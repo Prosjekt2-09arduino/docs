@@ -1,0 +1,18 @@
+## Generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+.gitignore
+
+# LaTeX files to ignore
+*.aux
+*.lof
+*.log
+*.lot
+*.toc
+*.pdf
+
+# Ignore test dir
+test/
