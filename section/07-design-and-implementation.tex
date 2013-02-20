@@ -1,0 +1,9 @@
+\section{Design and implentation}
+The market app should be easy to use and fit for consumers of all ages. To install an application the user has to select a desired application with one touch, then check the specification if its compatible with the Arduino, then a agree/install button for installing the app on the Arduino. This is a total of two clicks, despite you have chosen a category or search hits on the market app. This is similar to Google Play.\\
+\newline
+Each (supported) Arduino device is equipped with a Unified Resource Identifier (URI) stored in its ROM. This URI is automatically transferred to the market app once it is turned on and is in range; the hardware configuration (Memory, connected devices) is stored in a XML file the URI links to.
+The app store client can then compare compatibility with the device and app requirements.
+Only apps supported on your Arduino will initially be visible in the market application, however, power users can enable unfiltered results to browse the selection and consider upgrading the device.\\
+\newline
+Anyone modifying a board will have to provide a hardware specification and transfer a new URI to the device if they want filtered results in the app store (Such a user could still choose to view and install unfiltered applications).
+The URI could also be read from a QR-code.

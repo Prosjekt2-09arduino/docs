@@ -1,0 +1,49 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{ifpdf}
+\usepackage{url}
+\usepackage{xtab}
+\usepackage[hmargin=3cm,vmargin=3cm]{geometry}
+\usepackage[norsk, english]{babel} 
+\usepackage[parfill]{parskip}
+\usepackage{pdfpages}
+%\newcommand{\newCommandName}{text to insert} % Defines a variable in LaTeX
+\newcommand{\comment}[1]{} \comment{This is a block comment wrapped in curly brackets}
+%\renewcommand{\thefootnote}{\roman{footnote}}
+
+\begin{document}
+\input{section/00-front-page}
+\newpage
+
+\tableofcontents
+\newpage
+\input{section/01-introduction}
+\input{section/02-prestudy}
+\input{section/03-project-planning}
+\input{section/04-requirements}
+\input{section/05-iterations}
+\input{section/06-development-environment}
+\input{section/07-design-and-implementation}
+\input{section/08-testing}
+\input{section/09-evaluation}
+
+\newpage
+\addcontentsline{toc}{section}{Appendixes} %this line may break your compilation, and may require recompiation
+\appendix
+%\input{section/}
+
+\newpage
+\listoftables
+\listoffigures
+\bibliographystyle{plain}
+\input{section/0x-bibliography}
+
+\end{document}
