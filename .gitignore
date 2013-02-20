@@ -15,4 +15,4 @@
 *.pdf
 
 # Ignore test dir
-test/
+./test
