@@ -1,16 +1,23 @@
 \section{Development environment}
 \subsection{Development tools}
-\subsubsection{Integradet Development Environments (IDEs)}
-Eclipse was chosen for Android development, due to previous experience. The official Arduino IDE was considered, but due to its limited feature set (lacking features such as auto complete) it was decided to use Eclipse for this as well.\\
-Mylyn plugins were used to integrate GitHub issues into the IDE.
+\subsubsection{Integrated Development Environments (IDEs)}
+\subsubsubsection{Eclipse}
+Eclipse is a freely available IDE implemented in Java. It has extensive plugin support and anyone can publish a plugin to support another programming language, versioning software or new program features alltogether. Eclipse provides useful, time saving functionality to developers, such as an extensive live debugging suite in addition to checking code syntax and providing auto completition of method calls.\\
+Eclipse was chosen for Android development, due to previous experience with the software and good plugin support for targeting different versions of the Android API. Using a plugin for Arduino support was also considered, but the functionality of the available plugin was found lacking. %Ståle, kan du si mer her?
+
+\subsubsubsubsection{Mylyn plugins}
+Mylin is a plugin meant to integrate with other plugins that provide access to task, issue and bug tracking repositories. Issues can be referenced or created quickly from the Eclipse IDE while coding, and the plugin can be configure to show relevant code sections when selecting an issue to work on. The group used a Github connector for Mylin to get Mylin to display and work with GitHub issues.
+
+\subsubsubsubsection{Android Software Development Kit (SDK)}
+The Android SDK provides access to several versions of the Android API through the use of an installation manager. This allows for simple updating when new versions of the API are released, as well as supporting older devices. A simulator for testing against different Android devices is also available.
+
+\subsubsubsection{Arduino IDE}
+The Arduino IDE is provided by the creators of the Arduino platform as a free and open source program. It provides syntax checking, example programs, as well as basic editing tools. The IDE handles compilation of Arduino code into C and C++ code the regular microcontroller tools can handle (the IDE includes and depends on tools developed by Atmel, the company behind the chip Arduino uses) and can pass it on to an integrated uploading tool (avr-dude) to get it running on the Arduino.\\
+The official Arduino IDE was considered for coding the Arduino component in, but due to its limited text and code related feature set (lacking features such as auto complete), the IDE was not used for coding.
 
 \subsubsection{Codebase management and versioning}
-The customer required source code to be uploaded to Github. Use of git terminal solutions was deemed useful, since these are similar across different platforms and are IDE-independent.
+The customer required source code to be uploaded to Github. Github provides both free (limited to public repositories) and paid services.Use of git terminal solutions was deemed useful, since these are similar across different platforms and are IDE-independent.
 
-\subsection{Communication}
-Most of the communication within the group were done at group meetings and when the group were working together. For communication between group members outside the meetings it was decided that the group should only use email and Skype. This was decided to avoid the confusion that might arise from using numerous channels of communication. Mobile phone was also used when immediate contact were necessary.\\
-\newline
-Communication between the group and the customer were mainly done in meetings or by email. The same applies for communication with the supervisor.\\
 The customer heavily recommended use of Github for requesting assistance using issues and milestones, which was accepted for use.\\
 Wunderlist was used for other, non-coding related tasks.
 
@@ -20,5 +27,3 @@ The final version of the report was created using \LaTeX.
 A shared calendar in Google Calendar was created to make it easier to keep track of group meetings, meetings with the customer and so on.\\
 Dropbox was used for sharing of various files within the group. 
 Microsoft Word was used to generate certain graphs for the preliminary reports.\\
-\newline
-Scrumy.com is a online project management tool loosely based off scrum, and was used as the scrum task board during the project. Since the group did not have a constant meeting area, it was helpful to have the scrum task board online instead of using a physical board.
