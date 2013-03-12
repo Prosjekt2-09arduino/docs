@@ -1,25 +1,29 @@
 \section{Prestudy}
 \subsection{Development methods}
 \subsubsection{Scrum}
-Scrum is an iterative and incremental development framework for development of complex information systems. The use of Scrum requires the team to be divided into specific roles, where each role has its own responsibility. The following is the core roles of the Scrum team:
+Scrum is an iterative and incremental development framework for development of complex information systems. When using Scrum, the development of the product is developed in small pieces, with each piece building upon previously created pieces. The use of Scrum requires the team to be divided into specific roles, where each role has its own responsibility. The following is the core roles of the Scrum team:
 \begin{description}
-	\item[Product owner:]{The product owner represents the stakeholders in the project, and is the voice of the customer. It is the product owner’s responsibility to ensure that the Scrum team at all times is working with the right things seen from a business perspective.}
+	\item[Product owner:]{The product owner represents the stakeholders in the project, and is the voice of the customer. It is the product owner's responsibility to ensure that the Scrum team at all times is working with the right things seen from a business perspective.}
 	\item[Scrum master:]{The scrum master should act as a buffer between the development team and distracting influences, so that the development team can deliver potentially shippable products at the end of each sprint. The scrum master should keep the development team focused at all times.}
 	\item[Development team:]{The development team is made up from three to nine persons with cross-functional skills. This team does the all the actual work, including development, testing, designing and so on.}
 \end{description}
 
-\subsubsection{Spiral model}
-The spiral model is software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product.
+\subsubsection{Waterfall model}
+The waterfall model is among the first process models to be introduced. In this model, each phase in the development must be completed before one can advance to the next phase. At the end of each phase in the development, a review takes place. In this review it is determined if the project is on the right path and if it should continue or not. The phases in the development does not overlap.
 
-\subsubsection{Lean sotfware development}
+\subsubsection{Spiral model}
+The spiral model is software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product, as prototypes.
+
+%Check if it is written anything about this in the Systemutviklings-bok.
+\subsubsection{Lean software development}
 Lean is an agile software development methodology that is defined by seven principles:
 \begin{description}
 	\item[Eliminate waste.]{Everything that does not add any value to the customer is considered a waste.}
-	\item[Amplify learning Defects.]{Should be prevented by running early after the code is made.}
-	\item[Decide as late as possible.]{Better result should be achieved with an option-based approach. Delaying options as much as possible would give more flexibility later.}
+	\item[Amplify learning.]{The development environment should the designed so it amplifies the learning process of the developers. Defects should be prevented by running tests as soon as the code is written.}
+	\item[Decide as late as possible.]{By delaying decisions as much as possible, better results can be achieved. There is always uncertainty associated with software development, and delaying options as much as possible results in more flexibility later.} 
 	\item[Deliver as fast as possible.]{The sooner the product is delivered, the sooner feedback can be received.}
 	\item[Empower the team.]{The managers are taught how to listen to the developers, so they can explain better what action that might be taken, and give suggestion for improvement.}
-	\item[Build integrity.]{The customer needs to have more influence and inspection of the project.}
+	\item[Build integrity.]{The customer needs to have influence and inspection of the project, and an overall experience of the system to be developed.}
 	\item[See the whole.]{Decompose the system into smaller parts and find and eliminate defects.}
 \end{description}
 
@@ -31,10 +35,13 @@ This is a summary of existing solutions similar to the project assignment. This 
 \end{itemize}
 
 \subsubsection{Market application}
-A prior project created an universal app store in PHP. Had potential for serving as a back end.
 
-{\bf Google Play} is a similar market application for android that categorizes the applications and have a search option. It also detects what model of phone that is being used, and only shows apps that are supported by that phone. The applications are shown in lists and can be downloaded by two clicks. The first click guides you to a description section with pictures, description, comments and user-feedback in form of 5-star-rating.\\
-The store is not open source and can only be a source of inspiration for this project.
+%Write about the application from prior project here.
+A prior project created an universal application store in PHP. Had potential for serving as a back end.
+
+\\
+
+{\bf Google Play} is the market application for Android provided by Google. It is an application that allows for easy browsing and installation of applications on Android devices. It also detects what model of phone that is being used, and only shows applications that are supported by that phone. This functionality is similar to the requirements for the Android application in the project. Google Play is not open source and could therefore only be used as a source of inspiration for the project.\\
 \begin{figure}[H]
 \includegraphics[scale=0.2]{images/Google-Play-Store-APK-3-7-15.jpg}
 \caption{Google Play Store}
