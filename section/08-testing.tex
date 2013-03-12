@@ -1,2 +1,67 @@
 \section{Testing}
-\ldots
+	Testing is used to accomplish quality of the software and to avoid defects.
+	
+	\subsection{Testing strategy}
+
+		\subsubsection{Unit testing}
+			For the Android developing it was used Android testing API that is and extension of the JUnit API.
+			This test aim at writing small portions of code, and check the results against expected results.
+
+			In Android development, functions, contexts and Activities is a big portion of the coding.
+			One small component is therefore one of these, and the unit testing is finish when these components are complete.
+
+		\subsubsection{Integration testing}
+			This test is based on combining different units and test the interface between them. It is a phase after the unit testing and before the Valudation testing. The units that can be used in these tests must therefore have passed the unit tests.
+
+			Because our system is composed in more than one process (stk500 protocol and the market application), they 
+			was steded in pair and not all at once.
+
+			Integration testing identifies problems that occurs when we combine the units.
+
+		\subsubsection{Validation testing}
+			Validation testing is used for validating that the system have met the customers requirements.
+
+		%This section might possible be removed
+		\subsubsection{Functionality test}
+			Functionality testing was used to test the specification of the software componenests.
+			Functions are tested by give them inputs and examine the outputs, and it gives and indicator on what the system does.\\
+
+			%Try to use functionality test when implementing stk500
+			This was usfull when the STK500 was implemented.\\
+
+			Functionality testing typically involves five steps:\\
+			\begin{itemize}
+			\item{The identification of functions that the software is expected to perform}
+			\item{The creation of input data based on the function's specifications}
+			\item{The determination of output based on the function's specifications}
+			\item{The execution of the test case}
+			\item{The comparison of actual and expected outputs}
+			\end{itemize}
+
+	\subsection{Usability and acceptance test}
+		blablabla
+
+	\subsection{System test}
+		blablabla
+
+
+\subsection{Bibliography}
+	
+	\subsubsection{Integration testing}
+	http://en.wikipedia.org/wiki/Integration_testing
+	http://msdn.microsoft.com/en-us/library/aa292128(v=vs.71).aspx
+
+	\subsubsection{Functional testing}
+	http://en.wikipedia.org/wiki/Functional_testing
+
+	\subsubsection{Unit testing}
+	http://msdn.microsoft.com/en-us/library/aa292197(v=vs.71).aspx
+	http://en.wikipedia.org/wiki/Unit_testing
+	http://developer.android.com/tools/testing/testing_android.html
+
+	\subsubsection{Testing overview}
+	http://msdn.microsoft.com/en-us/library/aa292191(v=vs.71).aspx
+
+	\subsubsection{Validation testing}
+	http://en.wikipedia.org/wiki/Verification_and_validation
+	http://www.buzzle.com/articles/validation-testing.html
