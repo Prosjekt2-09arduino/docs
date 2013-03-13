@@ -4,13 +4,15 @@ The group consisted of six students from Computer Science at NTNU, each possessi
 
 \begin{description}
 \item{Bjørn Arve Fossum}\hfill \\
-	Third year Informatics student at NTNU. Experience with Java, MySQL, PHP and C#.
+	Third year Informatics student at NTNU. Experience with Java, MySQL, PHP and C\#.
 \item{Wilhelm Walberg Schive}\hfill \\
 	Third year Informatics student at NTNU. Experience with Java, MySQL and knew the basics of Arduino project development.
 \item{Nina Margrethe Smørsgård}\hfill \\
 	Third year Informatics student at NTNU. Experience with Java, MySQL, \LaTeX, and basics Android development.
 \item{Robin Tordly}\hfill \\
 	Third year Informatics student at NTNU. Experience with Java, Android, MySQL, PHP and SQLite. 
+\item{Ståle Semb Hauknes}\hfill \\
+	Third year Informatics student at NTNU. Experience with Java, MySQL, PHP and Arduino.
 \end{description}
 
 \subsection{Problem description}
@@ -22,6 +24,9 @@ The purpose of the market application was to allow users of Arduino to browse an
 The goal of the project task was to make Arduino easier to use for ordinary people, by allowing easy browsing, sharing and installation of applications on Arduino boards. By developing an application for over the air installation of applications, the finished product should ease the process of both installing and updating PUIs on an Arduino.
 
 \subsection{Mid-term changes}
+About halfway through the project we realized that we had to prioritize differently. The over the air transfer of new PUI apps to an arduino device proved to be more demanding than planned. This made us have a talk with the customer about what he wanted us to focus on. \\
+\newline
+The goal of the project remained consistent with prevoius statement, a simple store application had been made, though not all funcionality was made and tested. Work on this application came to a halt. Resources were now focused primarily on creating an implementation of AVRDude in java without specifically creating it for the application made. The customer wanted to have an implementation of AVRDude in java with intentions of reuse by anyone who might need to through the Apache 2 license. 
 
 \section{Definitions}
 This is a list of terms and abbreviations used throughout the project report in order to clarify and explain their meaning.
@@ -37,9 +42,14 @@ A software foundation focused on open source and community driven software.
 \item[Arduino:]\hfill \\
 A tool for making Physical User Interfaces (PUIs). It is an open-source physical computin platform based on a simple microcontroller board.
 
-\item[PUI:]\hfill \\
-An acronym for Physical User Interface. A PUI is a user interface which interacts with digital information through the physical environment. 
+\item[AVRDude:]\hfill \\
+This is a tool to upload programs to microcontrollers from the Unix command line. This software has a lot of features, such as reading and writing to the microcontrollers memory over a serial connection. This software can also compile your C code into an Intel Hex file, a file full of binary information, that can be sent to the arduino with the STK500 protocol. Normally this is used with a cable between your computer and the microcontroller.
 
+\item[STK500:]\hfill \\
+This is a standard protocol used by many microcontrollers to upload and download memory, including the arduino.
+
+\item[PUI:]\hfill \\
+An acronym for Physical User Interface. A PUI is a user interface which interacts with digital information through the physical environment.
 
 \subsection{Work breakdown structure (WBS)}
 The WBS is a view on what work packages the project encompasses. It helps with communicating the work and processes to easily execute the project. The duration-time show how much estimated time one task require, and gives an assessment on how much effort to be considered.\\
