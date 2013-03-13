@@ -16,8 +16,7 @@ The URI could also be read from a QR-code.
 		\item{Android application view (the visible design)}
 		\item{A service that contains the protocol for installing ``over the air''}
 	\end{itemize}
-	\newLine
-	\\
+
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
 	Therefor it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only support STK500 protocol and therefore only connection towards Arduino.
 	The design for the connection to other devices are done as following:\\
@@ -29,6 +28,7 @@ The URI could also be read from a QR-code.
 
 	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service there is few changes to be done in Devices.java. Afterall an own service and a protocol towards a desired device must be implemented. Since this project only take in hand a connection between Android and Arduino, we implemented the STK500 protocol.
 	The overall design solution for multiple connections will be like this:\\
+
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
 	\captionof{figure}{Over The Air Architecture}
