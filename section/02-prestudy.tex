@@ -1,6 +1,6 @@
-\section{Prestudy}
-\subsection{Development methods}
-\subsubsection{Scrum}
+\chapter{Prestudy}
+\section{Development methods}
+\subsection{Scrum}
 Scrum is an iterative and incremental development framework for development of complex information systems. When using Scrum, the development of the product is developed in small pieces, with each piece building upon previously created pieces. The use of Scrum requires the team to be divided into specific roles, where each role has its own responsibility. The following is the core roles of the Scrum team:
 \begin{description}
 	\item[Product owner:]{The product owner represents the stakeholders in the project, and is the voice of the customer. It is the product owner's responsibility to ensure that the Scrum team at all times is working with the right things seen from a business perspective.}
@@ -8,14 +8,14 @@ Scrum is an iterative and incremental development framework for development of c
 	\item[Development team:]{The development team is made up from three to nine persons with cross-functional skills. This team does the all the actual work, including development, testing, designing and so on.}
 \end{description}
 
-\subsubsection{Waterfall model}
+\subsection{Waterfall model}
 The waterfall model is among the first process models to be introduced. In this model, each phase in the development must be completed before one can advance to the next phase. At the end of each phase in the development, a review takes place. In this review it is determined if the project is on the right path and if it should continue or not. The phases in the development does not overlap.
 
-\subsubsection{Spiral model}
+\subsection{Spiral model}
 The spiral model is software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product, as prototypes.
 
 %Check if it is written anything about this in the Systemutviklings-bok.
-\subsubsection{Lean software development}
+\subsection{Lean software development}
 Lean is an agile software development methodology that is defined by seven principles:
 \begin{description}
 	\item[Eliminate waste.]{Everything that does not add any value to the customer is considered a waste.}
@@ -27,15 +27,19 @@ Lean is an agile software development methodology that is defined by seven princ
 	\item[See the whole.]{Decompose the system into smaller parts and find and eliminate defects.}
 \end{description}
 
-\subsection{Existing solutions}
+\section{Existing solutions}
 This is a summary of existing solutions similar to the project assignment. This section is divided in two subsections; one for the market application and one for the over-the-air transfer. The existing products were evaluated on the following criteria:
 \begin{itemize}
 	\item{To what degree the product fits the assignment.}
 	\item{Can the product, or parts of it, be reused for the assignment? Can it lead to licensing issues?}
 \end{itemize}
 
+<<<<<<< HEAD
 \subsubsection{Market application}
 \textbf{UbiBazaar} is a prior project which created an universal app store in PHP. This project had potential for serving as a back end, but this was later discarded. The idea of a website for uploading applications was the primary idea for the project. Upon revising the project it was deemed too unstable and incomplete to properly function for our intended use. The project used an outdated version of PHP which caused numerous bugs which would take up too much time to attempt to fix properly.\\
+=======
+\subsection{Market applications}
+>>>>>>> b3ecba3dc2e730f80141d7aa7c63a9da9eb81027
 
 It did have a way for developer to follow each other, which would help creating a community for the developers. For further development of $\mu$\mu$CSS, UbiBazaar would also be able to support the development of applications aimed at, for example, raspberry pi. This was not included as the goal of our project and therefore discarded.\\
 
@@ -58,7 +62,7 @@ These applications fit the assignment in the way that they are both market appli
 Google Play fits the assignment in the way that is is a market applications where one can download applications. This was useful for the development of the product, since it was possible to use the same principles in the assignment. It was also similar in the way that it was possible to browse for applications on the computer, and ''push'' the application to a mobile telephone. This, however, did not connect via bluetooth which the task assignment stated that the finished product should. Google Play is not open source and could therefore only be used as a source of inspiration for the project. It was not possible to reuse the code or other parts of the application in the development. 
 
 
-\subsubsection{Pebble}
+\subsection{Pebble}
 Pebble is a watch that offers over the air transfer of applications. The main differents between this watch and a standard arduino, is that Pebble have written a custom operating system in C for this device and contains a bluetooth connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that is much easier to develop an operating system.\\
 \\
 To transfer a new application to the watch, the user connects the mobile phone to the watch using bluetooth. The user can then open the Pebble application store and upload applications made for this watch.
@@ -71,7 +75,7 @@ To transfer a new application to the watch, the user connects the mobile phone t
 \end{figure}
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential reuse in this project appears minimal.
 
-\subsection{Over the air transfer}
+\section{Over the air transfer}
 Usally when you program the arduino you use a computer with a usb-cable connected to the arduino board. This is used because this is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you programming the arduino and move the software over to a android device. To remove the usb-cable we had to use bluetooth to communicate between the devices.
 \\
 \begin{figure}[H]
