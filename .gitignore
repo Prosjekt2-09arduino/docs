@@ -11,9 +11,7 @@
 *.log
 *.lot
 *.toc
+*.blg
+*.bbl
 *.pdf
-
-# Ignore test dir
-./test
-
-rapport.synctex.gz
+*.synctex.gz
