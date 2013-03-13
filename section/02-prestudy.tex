@@ -69,11 +69,12 @@ The principles are quite similar to what we planned to develop, but this platfor
 Usally when you program the arduino you use a computer with a usb-cable connected to the arduino board. This is used because this is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you programming the arduino and move the software over to a android device. To remove the usb-cable we had to use bluetooth to communicate between the devices.
 \\
 \begin{figure}[H]
-\includegraphics[scale=1.5]{images/wiring_simple.png}
+\includegraphics[scale=1.2]{images/wiring_simple.png}
 \caption{Bluetooth on arduino}
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
-After a lot of research we made a wireless connection between the android and the arduino with a bluetooth module, with the wiring as shown in the figure~\ref{fig:SimpleArduinoWiring}. We used the bluetooth module RN-42 because this was well documented and easy to connecto to the arduino.\\
+% ref til RN-42
+After a lot of research we made a wireless connection between the android and the arduino with a bluetooth module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the bluetooth module RN-42 because this was well documented and easy to connecto to the arduino.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
