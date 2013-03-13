@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
 \usepackage{array}
@@ -20,6 +20,20 @@
 \usepackage[norsk, english]{babel} 
 \usepackage[parfill]{parskip}
 \usepackage{pdfpages}
+
+
+% Begin chapter numbering
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+% End chapter numbering
+
+% Add numbering to subsubsection
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 %\newcommand{\newCommandName}{text to insert} % Defines a variable in LaTeX
 \newcommand{\comment}[1]{} \comment{This is a block comment wrapped in curly brackets}
