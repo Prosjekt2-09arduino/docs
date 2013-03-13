@@ -39,10 +39,8 @@ This is a summary of existing solutions similar to the project assignment. This 
 {\bf UbiBazaar} is a prior project which created an universal application store in PHP. This project had potential for serving as a back end, but this was later discarded. The idea of a website for uploading applications was the primary idea for the project. Upon revising the project it was deemed too unstable and incomplete to properly function for our intended use. The project used an outdated version of PHP which caused numerous bugs which would take up too much time to attempt to fix properly.\\
 
 It did have a way for developer to follow each other, which would help creating a community for the developers. For further development of µCSS, UbiBazaar would also be able to support the development of applications aimed at, for example, raspberry pi. This was not included as the goal of our project and therefore discarded.\\
-\\
 
 {\bf Google Play} is the market application for Android provided by Google. It is an application that allows for easy browsing and installation of applications on Android devices. It also detects what model of phone that is being used, and only shows applications that are supported by that phone. This functionality is similar to the requirements for the Android application in the project.
-
 \\
 
 \begin{figure}[H]
@@ -60,12 +58,6 @@ Pebble is a watch that offers over the air transfer of applications. The main di
 \\
 To transfer a new application to the watch, the user connects the mobile phone to the watch using bluetooth. The user can then open the Pebble application store and upload applications made for this watch.
 
-\paragraph{lol}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\subparagraph{lololol}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 
 \begin{figure}[H]
 \includegraphics[scale=0.7]{images/Pebble-Smartphone-Watch.jpeg}
@@ -74,13 +66,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential reuse in this project appears minimal.
 
 \subsection{Over the air transfer}
-Usally when you program the arduino you use a computer with a usb-cable connected to the arduino board. This is used because this is a stable and standardized cable that everybody has available. This project's main goal was remove the cable when you programming the arduino and move the software over to a android device. To remove the usb-cable we had to use bluetooth to communicate between the devices.
+Usally when you program the arduino you use a computer with a usb-cable connected to the arduino board. This is used because this is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you programming the arduino and move the software over to a android device. To remove the usb-cable we had to use bluetooth to communicate between the devices.
 \\
 \begin{figure}[H]
 \includegraphics[scale=1.5]{images/wiring_simple.png}
 \caption{Bluetooth on arduino}
+\label{fig:SimpleArduinoWiring}
 \end{figure}
 
-After a lot of research we made a wireless connection between the android and the arduino with a bluetooth module, with the wiring as shown in the figure X. We used the bluetooth module RN-42 because this was well documented and easy to connecto to the arduino.\\
+After a lot of research we made a wireless connection between the android and the arduino with a bluetooth module, with the wiring as shown in the figure~\ref{fig:SimpleArduinoWiring}. We used the bluetooth module RN-42 because this was well documented and easy to connecto to the arduino.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
