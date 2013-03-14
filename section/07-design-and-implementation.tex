@@ -8,7 +8,7 @@ Only apps supported on your Arduino will initially be visible in the market appl
 Anyone modifying a board will have to provide a hardware specification and transfer a new URI to the device if they want filtered results in the app store (Such a user could still choose to view and install unfiltered applications).
 The URI could also be read from a QR-code.
 
-\subsection{System Architecture}
+\section{System Architecture}
 	The design was divided into several modules:
 	\begin{itemize}
 		\item{Bluetooth connection between the Android and the Arduino}
@@ -18,7 +18,7 @@ The URI could also be read from a QR-code.
 	\end{itemize}
 
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
-	Therefor it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only support STK500 protocol and therefore only connection towards Arduino.
+	Therefore it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only support STK500 protocol and therefore only connection towards Arduino.
 	The design for the connection to other devices are done as following:\\
 
 	\begin{figure}[H]
@@ -30,6 +30,106 @@ The URI could also be read from a QR-code.
 	The overall design solution for multiple connections will be like this:\\
 
 	\begin{figure}[H]
-	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
-	\captionof{figure}{Over The Air Architecture}
+	\includegraphics[scale=0.2]{figures/OTAArchitecture.pdf}
+	\captionof{image}{Over The Air Architecture}
 	\end{figure}
+
+\section{Design of Android application}
+
+% Add short description about what the purpose of the application is?
+
+Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide were made for two reasons:
+\begin{itemize}
+	\item{Presentation for the customer.} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at a early stage, when it was easy to change the design.
+	\item{Avoid confusion.} A design guide reduce the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface is settled before the programming is started, there is no need to discuss this along the way. 
+\end{itemize}
+
+\subsection{Design guide}
+Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not showed, as it was unnecessary to design this screen.
+
+\paragraph{Screen 1a - Device list}
+Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text has switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid bluetooth connection with the chosen device is made.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen1a.png}
+\captionof{image}{Screen 1a - Device list}
+\end{image}
+
+
+\paragraph{Screen 1b - Add device manually}
+Screen that appears after pressing the ''Add device'' button in Screen 1a. It was chosen to remove the ''Bluetooth settings'' button, as it unnecessary. In the final design, this screen contains only the ''QR code'' button and ''Input serial'' button, with a short description of the functionality of the button between them.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen1b.png}
+\captionof{image}{Screen 1b - Add device manually}
+\end{image}
+
+
+\paragraph{Screen 1b-i - Input serial}
+%Link to Screen 1b-i
+Screen that appears when the ''Input serial'' button is clicked.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen1b-i.png}
+\captionof{image}{Screen 1b-i - Input serial}
+\end{image}
+
+
+\paragraph{Screen 2a - Browse shop}
+%Link to Screen 2a
+Screen for browsing all the applications for Arduino in the shop. More categories have been added. The user can here swipe left/right to sort the available applications in different ways. See next paragraph.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen2a.png}
+\captionof{image}{Screen 2a - Browse shop}
+\end{image}
+
+
+\paragraph{Screen 2b - Browse shop by category}
+%Link to Screen 2b
+Screen that shows a list of all applications in chosen category. Category ''All'' is chosen.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen2b.png}
+\captionof{image}{Screen 2b - Browse shop by category}
+\end{image}
+
+
+\paragraph{Screen 3a - Application view}
+%Link to Screen 3a
+Screen with overview of an chosen application. Small changes were as comments field and reviews were given a lower priority at mid-term. 
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen3a.png}
+\captionof{image}{Screen 3a - Application view}
+\end{image}
+
+
+\paragraph{Screen 3a-i - Installation confirmation}
+%Link to Screen 3a-i
+Screen that appears when the ''Install'' button in Screen 3a is pressed. Shows the name of the chosen device.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen3a-i.png}
+\captionof{image}{Screen 3a-i - Installation confirmation}
+\end{image}
+
+
+\paragraph{Screen 3a-ii - Progress of installation}
+%Link to Screen 3a-ii
+Screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed. 
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/Screen3a-ii.png}
+\captionof{image}{Screen 3a-ii - Progress of installation}
+\end{image}
+
+
+\paragraph{Screen Xa - Action overflow}
+%Link to Screen Xa
+Screen that appears when the ''Action overflow'' button is clicked. This menu is available from all the screen in the application with the exception of the preferences screen.
+
+\begin{image}[H]
+\includegraphics[scale=0.2]{images/Design_guide/ScreenXa.png}
+\captionof{image}{Screen Xa - Action overflow}
+\end{image}
