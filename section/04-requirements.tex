@@ -95,7 +95,7 @@
         Prerequisite     &     Installed $\mu$CSS \\     Intstalled predefined QR-reader                                                                                                                                                                                 \\ 
         End requirement  & The Arduino device is connected to the phone via bluetooth                                                                                                                                                                                    \\ 
         Main flow        & \begin{itemize} \\ \item{User opens $\mu$CSS} \\ \item{User presses the button indicating that he wants to pair with the Arduino device using a serial code} \\ \item{System opens dialog box for input} \\ \item{The user types the serial} \\ \item{The system pairs with the Arduino device} \\ \end{itemize} \\
- 
+
         Alternative flow & 4.a. The user misspells the serial \\ 4.b. The system displays an error, and prompts again                                                                                                                                                    \\ 
         Parent UC        & 1                                                                                                                                                                                                                                             \\ 
         Child UC         & 7                                                                                                                                                                                                                                             \\
@@ -135,7 +135,27 @@
 \includegraphics[scale=1]{images/UseCase5}
 \end{figure}
 
+\begin{table}
+        \begin{tabular}{|l|l|}
+            \hline
+            ID               & 5 \\ \hline
+            Name             & Hides applications that are incompatible with the connected Arduino device \\
+            Actors           & Arduino device owner \\
+            Prequisite       & Installed $\mu$CSS \\
+            End Requirement  & None \\
+            Main flow 		 & 
+            				\begin{itemize}
+            				\item{The user opens $\mu$CSS}
+            				\item{The user selects the an Arduino device}
+            				\item{The user clicks the action overflow button}
+            				\item{The user selects Hide incompatible}
+            				\end{itemize}\\
+            Alternative Flow & None \\
+         	Parent UC & 1, 2/3 \\
+         	Child UC & 6
 
+        \end{tabular}
+    \end{table}
 
 \begin{figure}[H]
 \centering
@@ -153,7 +173,7 @@
         End requirement  & The application is installed on the Arduino device                                                                                                                                   \\ 
         Main flow        &     The user selects the desired application \\     The user presses the “install” button \\     The user confirms the installation \\     The application is installed at the Arduino device \\ 
         Alternative flow & none                                                                                                                                                                                 \\ 
-        Parent UC        & 1, 2/3/4, 5                                                                                                                                                                          \\ 
+        Parent UC        & 1, 2/3, 5                                                                                                                                                                         \\ 
         Child UC         & none                                                                                                                                                                                 \\
         \hline
     \end{tabular}
