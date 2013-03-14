@@ -43,15 +43,19 @@
     \begin{table}
         \begin{tabular}{|l|l|}
             \hline
-            ID               & 1                                                                                                                                  \\ \hline
-            Name             & Install $\mu$CSS                                                                                                                   \\
-            Goal             & Have $\mu$CSS installed on the Android device                                                                                      \\
-            Actors           & Android device owner                                                                                                               \\
-            Prequisite       & The actor have a Android device with Google Play                                                                                   \\
-            Main Flow        & \begin{itemize} \\ \item{Opens Google Play} \\ \item{Search for ``$\mu$C Software Store''} \\ \item{Installs the application} \\ \end{itemize} \\
-            Alternative Flow & None                                                                                                                               \\
-            Parent UC        & None                                                                                                                               \\
-            Child UC         & All                                                                                                                                \\
+            ID               & 1 \\ \hline
+            Name             & Install $\mu$CSS\\
+            Goal             & Have $\mu$CSS installed on the Android device\\
+            Actors           & Android device owner\\
+            Prequisite       & The actor have a Android device with Google Play\\
+            Main Flow        & \begin{itemize}
+                                \item{Opens Google Play} 
+                                \item{Search for ``$\mu$C Software Store''} 
+                                \item{Installs the application}
+                                \end{itemize} \\
+            Alternative Flow & None\\
+            Parent UC        & None\\
+            Child UC         & All\\
             \hline
         \end{tabular}
     \end{table}
@@ -64,18 +68,25 @@
 \begin{table}
     \begin{tabular}{|l|l|}
         \hline
-        ID               & 2                                                                                                                                                                                                                                                                                                          \\ \hline
-        Name             & Pair Arduino device and Android device with QR code                                                                                                                                                                                                                                                        \\ 
-        Goal             & Connect the Arduino device to the Android application with the use of QR code                                                                                                                                                                                                                              \\ 
-        Actors           & Arduino device owner                                                                                                                                                                                                                                                                                       \\ 
-        Prerequisite     &     Installed $\mu$CSS \\     Installed predefined QR-reader                                                                                                                                                                                                                                                  \\ 
-        End requirement  & The Arduino device is connected to the phone via bluetooth                                                                                                                                                                                                                                                 \\ 
-        Main flow        &    \begin{itemize} \\ \item{User opens $\mu$CSS} \\ \item{User presses the button indicating that he wants to pair with the Arduino device using QR code} \\ \item{The system opens the QR reader application} \\ \item{The QR reader application reads the QR code and returns the information it contains} \\ \item{The system pairs with the Arduino device} \\ \end{itemize} \\
+        ID               & 2 \\ \hline
+        Name             & Pair Arduino device and Android device with QR code\\ 
+        Goal             & Connect the Arduino device to the Android application with the use of QR code\\ 
+        Actors           & Arduino device owner\\ 
+        Prerequisite     &     Installed $\mu$CSS \\     Installed predefined QR-reader\\ 
+        End requirement  & The Arduino device is connected to the phone via bluetooth\\ 
+        Main flow        &    
+        \begin{itemize}
+        \item{User opens $\mu$CSS}
+        \item{User presses the button indicating that he wants to pair with the Arduino device using QR code}
+        \item{The system opens the QR reader application}
+        \item{The QR reader application reads the QR code and returns the information it contains}
+        \item{The system pairs with the Arduino device}
+        \end{itemize} \\
 
  
-        Alternative flow & 3.a. The user does not have the right QR code reader installed \\ 3.b. The system prompts the user if he wants to install the QR code reader \\ 3.c. If no: stop \\ 4.a. The QR reader is unable to read the QR code \\ 4.b. Try again or stop                                                             \\ 
-        Parent UC        & 1                                                                                                                                                                                                                                                                                                          \\ 
-        Child UC         & 7                                                                                                                                                                                                                                                                                                          \\
+        Alternative flow & 3.a. The user does not have the right QR code reader installed \\ 3.b. The system prompts the user if he wants to install the QR code reader \\ 3.c. If no: stop \\ 4.a. The QR reader is unable to read the QR code \\ 4.b. Try again or stop\\ 
+        Parent UC        & 1\\ 
+        Child UC         & 7\\
         \hline
     \end{tabular}
 \end{table}
@@ -94,7 +105,13 @@
         Actors           & Arduino device owner     								             \\ 
         Prerequisite     &     Installed $\mu$CSS \\     Intstalled predefined QR-reader                                                                                                                                                                                 \\ 
         End requirement  & The Arduino device is connected to the phone via bluetooth                                                                                                                                                                                    \\ 
-        Main flow        & \begin{itemize} \\ \item{User opens $\mu$CSS} \\ \item{User presses the button indicating that he wants to pair with the Arduino device using a serial code} \\ \item{System opens dialog box for input} \\ \item{The user types the serial} \\ \item{The system pairs with the Arduino device} \\ \end{itemize} \\
+        Main flow        & \begin{itemize}
+        \item{User opens $\mu$CSS} 
+        \item{User presses the button indicating that he wants to pair with the Arduino device using a serial code} 
+        \item{System opens dialog box for input} 
+        \item{The user types the serial} 
+        \item{The system pairs with the Arduino device}
+        \end{itemize} \\
  
         Alternative flow & 4.a. The user misspells the serial \\ 4.b. The system displays an error, and prompts again                                                                                                                                                    \\ 
         Parent UC        & 1                                                                                                                                                                                                                                             \\ 
