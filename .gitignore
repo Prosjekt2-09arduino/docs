@@ -4,7 +4,8 @@
 *.DS_Store
 *.swp
 *.out
-
+*.bak
+*.sav
 # LaTeX files to ignore
 *.aux
 *.lof
@@ -14,5 +15,4 @@
 *.blg
 *.bbl
 *.pdf
-*.synctex.gz
-*.synctex.gz(busy)
+*.synctex*
