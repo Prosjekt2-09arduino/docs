@@ -217,12 +217,17 @@
 \end{table}
 
 
-\section{Mid-term changes}
-About halfway through the project we realized that we had to prioritize differently. The over the air transfer of new PUI apps to an arduino device proved to be more demanding than planned. This made us have a talk with the customer about what he wanted us to focus on. \\
+\section{Changes in requirements after midterm}
+Approaching midterm it was discovered that the over the air transfer of PUI apps to an Arduino device proved to be more demanding than planned. After a extra ordinary meeting with the customer it was decided to change the focus of the assignment. \\
 \newline
-The goal of the project remained consistent with prevoius statement, a simple store application had been made, though not all funcionality was made and tested. Work on this application came to a halt. Resources were now focused primarily on creating an implementation of AVRDude in java without specifically creating it for the application made. The customer wanted to have an implementation of AVRDude in java with intentions of reuse by anyone who might need to through the Apache 2 license. 
+The goal of the project remained consistent with previous statement. A prototype of the Android store application had been made, though not all functionality was implemented and tested. Further work on the Android application were temporarily put on halt. At this point the resources were primarily focused on implementing the STK500 protocol in Java to allow for programming of Arduino from an Android device. Se below for concrete additions and removals on the requirements.
 
+% Add more as needed
 \section{Additions}
+\paragraph{STK500 protocol} As mentioned above, implementing the STK500 protocol proved more demanding than expected. Initial research done by the group on this area showed that an Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. As of midterm, implementing the STK500 protocol in Java were added to the requirements.
 
+\section{Removals}
+\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other more critical tasks.
 
-\section{Deletions}
+\paragraph{Sync adapter} As the server component of the assignment were removed from the requirements, sync adapter also needed to be removed.
+
