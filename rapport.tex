@@ -43,11 +43,14 @@
 
 
 \begin{document}
+\pagenumbering{gobble}
+
 \input{section/00-front-page}
 \newpage
 
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 \input{section/01-introduction}
 \input{section/02-prestudy}
 \input{section/03-project-planning}
@@ -56,7 +59,7 @@
 \input{section/06-development-environment}
 \input{section/07-design-and-implementation}
 \input{section/08-testing}
-\input{section/09-evaluation}
+%\input{section/09-evaluation} %TODO Rename chapter to Reflection
 
 \newpage
 \addcontentsline{toc}{section}{Appendixes} %this line may break your compilation, and may require recompiation
