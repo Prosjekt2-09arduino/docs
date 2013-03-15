@@ -37,143 +37,183 @@
 \section{Use-Cases}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase1}
+\includegraphics[scale=0.7]{images/UseCase1}
 \end{figure}
 
     \begin{table}
-        \begin{tabular}{|l|l|}
+        \begin{tabularx}\linewidth{    |m{0.3 \textwidth} |X|   }
             \hline
-            ID               & 1 \\ \hline
-            Name             & Install $\mu$CSS\\
-            Goal             & Have $\mu$CSS installed on the Android device\\
-            Actors           & Android device owner\\
-            Prequisite       & The actor have a Android device with Google Play\\
-            Main Flow        & \begin{itemize}
-                                \item{Opens Google Play} 
-                                \item{Search for ``$\mu$C Software Store''} 
-                                \item{Installs the application}
-                                \end{itemize} \\
-            Alternative Flow & None\\
-            Parent UC        & None\\
-            Child UC         & All\\
+                ID           & 1 \\ 
             \hline
-        \end{tabular}
+                Name             & Install $\mu$CSS \\
+            \hline
+                Goal             & Have $\mu$CSS installed on the Android device\\
+            \hline
+                Actors           & Android device owner\\
+            \hline
+                Prequisite       & The actor have a Android device with Google Play\\
+            \hline
+                Main Flow        &  1. Opens Google Play \\
+                                 &  2. Search for ``$\mu$C Software Store'' \\
+                                 &  3. Installs the application \\
+            \hline
+                Alternative Flow & None\\
+            \hline
+                Parent UC        & None\\
+            \hline
+                Child UC         & All\\
+            \hline
+        \end{tabularx}
     \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase2}
+\includegraphics[scale=0.7]{images/UseCase2}
 \end{figure}
 
 \begin{table}
-    \begin{tabular}{|l|l|}
+    \begin{tabularx}\linewidth{    |m{0.3 \textwidth} |X| }
         \hline
-        ID               & 2 \\ \hline
-        Name             & Pair Arduino device and Android device with QR code\\ 
-        Goal             & Connect the Arduino device to the Android application with the use of QR code\\ 
-        Actors           & Arduino device owner\\ 
-        Prerequisite     &     Installed $\mu$CSS \\     Installed predefined QR-reader\\ 
-        End requirement  & The Arduino device is connected to the phone via bluetooth\\ 
-        Main flow        &    
-        \begin{itemize}
-        \item{User opens $\mu$CSS}
-        \item{User presses the button indicating that he wants to pair with the Arduino device using QR code}
-        \item{The system opens the QR reader application}
-        \item{The QR reader application reads the QR code and returns the information it contains}
-        \item{The system pairs with the Arduino device}
-        \end{itemize} \\
-
- 
-        Alternative flow & 3.a. The user does not have the right QR code reader installed \\ 3.b. The system prompts the user if he wants to install the QR code reader \\ 3.c. If no: stop \\ 4.a. The QR reader is unable to read the QR code \\ 4.b. Try again or stop\\ 
-        Parent UC        & 1\\ 
-        Child UC         & 7\\
+            ID               & 2 \\ 
         \hline
-    \end{tabular}
+            Name             & Pair Arduino device and Android device with QR code\\ 
+        \hline
+            Goal             & Connect the Arduino device to the Android application with the use of QR code\\ 
+        \hline
+            Actors           & Arduino device owner\\ 
+        \hline
+            Prerequisite     & Installed $\mu$CSS \\ 
+                             & Installed predefined QR-reader\\ 
+        \hline
+            End requirement  & The Arduino device is connected to the phone via bluetooth\\ 
+        \hline
+            Main flow        &  1. User opens $\mu$CSS \\
+                             &  2. User presses the button indicating that he wants to pair with the Arduino device using QR code \\
+                             &  3. The system opens the QR reader application \\
+                             &  4. The QR reader application reads the QR code and returns the information it contains\\
+                             &  5. The system pairs with the Arduino device \\
+        \hline
+            Alternative flow &  3.a. The user does not have the right QR code reader installed \\ 
+                             &  3.b. The system prompts the user if he wants to install the QR code reader \\ 
+                             &  3.c. If no: stop \\ 
+                             &  4.a. The QR reader is unable to read the QR code \\ 
+                             &  4.b. Try again or stop\\ 
+        \hline
+            Parent UC        & 1\\
+        \hline 
+            Child UC         & 7\\
+        \hline
+    \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase3}
+\includegraphics[scale=0.7]{images/UseCase3}
 \end{figure}
 
 \begin{table}
-    \begin{tabular}{|l|l|}
+    \begin{tabularx}\linewidth{    |m{0.3 \textwidth} |X| }
         \hline
-        ID               & 3                                                                                                                                                                                                                                             \\ \hline
-        Name             & Pair Arduino device with Android device using serial                                                                                                                                                                                          \\ 
-        Goal             & Connect the Arduino device to the Android application with the use of QR code                                                                                                                                                                 \\ 
-        Actors           & Arduino device owner     								             \\ 
-        Prerequisite     &     Installed $\mu$CSS \\     Intstalled predefined QR-reader                                                                                                                                                                                 \\ 
-        End requirement  & The Arduino device is connected to the phone via bluetooth                                                                                                                                                                                    \\ 
-        Main flow        & \begin{itemize}
-        \item{User opens $\mu$CSS} 
-        \item{User presses the button indicating that he wants to pair with the Arduino device using a serial code} 
-        \item{System opens dialog box for input} 
-        \item{The user types the serial} 
-        \item{The system pairs with the Arduino device}
-        \end{itemize} \\
- 
-        Alternative flow & 4.a. The user misspells the serial \\ 4.b. The system displays an error, and prompts again                                                                                                                                                    \\ 
-        Parent UC        & 1                                                                                                                                                                                                                                             \\ 
-        Child UC         & 7                                                                                                                                                                                                                                             \\
+            ID               & 3 \\
         \hline
-    \end{tabular}
+            Name             & Pair Arduino device with Android device using serial \\
+        \hline
+            Goal             & Connect the Arduino device to the Android application with the use of QR code \\
+        \hline
+            Actors           & Arduino device owner \\
+        \hline
+            Prerequisite     & Installed $\mu$CSS \\
+                             & Intstalled predefined QR-reader \\
+        \hline
+            End requirement  & The Arduino device is connected to the phone via bluetooth \\
+        \hline
+            Main flow        &  1. User opens $\mu$CSS \\
+                             &  2. User presses the button indicating that he 
+                                    wants to pair with the Arduino device using a serial code \\ 
+                             &  3. System opens dialog box for input\\
+                             &  4. The user types the serial \\
+                             &  5. The system pairs with the Arduino device \\
+        \hline
+            Alternative flow &  4.a. The user misspells the serial \\ 
+                             &  4.b. The system displays an error, and prompts again \\
+        \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & 7 \\
+        \hline
+    \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase4}
+\includegraphics[scale=0.7]{images/UseCase4}
 \end{figure}
 
         \begin{table}
-        \begin{tabular}{|l|l|}
+        \begin{tabularx}\linewidth{    |m{0.3 \textwidth} |X| }
             \hline
-            ID               & 4 \\ \hline
-            Name             & Browse apps \\
-            Actors           & Arduino device owner \\
-            Prequisite       & Installed $\mu$CSS \\
-            End Requirement  & None \\
-            Main Flow        &      
-                    \begin{itemize}
-                    \item{The user opens $\mu$CSS}
-                    \item{The user selects the an Arduino device}
-                    \item{The user selects category (One category is named ``al'')}
-                    \item{The user browses apps}
-                    \end{itemize} \\
-            Alternative Flow & 2.a. The user does not select Arduino device, but browses anyway
-           \\ \hline
-        \end{tabular}
+                ID               & 4 \\ 
+            \hline
+                Name             & Browse apps \\
+            \hline
+                Actors           & Arduino device owner \\
+            \hline
+                Prequisite       & Installed $\mu$CSS \\
+            \hline
+                End Requirement  & None \\
+            \hline
+                Main Flow        &  1. The user opens $\mu$CSS \\
+                                 &  2. The user selects the an Arduino device \\
+                                 &  3. The user selects category (One category is named ``al'') \\
+                                 &  4. The user browses apps \\
+            \hline
+             Alternative Flow    & 2.a. The user does not select Arduino device, but browses anyway \\
+           \hline
+        \end{tabularx}
     \end{table}
 
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase5}
+\includegraphics[scale=0.7]{images/UseCase5}
 \end{figure}
 
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{images/UseCase6}
+\includegraphics[scale=0.7]{images/UseCase6}
 \end{figure}
 
 \begin{table}
-    \begin{tabular}{|l|l|}
+    \begin{tabularx}\linewidth{    |m{0.3 \textwidth} |X| }
         \hline
-        ID               & 6                                                                                                                                                                                    \\ \hline
-        Name             & Install application on Arduino device                                                                                                                                                \\ 
-        Goal             & Connect the Arduino device to the Android application with the use of QR code                                                                                                        \\ 
-        Actors           & Arduino device owner                                                                                                                                                                 \\ 
-        Prerequisite     &     Installed $\mu$CSS \\     Arduino device connected to $\mu$CSS                                                                                                                   \\ 
-        End requirement  & The application is installed on the Arduino device                                                                                                                                   \\ 
-        Main flow        &     The user selects the desired application \\     The user presses the “install” button \\     The user confirms the installation \\     The application is installed at the Arduino device \\ 
-        Alternative flow & none                                                                                                                                                                                 \\ 
-        Parent UC        & 1, 2/3/4, 5                                                                                                                                                                          \\ 
-        Child UC         & none                                                                                                                                                                                 \\
+            ID               & 6 \\ 
         \hline
-    \end{tabular}
+            Name             & Install application on Arduino device \\ 
+        \hline
+            Goal             & Connect the Arduino device to the Android application with the use of QR code \\ 
+        \hline
+            Actors           & Arduino device owner \\ 
+        \hline
+            Prerequisite     &  Installed $\mu$CSS \\
+                             &  Arduino device connected to $\mu$CSS \\ 
+        \hline
+            End requirement  & The application is installed on the Arduino device \\ 
+        \hline
+            Main flow        &  The user selects the desired application \\     
+                             &  The user presses the “install” button \\     
+                             &  The user confirms the installation \\     
+                             &  The application is installed at the Arduino device \\ 
+        \hline
+            Alternative flow & none \\ 
+        \hline
+            Parent UC        & 1, 2, 3, 4, 5 \\ 
+        \hline
+            Child UC         & none \\
+        \hline
+    \end{tabularx}
 \end{table}
 
 
