@@ -1,5 +1,5 @@
 \chapter{Design and implentation}
-The market app should be easy to use and fit for consumers of all ages. To install an application the user has to select a desired application with one touch, then check the specification if its compatible with the Arduino, then a agree/install button for installing the app on the Arduino. This is a total of two clicks, despite you have chosen a category or search hits on the market app. This is similar to Google Play.\\
+The market app should be easy to use and fit for consumers of all ages. To install an application the user has to select a desired application with one touch, then check the specification if its compatible with the Arduino, then click an agree/install button to install the app on the Arduino. This is a total of two clicks, once you have chosen a category or searched on the market app. This is similar to Google Play.\\
 \newline
 Each (supported) Arduino device is equipped with a Unified Resource Identifier (URI) stored in its ROM. This URI is automatically transferred to the market app once it is turned on and is in range; the hardware configuration (Memory, connected devices) is stored in a XML file the URI links to.
 The app store client can then compare compatibility with the device and app requirements.
@@ -19,15 +19,15 @@ The URI could also be read from a QR-code.
 	\vspace{0.2in}
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
-	Therefore it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only support STK500 protocol and therefore only connection towards Arduino.
-	The design for the connection to other devices are done as following:\\
+	Therefore it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
+	The design for the connection to other devices is done as follows:\\
 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=130mm]{images/BTConnection.png}
 	\end{figure}
 
-	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service there is few changes to be done in Devices.java. Afterall an own service and a protocol towards a desired device must be implemented. Since this project only take in hand a connection between Android and Arduino, we implemented the STK500 protocol.
+	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, we implemented the STK500 protocol only.
 	The overall design solution for multiple connections will be like this:\\
 
 	\begin{figure}[H]
@@ -39,10 +39,10 @@ The URI could also be read from a QR-code.
 
 %TODO Add short description about what the purpose of the application is?
 
-Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide were made for two reasons:
+Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide was made for two reasons:
 \begin{itemize}
-	\item{Presentation for the customer.} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at a early stage, when it was easy to change the design.
-	\item{Avoid confusion.} A design guide reduce the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface is settled before the programming is started, there is no need to discuss this along the way. 
+	\item{Presentation for the customer.} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at a early stage, when it was easier to change the design.
+	\item{Avoid confusion.} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface is settled before the programming is started, there is less need to discuss this along the way.
 \end{itemize}
 
 \subsection{Design guide}
@@ -59,7 +59,7 @@ Screen that shows the list of available Arduino devices. In the final design the
 
 
 \paragraph{Screen 1b - Add device manually}
-Screen that appears after pressing the ''Add device'' button in Screen 1a. It was chosen to remove the ''Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it unnecessary. In the final design, this screen contains only the ''QR code'' button and ''Input serial'' button, with a short description of the functionality of the button between them.
+Screen that appears after pressing the ''Add device'' button in Screen 1a. It was chosen to remove the ''Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it proved unnecessary. In the final design, this screen contains only the ''QR code'' button and ''Input serial'' button, with a short description of the functionality of the button between them.
 
 \begin{figure}[H]
 \centering
@@ -103,7 +103,7 @@ Screen that shows a list of all applications in chosen category. Category ''All'
 
 \paragraph{Screen 3a - Application view}
 %Link to Screen 3a
-Screen with overview of an chosen application. Small changes were as comments field and reviews were given a lower priority at mid-term. 
+Screen with overview of an chosen application. Small changes were needed, as the comments field and reviews were given a lower priority at mid-term.
 
 \begin{figure}[H]
 \centering
@@ -125,7 +125,8 @@ Screen that appears when the ''Install'' button in Screen 3a is pressed. Shows t
 
 \paragraph{Screen 3a-ii - Progress of installation}
 %Link to Screen 3a-ii
-Screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed. 
+Screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed.
+The user is warned not to move the Android device out of range of the Arduino.
 
 \begin{figure}[H]
 \centering
