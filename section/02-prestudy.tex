@@ -50,7 +50,7 @@ Google Play fits the assignment in the way that is is a market applications wher
 
 
 \subsection{Pebble}
-Pebble is a watch that offers over the air transfer of applications. The main differents between this watch and a standard arduino, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth$\textsuperscript{\textregistered}$ connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that is much easier to develop an operating system.\\
+Pebble is a watch that offers over the air transfer of applications. The main differents between this watch and a standard Ardunio$\texttrademark$, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth$\textsuperscript{\textregistered}$ connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that is much easier to develop an operating system.\\
 \\
 To transfer a new application to the watch, the user connects the mobile phone to the watch using Bluetooth$\textsuperscript{\textregistered}$. The user can then open the Pebble application store and upload applications made for this watch.
 
@@ -61,15 +61,15 @@ To transfer a new application to the watch, the user connects the mobile phone t
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential reuse in this project appears minimal.
 
 \section{Over the air transfer}
-Usally when you program the arduino you use a computer with a usb-cable connected to the arduino board. This is used because this is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you programming the arduino and move the software over to a android device. To remove the usb-cable we had to use Bluetooth$\textsuperscript{\textregistered}$ to communicate between the devices.
+Usally when you program the Ardunio$\texttrademark$ you use a computer with a usb-cable connected to the Ardunio$\texttrademark$ board. This is used because this is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you programming the Ardunio$\texttrademark$ and move the software over to a android device. To remove the usb-cable we had to use Bluetooth$\textsuperscript{\textregistered}$ to communicate between the devices.
 \\
 \begin{figure}[H]
 \includegraphics[scale=1.2]{images/wiring_simple.png}
-\caption{Bluetooth$\textsuperscript{\textregistered}$ on arduino}
+\caption{Bluetooth$\textsuperscript{\textregistered}$ on Ardunio$\texttrademark$}
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
 % ref til RN-42
-After a lot of research we made a wireless connection between the android and the arduino with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring} . We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 because this was well documented and easy to connecto to the arduino.\\
+After a lot of research we made a wireless connection between the android and the Ardunio$\texttrademark$ with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring} . We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 because this was well documented and easy to connecto to the Ardunio$\texttrademark$.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
