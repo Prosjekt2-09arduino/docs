@@ -9,10 +9,15 @@
 \section{Development method}
 %Iterative model based on lean with proposal to the customer weekly. This agile methodology decreased the project risk and secured a %complete and functional system for the customer. The customer could then influence our work and adjust potential misconceptions early %in the project. Prototypes and demonstration for SINTEF were made in the beginning to validate the understanding of the requirements.
 
-Refined Unified Process (RUP) model is an extensible framework. By this we mean that it should be customized for a spesific project.
+Rational Unified Process (RUP) model is an extensible framework. By this we mean that it should be customized for a specific project.
 It is an iterative and incremental software development process that is divided into a series of timeboxed iterations.
+<<<<<<< HEAD
 Each iteration results in a increment, which is a release of the system that is an improvement of the previous iteration.
 Most of the iterations will containt processwork as requirements, design, implementation and testing.
+=======
+Each iteration results in a increment, which is a release of the system that is and an improvement of the previous iteration.
+Most of the iterations will contain processwork as requirements, design, implementation and testing.
+>>>>>>> processmodel
 
 A feature of this model is that it is use case driven. Every iteration takes a set of use case scenarios from the requirements and use those for the content of the iteration.
 
@@ -27,14 +32,17 @@ The model consists of four phases:
 \item{Transition}
 \end{itemize}
 
-The Inception pase is the smalles phase and should contain the work of identifying risks and set the portion of requirements and use cases to work on in this iteration.
+The Inception phase is the smallest phase and should contain the work of identifying risks and set the portion of requirements and use cases to work on in this iteration.
 
-In the Elaboration phase the team is expected to filter out the majority of the system requirements and validate the system architecture.At the end of the Elaboration phase it should be created a plan and schedule estimates for the Construction phase. This will be the activity plan and the status report that is used in this project. 
+In the Elaboration phase the team is expected to filter out the majority of the system requirements and validate the system architecture.At the end of the Elaboration phase there should be created a plan and schedule estimates for the Construction phase. This will be the activity plan and the status report that is used in this project.
 
 The Construction phase is the largest phase where all the features is implemented into the system and the textual use cases is made.
-\textbf{There was made an activity diagram at this point for every main module.}
 
-The last phase: Transition phase, is where the system is deployed to the target users. Feedback might result in further refinements. This step could also include user training which was descided to not be done. This was because the system should be user friendly and easy to understand, and therefore redundant.
+The last phase: Transition phase, is where the system is deployed to the target users. Feedback might result in further refinements. This step could also include user training which was decided to not be done. This was mostly because the eventual software product would not be an end user product, but a prototype, but in part because the system should be user friendly and easy to understand.
+
+\subsection{Changes to description}
+The development method description was refined between the preliminary version and the midterm version of the report. Based on the customer requirements of short iterations, it was clear that an iterative model was in order. Use of Lean principles was adopted from the start of the project as well.
+The specific documentation of the development method was deferred for three weeks, however. This was due to the uncertain future of the project (over the air installation was said to potentially be impossible) and the need to get the first iteration presented to the customer; precisely documenting the development method was deemed to be wasteful at that point in time.
 
 \section{Team roles}
 The group was organized in different roles based on skill and experience. Each team member was given a responsibility for some code-packages. Further, the team was divided in six subgroups where each subgroup had one responsible leader. These were respectively group leader, documentation and substitute leader, Android and GUI, Ardunio$\texttrademark$ and PUI, over the air and test leader. The group worked in three subgroups of two, which made it easy to do pair-programming and individual work.
