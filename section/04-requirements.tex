@@ -1,35 +1,35 @@
 \chapter{Requirements}
 \section{Functional requirements}
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{lX}
-\textbf{FR01} & \textbf{Over the air installation}\\
- & The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
-\textbf{FR02} & \textbf{Easy to use interface}\\
+	\begin{table}[H]
+	\begin{tabularx}{\linewidth}{lX}
+		\textbf{FR01} & \textbf{Over the air installation}\\
+ 		& The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
+		\textbf{FR02} & \textbf{Easy to use interface}\\
  & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
- \textbf{FR03} & \textbf{Example PUIs}\\
+ 		\textbf{FR03} & \textbf{Example PUIs}\\
  & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino.\\
-\textbf{FR04} & \textbf{Validation of Arduino hardware and software}\\
+		\textbf{FR04} & \textbf{Validation of Arduino hardware and software}\\
  & The Android application should by default hide Arduino applications in the Arduino Store which are incompatible with the Arduino device depending on memory requirements and connected devices.\\
-\end{tabularx}
-\caption{Functional Requirements}
-\end{table}
+	\end{tabularx}
+		\caption{Functional Requirements}
+	\end{table}
 
 \section{Non-functional requirements}
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{lX}
-\textbf{NFR01} & \textbf{Usability}\\
- & Both old and young persons should be able to understand how to use the application and install arduino-apps.\\
-\textbf{NFR02} & \textbf{Reliability}\\
- & The application on the Arduino should work and start if rebooted.\\
-\textbf{NFR03} & \textbf{Open source}\\
- & The project is under European R\&D project SOCIETIES. All source code will be open source under Apache 2.0 license.\\
-\textbf{NFR04} & \textbf{Platform compability}\\
- & Arduino Store should be compatible in Android 2.3 and newer. See FR04 for compatibility for Arduinos.\\
-\textbf{NFR05} & \textbf{Extensibility}\\
- & It should be easy to add features and extend this product later. The system should therefore be modular to simplify further development.\\
-\end{tabularx}
-\caption{Non-functional requirements}
-\end{table}
+	\begin{table}[H]
+	\begin{tabularx}{\linewidth}{lX}
+		\textbf{NFR01} & \textbf{Usability}\\
+		 & Both old and young persons should be able to understand how to use the application and install arduino-apps.\\
+		\textbf{NFR02} & \textbf{Reliability}\\
+		 & The application on the Arduino should work and start if rebooted.\\
+		\textbf{NFR03} & \textbf{Open source}\\
+		 & The project is under European R\&D project SOCIETIES. All source code will be open source under Apache 2.0 license.\\
+		\textbf{NFR04} & \textbf{Platform compability}\\
+		 & Arduino Store should be compatible in Android 2.3 and newer. See FR04 for compatibility for Arduinos.\\
+		\textbf{NFR05} & \textbf{Extensibility}\\
+		 & It should be easy to add features and extend this product later. The system should therefore be modular to simplify further development.\\
+	\end{tabularx}
+		\caption{Non-functional requirements}
+	\end{table}
 
 %TODO: Do the latex stuffs so it looks nice.
 %TODO: bestemme requirements som skal forsvinne og legges til
@@ -38,6 +38,7 @@
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
+\caption{Use case 1}
 \end{figure}
 
     \begin{table}[H]
@@ -64,11 +65,13 @@
                 Child UC         & All\\
             \hline
         \end{tabularx}
+        \caption{Use case 1}
     \end{table}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase2}
+\caption{Use case 2}
 \end{figure}
 
 \begin{table}[H]
@@ -104,11 +107,13 @@
             Child UC         & 7\\
         \hline
     \end{tabularx}
+    \caption{Use case 2}
 \end{table}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase3}
+\caption{Use case 3}
 \end{figure}
 
 \begin{table}[H]
@@ -142,11 +147,13 @@
             Child UC         & 7 \\
         \hline
     \end{tabularx}
+    \caption{Use case 3}
 \end{table}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase4}
+\caption{Use case 4}
 \end{figure}
 
         \begin{table}[H]
@@ -170,6 +177,7 @@
              Alternative Flow    & 2.a. The user does not select Arduino device, but browses anyway \\
            \hline
         \end{tabularx}
+        \caption{Use case 4}
     \end{table}
 
 
@@ -177,6 +185,7 @@
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase5}
+\caption{Use case 5}
 \end{figure}
 
 
@@ -184,6 +193,7 @@
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase6}
+\caption{Use case 6}
 \end{figure}
 
 \begin{table}[H]
@@ -214,6 +224,7 @@
             Child UC         & none \\
         \hline
     \end{tabularx}
+    \caption{Use case 6}
 \end{table}
 
 
