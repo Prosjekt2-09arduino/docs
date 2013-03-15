@@ -43,7 +43,7 @@
     \begin{table}[H]
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X|   }
             \hline
-                ID           & 1 \\ 
+                ID           & 1 \\
             \hline
                 Name             & Install $\mu$CSS \\
             \hline
@@ -74,18 +74,18 @@
 \begin{table}[H]
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
         \hline
-            ID               & 2 \\ 
+            ID               & 2 \\
         \hline
-            Name             & Pair Arduino device and Android device with QR code\\ 
+            Name             & Pair Arduino device and Android device with QR code\\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR code\\ 
+            Goal             & Connect the Arduino device to the Android application with the use of QR code\\
         \hline
-            Actors           & Arduino device owner\\ 
+            Actors           & Arduino device owner\\
         \hline
-            Prerequisite     & Installed $\mu$CSS \\ 
-                             & Installed predefined QR-reader\\ 
+            Prerequisite     & Installed $\mu$CSS \\
+                             & Installed predefined QR-reader\\
         \hline
-            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\ 
+            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$\\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
                              &  2. User presses the button indicating that he wants to pair with the Arduino device using QR code \\
@@ -93,14 +93,14 @@
                              &  4. The QR reader application reads the QR code and returns the information it contains\\
                              &  5. The system pairs with the Arduino device \\
         \hline
-            Alternative flow &  3.a. The user does not have the right QR code reader installed \\ 
-                             &  3.b. The system prompts the user if he wants to install the QR code reader \\ 
-                             &  3.c. If no: stop \\ 
-                             &  4.a. The QR reader is unable to read the QR code \\ 
-                             &  4.b. Try again or stop\\ 
+            Alternative flow &  3.a. The user does not have the right QR code reader installed \\
+                             &  3.b. The system prompts the user if he wants to install the QR code reader \\
+                             &  3.c. If no: stop \\
+                             &  4.a. The QR reader is unable to read the QR code \\
+                             &  4.b. Try again or stop\\
         \hline
             Parent UC        & 1\\
-        \hline 
+        \hline
             Child UC         & 7\\
         \hline
     \end{tabularx}
@@ -128,13 +128,13 @@
             End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
-                             &  2. User presses the button indicating that he 
-                                    wants to pair with the Arduino device using a serial code \\ 
+                             &  2. User presses the button indicating that he
+                                    wants to pair with the Arduino device using a serial code \\
                              &  3. System opens dialog box for input\\
                              &  4. The user types the serial \\
                              &  5. The system pairs with the Arduino device \\
         \hline
-            Alternative flow &  4.a. The user misspells the serial \\ 
+            Alternative flow &  4.a. The user misspells the serial \\
                              &  4.b. The system displays an error, and prompts again \\
         \hline
             Parent UC        & 1 \\
@@ -152,7 +152,7 @@
         \begin{table}[H]
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
             \hline
-                ID               & 4 \\ 
+                ID               & 4 \\
             \hline
                 Name             & Browse apps \\
             \hline
@@ -189,27 +189,27 @@
 \begin{table}[H]
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
         \hline
-            ID               & 6 \\ 
+            ID               & 6 \\
         \hline
-            Name             & Install application on Arduino device \\ 
+            Name             & Install application on Arduino device \\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR code \\ 
+            Goal             & Connect the Arduino device to the Android application with the use of QR code \\
         \hline
-            Actors           & Arduino device owner \\ 
+            Actors           & Arduino device owner \\
         \hline
             Prerequisite     &  Installed $\mu$CSS \\
-                             &  Arduino device connected to $\mu$CSS \\ 
+                             &  Arduino device connected to $\mu$CSS \\
         \hline
-            End requirement  & The application is installed on the Arduino device \\ 
+            End requirement  & The application is installed on the Arduino device \\
         \hline
-            Main flow        &  The user selects the desired application \\     
-                             &  The user presses the ''install'' button \\     
-                             &  The user confirms the installation \\     
-                             &  The application is installed at the Arduino device \\ 
+            Main flow        &  The user selects the desired application \\
+                             &  The user presses the ''install'' button \\
+                             &  The user confirms the installation \\
+                             &  The application is installed at the Arduino device \\
         \hline
-            Alternative flow & none \\ 
+            Alternative flow & none \\
         \hline
-            Parent UC        & 1, 2, 3, 4, 5 \\ 
+            Parent UC        & 1, 2, 3, 4, 5 \\
         \hline
             Child UC         & none \\
         \hline
@@ -227,7 +227,7 @@ The goal of the project remained consistent with previous statement. A prototype
 \paragraph{STK500 protocol} As mentioned above, implementing the STK500 protocol proved more demanding than expected. Initial research done by the group on this area showed that an Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. As of midterm, implementing the STK500 protocol in Java were added to the requirements.
 
 \subsection{Removals}
-\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other more critical tasks.
+\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided in order to pool resources to other, more critical, tasks.
 
-\paragraph{Sync adapter} As the server component of the assignment were removed from the requirements, sync adapter also needed to be removed.
+\paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
 
