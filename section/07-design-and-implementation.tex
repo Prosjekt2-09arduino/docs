@@ -11,7 +11,7 @@ The URI could also be read from a QR-code.
 \section{System Architecture}
 	The design was divided into several modules:
 	\begin{itemize}
-		\item{Bluetooth connection between the Android and the Arduino}
+		\item{Bluetooth$\textsuperscript{\textregistered}$ connection between the Android and the Arduino}
 		\item{Synchronization with the local SQLite database}
 		\item{Android application view (the visible design)}
 		\item{A service that contains the protocol for installing ``over the air''}
@@ -49,7 +49,7 @@ Before the programming of the Android application was started, a complete design
 Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not showed, as it was unnecessary to design this screen.
 
 \paragraph{Screen 1a - Device list}
-Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text has switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid bluetooth connection with the chosen device is made.
+Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text has switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth$\textsuperscript{\textregistered}$ connection with the chosen device is made.
 
 \begin{figure}[H]
 \centering
@@ -59,7 +59,7 @@ Screen that shows the list of available Arduino devices. In the final design the
 
 
 \paragraph{Screen 1b - Add device manually}
-Screen that appears after pressing the ''Add device'' button in Screen 1a. It was chosen to remove the ''Bluetooth settings'' button, as it unnecessary. In the final design, this screen contains only the ''QR code'' button and ''Input serial'' button, with a short description of the functionality of the button between them.
+Screen that appears after pressing the ''Add device'' button in Screen 1a. It was chosen to remove the ''Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it unnecessary. In the final design, this screen contains only the ''QR code'' button and ''Input serial'' button, with a short description of the functionality of the button between them.
 
 \begin{figure}[H]
 \centering
