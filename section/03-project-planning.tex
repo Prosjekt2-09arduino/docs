@@ -8,15 +8,15 @@ The following sections details the project management decisions of the project. 
 \end{figure}
 
 \section{Development method}
-Based on the customer requirement of short iterations, it was early decided to adapt an iterative and incremental development method for the project. By working in an iterative manner, it was possible to present prototypes and work done to the customer every week, and at the same time receive feedback. In this fashion it was possible for the customer to continuously present his thoughts on the product, and propose changes where he thought is was necessary. The iterative approach on the project also made it easier for the group to set deadlines of specific parts of the product and create milestones.\\
+Based on the customer requirement of short iterations, it was early decided to adapt an iterative and incremental development method for the project. By working in an iterative manner, it was possible to present prototypes and work done to the customer every week, and at the same time receive feedback. In this fashion it was possible for the customer to continuously present his thoughts on the product, and propose changes where he thought is was necessary. The iterative approach on the project also made it easier for the group to set deadlines and milestones of specific parts of the product.\\
 \newline
 All the members of the group have taken the course TDT4140 - Systemutvikling, and therefore have some knowledge about different development methods. The Rational Unified Process (RUP) model is an extensible framework\cite{kruchten} and was chosen for the project.
 
 \subsection{Rational Unified Process}
-Rational Unified Process (RUP) is an iterative and incremental software development process model. It is a process model that aims to capture the best practises in modern software development and present them in a tailorable form.\cite{kruchten}Each iteration in this model results in a increment, which is a release of a prototype that is and an improvement of the previous iteration. Most of the iterations will, in addition to work on prototypes, also contain work on requirements, design, implementation, testing and so on.\\
+Rational Unified Process (RUP) is an iterative and incremental software development process model. It is a process model that aims to capture the best practises in modern software development and present them in a tailorable form.\cite{kruchten} Each iteration in this model results in a increment, which is a release of a prototype that is and an improvement of the previous iteration. Most of the iterations will, in addition to work on prototypes, also contain work on requirements, design, implementation, testing and so on.\\
 \newline
-A feature of this model is that it is use case driven. Every iteration takes a set of use case scenarios from the requirements and use those for the content of the iteration. The model also requires the team to focus on the critical risks of the project early in the development process. This ensures that problem areas and uncertainties is dealt with before severe problems arise. 
-
+A feature of this model is that it is use case driven. Every iteration takes a set of use case scenarios from the requirements and use those for the content of the iteration. The model also requires the team to focus on the critical risks of the project early in the development process. This ensures that problem areas and uncertainties is dealt with before severe problems arise.\\
+\newline
 The model consists of four phases:
 
 \begin{itemize}
@@ -26,21 +26,20 @@ The model consists of four phases:
 \item{Transition}
 \end{itemize}
 
+\paragraph{Inception phase} The inception phase is the smallest phase, and should cover the work on identifying risks, creating use cases, establish boundaries and so on. Cost estimates is calculated in the inception phase. This phase should result in a document that states the core of the product, with an preliminary overview of the architecture, requirements, use cases and risks.
 
-% Jeg har kommet hit. Skriver mer i morgen.
+\paragraph{Elaboration phase} In the Elaboration phase the team is expected to filter out the majority of the system requirements and validate the system architecture. A detailed overview of the product should be established in this phase, and the project plan should be developed. The documentation produced in this phase is essential for the work done in the Construction phase.
 
-\paragraph{Inception phase} The inception phase is the smallest phase and should contain the work of identifying risks and set the portion of requirements and use cases to work on in this iteration.
+\paragraph{Construction phase} The Construction phase is the largest phase in the model. In this phase all the remaining features of the product are developed and integrated, and thoroughly tested. At the end of this phase, the finished product should be ready to be presented to the customer.
 
-In the Elaboration phase the team is expected to filter out the majority of the system requirements and validate the system architecture.At the end of the Elaboration phase there should be created a plan and schedule estimates for the Construction phase. This will be the activity plan and the status report that is used in this project.
+\paragraph{Transition phase} The Transition phase is where the system is deployed to the target users. Feedback from the customer might result in further refinements, and new versions of the product. Elements in this phase is beta testing and training of the users.
 
-The Construction phase is the largest phase where all the features is implemented into the system and the textual use cases is made.
-
-The last phase: Transition phase, is where the system is deployed to the target users. Feedback might result in further refinements. This step could also include user training which was decided to not be done. This was mostly because the eventual software product would not be an end user product, but a prototype, and in part because the system should be user friendly and easy to understand.
-
-\subsection{Changes to description}
-The development method description was refined between the preliminary version and the midterm version of the report. Based on the customer requirements of short iterations, it was clear that an iterative model was in order. Use of Lean principles was adopted from the start of the project as well.\\
+\subsection{Changes to description} 
+As mentioned above, it was clear that the use of iterative model was in order. The specific documentation of the development method was deferred for three weeks, however. This was due to the uncertain future of the project (over the air installation was said to potentially be impossible) and the need to get the first iteration presented to the customer; precisely documenting the development method was deemed to be wasteful at that point in time. The development method description was also refined between the preliminary version and the midterm version of the report. \\
 \newline
-The specific documentation of the development method was deferred for three weeks, however. This was due to the uncertain future of the project (over the air installation was said to potentially be impossible) and the need to get the first iteration presented to the customer; precisely documenting the development method was deemed to be wasteful at that point in time.
+Upon defining the process model to be used, it soon became clear that the Rational Unified model fitted the needs of the group. It was decided to adopt this model, though with some minor changes. First of all, the Transition phase of the model was deemed unnecessary. This was mainly due to the lack of time and resources for beta testing and new versions of the product. Further, no cost estimates were developed for the project. Because no money were involved in the production of the product, this was also deemed unnecessary. Time and resource estimates, however, were established during the Inception phase. \\
+\newline
+In addition to the changes mentioned above, use of Lean principles was adapted from the start of the project. As described in the section about Lean Software Development, this methodology is defined by seven principles. Of these, several were used actively by the team during the development of the product and project report. %Skrive mer om dette?
 
 \section{Team roles}
 The group was organized in different roles based on skill and experience. Each team member was given a responsibility for some code-packages. Further, the team was divided in six subgroups where each subgroup had one responsible leader. These were respectively group leader, documentation and substitute leader, Android and GUI, Arduino$\texttrademark$ and PUI, over the air and test leader. Work was done in subgroups of two, which made it easy to do both pair-programming and individual work.
