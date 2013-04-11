@@ -3,22 +3,35 @@
 	
 	\section{Testing strategy}
 		\subsection{Unit testing}
-			For the Android development an Android testing API (an extension of the JUnit API) was used.
+			For the Android development an Android testing API (Robotium) was used.
+			Robotium is a powerful test framework that could be used for function, system and acceptance testing.
 			These tests aim at writing small portions of code and checking the results against expected results.
+			For example the connection could be tested to check if it is consistent when we go into settings from the main activity.\\
 
-			In Android development, functions, contexts and Activities are a big portion of the coding.
-			One small component is therefore one of these, and the unit testing is finished when these components are complete.
+			\begin{lstlisting}
+solo.clickOnActionBarItem(R.id.settings);
+
+ConnectionState expectedState = BluetoothConnection
+	.ConnectionState.STATE_CONNECTED;
+	
+ConnectionState actualState = BtArduinoService.getBtService()
+	.getBluetoothConnection().getConnectionState();
+
+assertEquals(expectedState, actualState);
+			\end{lstlisting}
 
 		\subsection{Integration testing}
-			This test is based on combining different units and test the interface between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests.
+			This test is based on combining different units and testing the interface between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests.
 
 			Because our system is composed in more than one process (stk500 protocol and the market application), they
 			were tested in pairs and not all at once.
 
 			Integration testing identifies problems that occur when we combine the units.
 
+			A persistent bluetooth connection throught the whole application was tested by checking if the service was providing a STATE\_CONNECTED at all times when we expected it to be connected. When the application was closed and reopened or if the phone was rebooted it should hold its state if possible (if the arduino was turned on and in range). 
+
 		\subsection{Validation testing}
-			Validation testing is used for validating that the system has met the customer's requirements.
+			Validation testing is used for validating that the system has met the customer's requirements. This was done by testing that the system is holding the requirement specification.
 
 	\section{Usability test}
 		The customer required to test the product on average people.
