@@ -1,40 +1,105 @@
 \chapter{Iterations}
+
+This section contains an overview and a summary of each iteration of this project. The project was splitted into 
+iterations of two weeks, and the content is based on the activity plan and the status report that was delivered to the supervisor.
+
 \section{Iteration 1}
 Week 6 and 7
+\subsection{Summary}
+	This was the first two weeks of the project and the group was getting together to know each others.
+	Meeting with the customer to get the requirement spesification and understanding of the projects goal was done.
+	Required libraries, licenses and other factors was taken in account before the group could start developing.  
+
+\subsection{Overview}
 \begin{itemize}
-	\item{Hold a concept demonstration for SINTEF (Powerpoint or role playing)}
-	\begin{itemize}
-		\item{Confirm understanding of the task}
-		\item{Ideas for identifying the capabilities of an Arduino device and how to communicate these to the store client}
-	\end{itemize}
+	\item{Confirm understanding of the task}
+	\item{Ideas for identifying the capabilities of an Arduino device and how to communicate these to the store client}
 	\item{Investigate potential solutions to faceilitate over the air installation of Arduino apps}
 	\item{design the GUI for the app store}
+	\item{Research on Apache licenses}
+	\item{Meeting with customer}
 \end{itemize}
 
 \section{Iteration 2}
 Week 8 and 9
+\subsection{Summary}
+	Nothing special happened these weeks. The group had a good progress and held a steady pace. The GUI design was drawed
+	and the customers feedback on this design was good.
+
+\subsection{Overview}
 \begin{itemize}
 	\item{Think architectural}
-	\item{Start implement the skeleton on the android application GUI}
-	\item{Begin with the bluetooth connection establishment}
+	\item{Designing of GUI}
+	\item{Research on over the air implementation}
+	\item{Research ubicollab libraries}
+	\item{Use iJacket - generic app bluetooth connection code}
+	\item{Implement a first sketch of the content provider}
+	\item{Meeting with customer}
 \end{itemize}
 
 \section{Iteration 3}
 Week 10 and 11
+\subsection{Summary}
+	Focus on bluetooth connection and over the air implementation was taken place these weeks. The application was taking form
+	and the bugs was beginning to show up. There was some issues with over the air because of uncompatible licenses and much work was
+	put on research. The Android application was estimated to be 50\% complete.
+
+\subsection{Overview}
 \begin{itemize}
-	\item{Try to get contact with the arduino over bluetooth}
-	\item{Further development of graphical user interface}
-	\item{Research on licenses}
+	\item{Research ubicollab libraries}
+	\item{Designing the rest of the GUI}
+	\item{Establish a BT connection between android and arduino}
+	\item{Implement last drawn of the content provider}
+	\item{Meeting with customer}
 \end{itemize}
 
 \section{Iteration 4}
-Week 14 and 15
+Week 12 and 13
+\subsection{Summary}
+	This iteration was critical when the implementation of over the air was said to be impossible with Apache v.2 License. 
+	A crisis meeting with the customer was taken place and the group and the customer got in an agreement of writing
+	a protocol (STK500) for installing over the air. Sync Adapter had to be eliminated and the focus was now on writing the protocol as a library.
+
+\subsection{Overview}
 \begin{itemize}
-	\item{see status report and activity plan}
+	\item{Crisis meeting with customer}
+	\begin{itemize}
+		\item{Not possible to develope over the air with apache v.2}
+		\item{Come to an agreement of writing the protocol ourself as a library}
+	\end{itemize}
+	\item{Research on STK500}
+	\item{Unit test sketches}
+	\item{Develope android application}
 \end{itemize}
 
 \section{Iteration 5}
-Week 16 and 17
+Week 14 and 15
+\subsection{Summary}
+	Good progress and much was done. The group was more optimistic about the protocol and the application was almost complete.
+	The group was now splitted into two, where one group was writing the protocol, and the other group was writing Unit tests and polishing the last parts of the application.
+
+\subsection{Overview}
 \begin{itemize}
-	\item{}
+	\item{Added storage of hex-files to content provider}
+	\item{Writing Robotium unit tests}
+	\item{Writing the STK500 protocol in Java/Android}
+	\item{Finishing the Android application except for the STK500 part}
+	\item{Meeting with customer}
+\end{itemize}
+
+\section{Iteration 6}
+Week 16 and 17
+\subsection{Summary}
+	This was the last two weeks of the project. The last parts of the application was complete and the STK500 was implemented into the application as a library.
+	A workshop with the customer was done and an acceptance test and usability test was performed. Most of the time was spent on completing the documentation.
+
+\subsection{Overview}
+\begin{itemize}
+	\item{Implement the STK500 to the Android application}
+	\item{Workshop for SINTEF}
+		\begin{itemize}
+		\item{Demonstrate our finish application}
+		\item{Acceptance testing}
+		\item{Usability testing}
+	\end{itemize}
 \end{itemize}
