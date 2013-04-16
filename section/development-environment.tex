@@ -1,9 +1,14 @@
 \chapter{Development environment}
+In this chapter the different tools and resources used in relation with the project will be presented. The general requirement for a tool to be used is that it is multi-platform, as three different operating systems is in use within the group. It is also preferable that the tool is free, since this is a project that does not generate income.
+
 \section{Development tools}
 These are tools used in the development of the project. They have contributed in the technical aspects of development such as coding.
 \subsection{Integrated Development Environments (IDEs)}
+An IDE is used by programmers to develop and program applications. These are the IDEs that was used during the project.
+
 \subsubsection{Eclipse}
 Eclipse is a freely available IDE implemented in Java. It has extensive plugin support and anyone can publish a plugin to support another programming language, versioning software or new program features altogether. Eclipse provides useful, time saving functionality to developers, such as an extensive live debugging suite in addition to checking code syntax and providing auto completion of method calls.\\
+\newline
 Eclipse was chosen for Android development, due to previous experience with the software and good plugin support for targeting different versions of the Android API. Using a plugin for Arduino support was also considered, but the functionality of the available plugin was found lacking. %Ståle, kan du si mer her?
 
 \paragraph{Mylyn}
@@ -17,6 +22,7 @@ The Arduino IDE is provided by the creators of the Arduino platform as a free an
 The official Arduino IDE was considered for coding the Arduino component in, but due to its limited text and code related feature set (lacking features such as auto complete), the IDE was not used for coding.
 
 \subsection{Codebase management and versioning}
+The tools described in this section is used for versioning and managing the codebase. 
 
 \subsubsection{Git Version Control Software}
 Git is a free, open source Version Control Software (VCS) with support for both local and remote repositories. It keeps track of differences between versions of files and allows for offline commits and branch creation, as this is done locally first before pushing the updates to a repository.\\
@@ -47,6 +53,9 @@ A shared calendar in Google Calendar was created to make it easier to keep track
 Dropbox is a cross platform file synchronization and sharing service. Files in a specified folder are automatically kept in sync among different devices. It is also possible to share folders with other users and with the world at large (this will also serve HTML pages). The basic service is free, but comes with limited storage space.\\
 Dropbox was used for sharing of various files within the group, such as compiled versions of the report, data sheets for Arduino components and so on.
 
+\subsection{TextMate & Sublime Text 2}
+These tools is sophisticated text editors that can be used for coding, markup and regular text editing. In the project they were used for editing of the report and coding for Arduino. While TextMate is for OS X only, Sublime Text is cross-platform.
+
 \subsection{Wunderlist}
 Wunderlist is a free todo list tool supporting shared lists. It supports sharing tasks between the participants of a to-do list with reminders and notes.\\
 Wunderlist was used to serve reminders for other, non-coding related tasks, like scheduling meetings or booking rooms.
@@ -64,7 +73,7 @@ OmniGraffle is a software used to draw diagrams and charts. This program makes i
 OmniGraffle was used to create ER-diagram and use cases.
 
 \section{Test Management}
-The tools mentioned here were used for preperation and creation of tests for the project. 
+The tools mentioned here were used for preparation and creation of tests for the project. 
 
 \subsection{Robotium}
 Robotium is a JUnit based framework for the creation of automatic unit testing in Android. It automates the created tests by going through the Android application as described in the tests. This shows the tester what is done and even though it may be slow it allows the tester to see if a mishap is due to the test itself being wrong, for example being in the wrong screen.
