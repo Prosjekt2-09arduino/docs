@@ -1,12 +1,5 @@
-\chapter{Design and implentation}
-The market app should be easy to use and fit for consumers of all ages. To install an application the user has to select a desired application with one touch, then check the specification if its compatible with the Arduino, then click an agree/install button to install the app on the Arduino. This is a total of two clicks, once you have chosen a category or searched on the market app. This is similar to Google Play.\\
-\newline
-Each (supported) Arduino device is equipped with a Unified Resource Identifier (URI) stored in its ROM. This URI is automatically transferred to the market app once it is turned on and is in range; the hardware configuration (Memory, connected devices) is stored in a XML file the URI links to.
-The app store client can then compare compatibility with the device and app requirements.
-Only apps supported on your Arduino will initially be visible in the market application, however, power users can enable unfiltered results to browse the selection and consider upgrading the device.\\
-\newline
-Anyone modifying a board will have to provide a hardware specification and transfer a new URI to the device if they want filtered results in the app store (Such a user could still choose to view and install unfiltered applications).
-The URI could also be read from a QR-code.
+\chapter{Design and implementation}
+In this chapter the design and system architecture of the product will be presented. The reader will learn about how the different components of the product is put together, and how the design of the application was planned.
 
 \section{System Architecture}
 	The design was divided into several modules:
@@ -28,18 +21,16 @@ The URI could also be read from a QR-code.
 	\end{figure}
 
 	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, we implemented the STK500 protocol only.
-	The overall design solution for multiple connections will be like this:\\
-
+	The overall design solution for multiple connections will be like in the figure below:\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
 	\caption{Over The Air Architecture}
 	\end{figure}
 
 \section{Design of Android application}
-
-%TODO Add short description about what the purpose of the application is?
-
-Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide was made for two reasons:
+One of the purposes of the Android application is to ease the process of installing PUOs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages is supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone is able to understand the different functions of the application. \\
+\newline
+Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide was made for primarily two reasons:
 \begin{itemize}
 	\item{Presentation for the customer.} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at a early stage, when it was easier to change the design.
 	\item{Avoid confusion.} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface is settled before the programming is started, there is less need to discuss this along the way.
