@@ -3,7 +3,6 @@ This chapter describes the functional and non-functional requirements of the sys
 The requirements of the project will be kept high level and vague, to facilitate making choices as late as possible.
 \section{Functional requirements}
 	\begin{table}[H]
-			\caption{Functional Requirements}
 	\begin{tabularx}{\linewidth}{lX}
 		\textbf{FR01} & \textbf{Over the air installation}\\
  		& The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
@@ -18,7 +17,6 @@ The requirements of the project will be kept high level and vague, to facilitate
 
 \section{Non-functional requirements}
 	\begin{table}[H]
-		\caption{Non-functional requirements}
 	\begin{tabularx}{\linewidth}{lX}
 		\textbf{NFR01} & \textbf{Usability}\\
 		 & Both old and young persons should be able to understand how to use the application and install arduino-apps.\\
@@ -35,6 +33,23 @@ The requirements of the project will be kept high level and vague, to facilitate
 
 %TODO: Do the latex stuffs so it looks nice.
 %TODO: bestemme requirements som skal forsvinne og legges til
+
+
+\section{Changes in requirements}
+It was discovered that the over the air transfer of PUI apps to an Arduino device proved to be more demanding than planned. After an extraordinary meeting with the customer it was decided to change the focus of the assignment. \\
+\newline
+The goal of the project remained consistent with previous statements. A prototype of the Android store application had been made, though not all functionality was implemented and tested. Further work on the Android application were temporarily put on halt. At this point the resources were primarily focused on implementing the STK500 protocol in Java to allow for programming of Arduino from an Android device. Se below for concrete additions and removals on the requirements.
+
+% Add more as needed
+\subsection{Additions}
+\paragraph{STK500 protocol} As mentioned above, implementing the STK500 protocol proved more demanding than expected. Initial research done by the group on this area showed that an Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. As of midterm, implementing the STK500 protocol in Java were added to the requirements.
+
+\subsection{Removals}
+\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other more critical tasks.
+
+\paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
+
+
 
 \section{Use-Cases}
 \begin{figure}[H]
@@ -228,19 +243,3 @@ The requirements of the project will be kept high level and vague, to facilitate
         \hline
     \end{tabularx}
 \end{table}
-
-
-\section{Changes in requirements after midterm}
-Approaching midterm it was discovered that the over the air transfer of PUI apps to an Arduino device proved to be more demanding than planned. After an extraordinary meeting with the customer it was decided to change the focus of the assignment. \\
-\newline
-The goal of the project remained consistent with previous statements. A prototype of the Android store application had been made, though not all functionality was implemented and tested. Further work on the Android application were temporarily put on halt. At this point the resources were primarily focused on implementing the STK500 protocol in Java to allow for programming of Arduino from an Android device. Se below for concrete additions and removals on the requirements.
-
-% Add more as needed
-\subsection{Additions}
-\paragraph{STK500 protocol} As mentioned above, implementing the STK500 protocol proved more demanding than expected. Initial research done by the group on this area showed that an Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. As of midterm, implementing the STK500 protocol in Java were added to the requirements.
-
-\subsection{Removals}
-\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other more critical tasks.
-
-\paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
-
