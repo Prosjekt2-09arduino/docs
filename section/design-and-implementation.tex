@@ -135,3 +135,67 @@ Screen that appears when the ''Action overflow'' button is clicked. This menu is
 \includegraphics[scale=0.2]{images/Design_guide/ScreenXa.png}
 \caption{Screen Xa - Action overflow}
 \end{figure}
+
+\section{Database implementation}
+
+	...Introduction...
+	Used SQLite...
+
+	\subsection{Database model}
+
+		In Figure ~\ref{fig:erdiagram} the database is shown as an ER Diagram. The pictures table was not used because of changes to the teams priorities. Things that had been done before was not important for the customer.
+
+		\begin{figure}[H]
+		\includegraphics[scale=1]{images/ER_Diagram.png}
+		\caption{ER Diagram}
+		\label{fig:erdiagram}
+		\end{figure}
+
+	\subsection{Database details}
+
+		Description and detail about the database tables.
+
+		\subsubsection{Table: app}
+
+			This table contains information about the application.\\
+
+			{\bf \underline{appid}(integer):} auto-increment primary key for applications  \\
+			\textbf{name(varchar 160):} name of the application \\
+			\textbf{rating(int 10):} rating of the application \\
+			\textbf{developerid(int 10):} foreign key to the developer of this application \\
+			\textbf{category(varchar 200):} which category this application belongs to \\
+			\textbf{description(varchar 200):} description of the application \\
+			\textbf{requirementid(int 10):} foreign key to the requirements of this application \\
+
+		\subsubsection{Table: binaryfiles}
+
+			This table contains information about the hex-file (compiled arduino code). \\
+			{\bf \underline{binaryfileid}(integer):} auto-increment primary key for binary files \\
+			\textbf{appid(int 10):} foreign key to the application that owns this binary file \\
+			\textbf{file(BLOB 1000000):} The binary file in a BLOB \\
+
+			A BLOB is no datatype and stores data exactly as it was input. This database stores it as a binary array.
+
+		\subsubsection{Table: developer}
+
+			This table contains information about the developer. \\
+			{\bf \underline{developerid}(integer):} auto-increment primary key for developers \\
+			\textbf{name(varchar 160):} name of the developer \\
+			\textbf{website(varchar 200):} website of the developer \\
+
+		\subsubsection{Table: requirements}
+
+			This table contains the requirements for the application. \\
+			{\bf \underline{requirementid}(integer):} auto-increment primary key for the requirement \\
+			\textbf{name(varchar 160):} name of the requirement \\
+			\textbf{description(varchar 200):} description of the requirement \\
+			\textbf{compatible(int 10):} integer that is converted to boolean when retreived from database. \\
+
+			Compatible is an integer of 1 or 0. This indicates if the application refered to is compatible with pagers or not.
+
+		\subsubsection{Table: appusespins}
+
+			This table contains the information about which pins on the arduino that the application is using. \\
+			\textbf{appid(int 10):} foreig key to the application that uses this rule \\
+			\textbf{requirementid(int 10):} foreign key to the associated requirement \\
+
