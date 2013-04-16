@@ -20,6 +20,9 @@ ConnectionState actualState = BtArduinoService.getBtService()
 assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
+			\subsubsection{Requirements tested this way}
+			FR04 - Validation of Arduino hardware and software
+
 		\subsection{Integration testing}
 			This test is based on combining different units and testing the interface between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests.
 
@@ -30,10 +33,44 @@ assertEquals(expectedState, actualState);
 
 			A persistent bluetooth connection through the whole application was tested by checking if the service was providing a STATE\_CONNECTED at all times when we expected it to be connected. When the application was closed and reopened or if the phone was rebooted it should hold its state if possible (if the arduino was turned on and in range). 
 
+			\subsubsection{Requirements tested this way}
+			FR01 - Over the air installation
+			FR03 - Example PUIs
+
 		\subsection{Validation testing}
 			Validation testing is used for validating that the system has met the customer's requirements. This was done by testing that the system is holding the requirement specification.
 
-	\section{Usability test}
-		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were be crucial in the testing aspects. The decision were made to perform a hallway test following scenarios described by the use cases created during the start of the project. To ensure proper undererstanding of the test subject, the think aloud protocol were used, meaning the subject talked about their actions during the test.
 
-		\subsection{Usability results}
+		\subsection{Usability test}
+		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were be crucial in the testing aspects. The decision were made to perform a hallway test following scenarios described by the use cases created during the start of the project. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
+
+		All test subjects filled out a System Usability Scale form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognised as the proper amount. According to Nielsen, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface.
+
+			\subsubsection{Requirements tested this way}
+			FR02 - Easy to use interface
+
+	\section{Test Results}
+		\subsection{Unit Testing}
+		All written Robotium tests run without encoutering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere. 
+
+		\subsection{Integration Testing}
+
+		\subsection{Validation Testing}
+		What the customer thought 
+
+		\subsection{Usability Testing}
+
+%Add table with all requirements and whether they pass the tests or not
+
+%FR01 Over the air installation
+%		& The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process
+
+%FR02  Easy to use interface
+%& The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
+
+%FR03 Example PUIs
+%& To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino.\\
+
+%FR04 Validation of Arduino hardware and software
+%& The Android application should by default hide Arduino applications in the Arduino Store which are incompatible with the Arduino device depending on memory requirements and connected devices.\\
+
