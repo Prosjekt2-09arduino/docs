@@ -1,17 +1,42 @@
 \chapter{Requirements}
 This chapter describes the functional and non-functional requirements of the system, together with use cases. At the end of the chapter the changes in requirements during the project will be described.
 The requirements of the project will be kept high level and vague, to facilitate making choices as late as possible.
+
 \section{Functional requirements}
 	\begin{table}[H]
 	\begin{tabularx}{\linewidth}{lX}
+
 		\textbf{FR01} & \textbf{Over the air installation}\\
- 		& The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
+
+ 		              & The Android application and the Arduino device should communicate over 
+                        Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
+
 		\textbf{FR02} & \textbf{Easy to use interface}\\
- & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
+
+                      & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to 
+                        do anything on the Arduino except for starting it. On startup it should search for nearby 
+                        Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
+
  		\textbf{FR03} & \textbf{Example PUIs}\\
- & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino.\\
-		\textbf{FR04} & \textbf{Validation of Arduino hardware and software}\\
- & The Android application should by default hide Arduino applications in the Arduino Store which are incompatible with the Arduino device depending on memory requirements and connected devices.\\
+
+                      & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action 
+                        on an Arduino.\\
+
+		\textbf{FR04} & \textbf{Reliable bluetooth connection with the Arduino}\\
+
+                      & There should be a connection with the Arduino at all times when its in range, and it should automatically
+                        try to connect to the last connected device when the Android application starts up.\\
+
+        \textbf{FR05} & \textbf{Hide/Show incompatible applications}\\
+
+                      & The Android application should by default hide Arduino applications in $\mu$C Software Store which are
+                        incompatible with the Arduino device\\
+
+        \textbf{FR06} & \textbf{Different ways to connect the Android to the Arduino}\\
+
+                      & It should be possible to connect to the Arduino with QR-code, SerialInput and from a discovered
+                        device list\\
+
 	\end{tabularx}
 	\end{table}
 

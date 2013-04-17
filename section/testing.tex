@@ -21,7 +21,9 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 			\subsubsection{Requirements tested this way}
-			FR04 - Validation of Arduino hardware and software
+			FR04 - Reliable bluetooth connection with the arduino\\
+			FR05 - Hide/Show incompatible applications\\
+			FR06 - Different ways to connect the Android to the Arduino\\
 
 		\subsection{Integration testing}
 			This test is based on combining different units and testing the interface between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests.
@@ -50,6 +52,31 @@ assertEquals(expectedState, actualState);
 			FR02 - Easy to use interface
 
 	\section{Test Results}
+
+		Table ~\ref{table:testresults} shows the test results of the Robotium Unit tests
+
+		\begin{table}[ht!]
+		\caption{Test Results}
+		\label{table:testresults}
+		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
+			\hline
+				{\bf Requirement code} & {\bf Result} & {\bf Comment}\\
+			\hline
+				FR01 & PENDING & This cannot be tested before the protocol is complete\\
+			\hline
+				FR02 & PASS & Usability testing was performed on SINTEF workshop\\
+			\hline
+				FR03 & PASS & \\
+			\hline
+				FR04 & PASS & This is possible unless you uninstall and install the application\\
+			\hline
+				FR05 & ERROR & There was no time to implement a standard for device compatibility validation\\
+			\hline
+				FR06 & PASS & The user can choose from a list a QR reader to use. The serialInput is a mac address\\
+			\hline
+		\end{tabularx}
+		\end{table}
+
 		\subsection{Unit Testing}
 		All written Robotium tests run without encoutering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere. 
 
@@ -59,18 +86,3 @@ assertEquals(expectedState, actualState);
 		What the customer thought 
 
 		\subsection{Usability Testing}
-
-%Add table with all requirements and whether they pass the tests or not
-
-%FR01 Over the air installation
-%		& The Android application and the Arduino device should communicate over Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process
-
-%FR02  Easy to use interface
-%& The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
-
-%FR03 Example PUIs
-%& To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino.\\
-
-%FR04 Validation of Arduino hardware and software
-%& The Android application should by default hide Arduino applications in the Arduino Store which are incompatible with the Arduino device depending on memory requirements and connected devices.\\
-
