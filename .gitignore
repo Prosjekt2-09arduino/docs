@@ -16,3 +16,5 @@
 *.bbl
 *.pdf
 *.synctex*
+# WinEDT project file
+*.prj
