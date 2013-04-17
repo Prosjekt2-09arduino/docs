@@ -75,9 +75,10 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
 
-
-
 \section{Use-Cases}
+
+\label{usecases}
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
@@ -195,15 +196,52 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{images/UseCase4}
+\includegraphics[scale=0.7]{images/UseCase7}
 \caption{Use case 4}
 \end{figure}
 
+\begin{table}[H]
+    \caption{Use case 4}
+    \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
+        \hline
+            ID               & 4 \\
+        \hline
+            Name             & Pair Arduino device with Android device using device list \\
+        \hline
+            Goal             & Connect the Arduino device to the Android application with the use of device list \\
+        \hline
+            Actors           & Arduino device owner \\
+        \hline
+            Prerequisite     & Installed $\mu$CSS \\
+        \hline
+            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
+        \hline
+            Main flow        &  1. User opens $\mu$CSS \\
+                             &  2. User presses the device list button \\
+                             &  3. System opens the list of available Bluetooth$\textsuperscript{\textregistered}$ devices\\
+                             &  4. The user presses the device to connect to \\
+                             &  5. The system pairs with the Arduino device \\
+        \hline
+            Alternative flow &  None \\
+        \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & 7 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/UseCase4}
+\caption{Use case 5}
+\end{figure}
+
         \begin{table}[H]
-                \caption{Use case 4}
+                \caption{Use case 5}
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
             \hline
-                ID               & 4 \\
+                ID               & 5 \\
             \hline
                 Name             & Browse apps \\
             \hline
@@ -220,6 +258,10 @@ The goal of the project remained consistent with previous statements. A prototyp
             \hline
              Alternative Flow    & 2.a. The user does not select Arduino device, but browses anyway \\
            \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & 7 \\
+        \hline
         \end{tabularx}
     \end{table}
 
@@ -228,14 +270,14 @@ The goal of the project remained consistent with previous statements. A prototyp
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase5}
-\caption{Use case 5}
+\caption{Use case 6}
 \end{figure}
 
 \begin{table}[H]
-                \caption{Use case 5}
+                \caption{Use case 6}
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
             \hline
-                ID               & 5 \\
+                ID               & 6 \\
             \hline
                 Name             & Hide incompatible apps \\
             \hline
@@ -252,20 +294,24 @@ The goal of the project remained consistent with previous statements. A prototyp
             \hline
              Alternative Flow    & none \\
            \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & None \\
+        \hline
         \end{tabularx}
     \end{table}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase6}
-\caption{Use case 6}
+\caption{Use case 7}
 \end{figure}
 
 \begin{table}[H]
-    \caption{Use case 6}
+    \caption{Use case 7}
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
         \hline
-            ID               & 6 \\
+            ID               & 7 \\
         \hline
             Name             & Install application on Arduino device \\
         \hline
@@ -285,9 +331,9 @@ The goal of the project remained consistent with previous statements. A prototyp
         \hline
             Alternative flow & none \\
         \hline
-            Parent UC        & 1, 2, 3, 4, 5 \\
+            Parent UC        & 1, 2, 3, 4, 5, 6 \\
         \hline
-            Child UC         & none \\
+            Child UC         & None \\
         \hline
     \end{tabularx}
 \end{table}

@@ -1,21 +1,18 @@
 \chapter{Iterations}
 
 This section contains an overview and a summary of each iteration of this project. The project was split into
-iterations of two weeks, and the content is based on the activity plan and the status report that was delivered to the supervisor.
+iterations of two weeks, and the content is based on the activity plan and the status report that was delivered to the supervisor. In each iteration it will also be presented which of the use cases described in chapter ~\ref{usecases} the group was working on.
 
 \section{Iteration 1}
 Week 6 and 7
 \subsection{Summary}
-	These were the first two weeks of the project and the group was getting together to get to know each other.
-	Meeting with the customer to get the requirement specification and understanding of the projects goal was done.
-	Required libraries, licenses and other factors was taken in account before the group could start developing.
-
+	These were the first two weeks of the project and the first group meeting was arranged.	Meeting with the customer to get the requirement specification and understanding of the projects goal was done.	Required libraries, licenses and other factors was taken in account before the group could start developing. No use cases were generated in this iteration, as basic research and planning had to be done before scenarios could be generated.
 \subsection{Overview}
 \begin{itemize}
 	\item{Confirm understanding of the task}
 	\item{Ideas for identifying the capabilities of an Arduino device and how to communicate these to the store client}
-	\item{Investigate potential solutions to facilitate over the air installation of Arduino apps}
-	\item{design the GUI for the app store}
+	\item{Investigate potential solutions to facilitate over the air installation of Arduino applications}
+	\item{Start design the GUI for the Android application}
 	\item{Research on Apache licenses}
 	\item{Meeting with customer}
 \end{itemize}
@@ -23,16 +20,14 @@ Week 6 and 7
 \section{Iteration 2}
 Week 8 and 9
 \subsection{Summary}
-	Nothing special happened these weeks. The group had a good progress and held a steady pace. The GUI design was drawn
-	and the customers feedback on this design was good.
-
+	Architectural work and designing of the user interface of the Android application. Positive feedback on the GUI was received from the customer. Designing of use cases and further research was done.
 \subsection{Overview}
 \begin{itemize}
 	\item{Think architectural}
 	\item{Designing of GUI}
 	\item{Research on over the air implementation}
 	\item{Research Ubicollab libraries}
-	\item{Use iJacket - generic app bluetooth connection code}
+	\item{Use iJacket - generic app Bluetooth connection code}
 	\item{Implement a first sketch of the content provider}
 	\item{Meeting with customer}
 \end{itemize}
@@ -40,15 +35,13 @@ Week 8 and 9
 \section{Iteration 3}
 Week 10 and 11
 \subsection{Summary}
-	Focus on bluetooth connection and over the air implementation was taken place these weeks. The application was taking form
-	and the bugs was beginning to show up. There was some issues with over the air because of incompatible licenses and much work was
-	put on research. The Android application was estimated to be 50\% complete.
+	Focus on bluetooth connection and over the air implementation was prioritized these weeks. The application was taking form and the bugs was beginning to show up. Use cases 2, 3, 4 and 5 were in focus during this iteration. There was some issues with over the air because of incompatible licenses and much work was put on research. The Android application was estimated to be 50\% complete.
 
 \subsection{Overview}
 \begin{itemize}
-	\item{Research ubicollab libraries}
-	\item{Designing the rest of the GUI}
-	\item{Establish a BT connection between Android and Arduino}
+	\item{Research Ubicollab libraries}
+	\item{Finish design of the GUI}
+	\item{Establish a Bluetooth connection between Android and Arduino}
 	\item{Implement last drawn of the content provider}
 	\item{Meeting with customer}
 \end{itemize}
@@ -56,27 +49,24 @@ Week 10 and 11
 \section{Iteration 4}
 Week 12 and 13
 \subsection{Summary}
-	This iteration became critical when existing implementations were either incompatible with the required Apache v.2 license, or nonexistent on Android.
-	A crisis meeting with the customer took place and the group and the customer agreed to write
-	a protocol (STK500) for installing over the air. Developing the Sync Adapter had to be eliminated, and the focus was now on writing the protocol as a library.
+	This iteration became critical when it was discovered that existing implementations of the STK500 protocol were either incompatible with the required Apache v.2 license, or not compatible with Android. An emergency meeting with the customer took place and it was decided to implement the STK500 protocol in Java. Developing the Sync Adapter was removed from the requirements, and the focus was moved to implementing the protocol as a library. Use cases 2, 3 and 4 were in focus during this iteration.
 
 \subsection{Overview}
 \begin{itemize}
 	\item{Emergency meeting with customer}
 	\begin{itemize}
-		\item{Not possible to use existing solutions}
-		\item{Come to an agreement of writing the protocol ourselves as a library}
+		\item{Not possible to use existing solutions of STK500 protocol}
+		\item{Agreement on implementing the STK500 in Java ourselves as a library}
 	\end{itemize}
 	\item{Research on STK500}
 	\item{Unit test sketches}
-	\item{Develop Android application}
+	\item{Continued work on develop the Android application}
 \end{itemize}
 
 \section{Iteration 5}
 Week 14 and 15
 \subsection{Summary}
-	Good progress and much was done. The group was more optimistic about the protocol and the application was almost complete.
-	The group was now split into two, where one group was writing the protocol, and the other group was writing Unit tests and polishing the last parts of the application.
+	Good progress and much was done. The group was more optimistic about the implementation of the protocol and the development of the application was almost complete.	The group was now split into two, where one group was writing the protocol, and the other group was writing Unit tests and polishing the last parts of the application. Use cases 4, 5 and 7 were in focus during this iteration.
 
 \subsection{Overview}
 \begin{itemize}
