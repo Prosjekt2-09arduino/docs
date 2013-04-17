@@ -1,4 +1,4 @@
-\chapter{Evalutation}
+\chapter{Evaluation}
 
 This chapter covers the evaluation of the final product, the process model and what the team learned in this course.
 
@@ -9,12 +9,25 @@ This chapter covers the evaluation of the final product, the process model and w
 
 	The last problem was to get the protocol to work.
 
+\subsection{Protocol}
+There were several difficulties related to programming the Arduino. There were few existing solutions for programming it in general, and none for Android or Java. The official implementation was available in C, but in the incompatible GPL license.\\
+
+The existence of certain programs written in Java with the purpose of programming Arduinos,
+led the group into assuming one of these could be utilized, as the license was compatible. When the time came to make use of it, it was discovered to internally use AVRDUDE as well - an embedded version was available for several platforms.\\
+
+This realization came somewhat late in the process, see Iteration 4 in the appendix on page \pageref{Iteration4}.
+
+			- Used more time than expected\\
+			- Change from STK500v2 to STK500v1\\
+			- Had major impact on the project\\
+			- Not enough research on the protocol in the beginning of the project\\
+
 \section{Interaction with the customer}
-	The communication with the customer was great. A regular meeting was held every Friday, and the customer had an insight to the projects repositories, so the customer allways knew what was going on. 
+	The communication with the customer was great. A regular meeting was held every Friday, and the customer had an insight to the projects repositories, so the customer always knew what was going on.
 
 \section{Usage of workhours}
 	The group decided from the beginning that every member should work approximately 20 hours every week.
-	In Table ~\ref{table:workhours} it is listed the total workhours for the group on every iteration.
+	In Table ~\ref{table:workhours} it is listed the total work hours for the group on every iteration.
 
 	\begin{table}[H]
 	\caption{Iterations and time spent}
@@ -61,12 +74,6 @@ This chapter covers the evaluation of the final product, the process model and w
 	- Focused too much on the application\\
 	- Focused too little on the protocol
 
-		\subsection{Protocol}
-			- Used more time than expected\\
-			- Change from STK500v2 to STK500v1\\
-			- Had majon impact on the project\\
-			- Not enough research on the protocol in the beginning of the project\\
-
 		\subsection{Requirements met}
 			- GUI\\
 			- Bluetooth connection\\
@@ -78,6 +85,6 @@ This chapter covers the evaluation of the final product, the process model and w
 		\subsection{Requirement not met}
 			- Sync Adapter\\
 			- External database\\
-			- 
+			-
 
 	\section{Conclusion}
