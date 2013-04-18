@@ -1,12 +1,10 @@
 \chapter{Testing}
-	Testing is used to accomplish quality of the software and to avoid defects.
+	This chapter contains a description of the testing performed during the project. 
 	
 	\section{Testing strategy}
+		This section details the strategy in which the tests were performed.
 		\subsection{Unit testing}
-			For the Android development an Android testing API (Robotium) was used.
-			Robotium is a powerful test framework that could be used for function, system and acceptance testing.
-			These tests aim at writing small portions of code and checking the results against expected results.
-			For example the connection could be tested to check if it is consistent when we go into settings from the main activity.\\
+			For the Android development an Android testing API (Robotium) was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with a Arduino device is as expected. \\
 
 			\begin{lstlisting}
 solo.clickOnActionBarItem(R.id.settings);
@@ -26,25 +24,18 @@ assertEquals(expectedState, actualState);
 			FR06 - Different ways to connect the Android to the Arduino\\
 
 		\subsection{Integration testing}
-			This test is based on combining different units and testing the interface between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests.
-
-			Because our system is composed in more than one process (stk500 protocol and the market application), they
-			were tested in pairs and not all at once.
-
-			Integration testing identifies problems that occur when we combine the units.
-
-			A persistent bluetooth connection through the whole application was tested by checking if the service was providing a STATE\_CONNECTED at all times when we expected it to be connected. When the application was closed and reopened or if the phone was rebooted it should hold its state if possible (if the arduino was turned on and in range). 
+			Integration testing is based on combining different units and testing the interface and communication between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. Because our system is composed of more than one process (stk500 protocol and the market application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product. A persistent Bluetooth connection through the whole application was tested by checking if the service was providing a STATE\_CONNECTED at all times when we expected it to be connected. When the application was closed and reopened or if the phone was rebooted it should hold its state if possible (if the Arduino was turned on and in range). 
 
 			\subsubsection{Requirements tested this way}
 			FR01 - Over the air installation
 			FR03 - Example PUIs
 
-		\subsection{Validation testing}
+		\subsection{User acceptance testing}
 			Validation testing is used for validating that the system has met the customer's requirements. This was done by testing that the system is holding the requirement specification.
 
 
 		\subsection{Usability test}
-		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were be crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
+		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
 
 		All test subjects filled out a System Usability Scale form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognised as the proper amount. According to \cite{Nielsen}, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface.
 
