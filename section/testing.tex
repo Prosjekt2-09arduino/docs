@@ -2,7 +2,7 @@
 	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product meets the requirements set. 
 	
 	\section{Testing strategy}
-		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing, 
+		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing. Usability testing was performed after the main shop part of the project was completed. User acceptance testing was then performed by the customer after significant parts were complete.
 
 		\subsection{Unit testing}
 			For testing of the Android application, Robotium was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. During the development of the application, different units were tested with Robotium after they were finished. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with a Arduino device is as expected. \\
@@ -24,7 +24,7 @@ assertEquals(expectedState, actualState);
 
 
 		\subsection{Usability test}
-		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
+		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. 
 
 		All test subjects filled out a System Usability Scale form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognised as the proper amount. According to \cite{Nielsen}, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface.
 
@@ -44,7 +44,7 @@ assertEquals(expectedState, actualState);
 
 
 		\subsection{User acceptance testing}
-			Validation testing is used for validating that the system has met the customer's requirements. This was done by testing that the system is holding the requirement specification.
+			User acceptance testing was done by the customer in order to ensure that requirements were met and whether the customer had any improvement points or not. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
 
 
 	\section{Test Results}
