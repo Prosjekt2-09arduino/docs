@@ -44,9 +44,9 @@ Screen that shows the list of available Arduino devices. In the final design the
 
 \begin{figure}[H]
 \includegraphics[scale=0.2]{images/Design_guide/Screen1a.png}
+\centering
 \label{fig:1a}
 \caption{Screen 1a - Device list}
-\centering
 \end{figure}
 
 
@@ -147,9 +147,9 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 	\subsection{Decision of design}
 	\textbf{Device list}\\
-	It should be simple and fit as much devices as possible, even on the smaller cell phones. As shown in Figure ~\ref{fig:1a} it was decided to use discovered bluetooth devices as primary method of connection to an Arduino. Thats why the user will meet this screen first. The less frequently used methods for connecting to an Arduino like QR codes and serial input was therefore put separatly in another screen as shown in Figure ~\ref{fig:1b}. 
+	It should be simple and fit as much devices as possible, even on the smaller cell phones. As shown in Figure ~\ref{fig:1a} it was decided to use discovered bluetooth devices as primary method of connection to an Arduino. Thats why the user will meet this screen first. The less frequently used methods for connecting to an Arduino like QR codes and serial input was therefore put separatly in another screen as shown in Figure ~\ref{fig:1b}. \\
 
-	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, its therefore possible for the user to select an optinal QR-reader from his application list.
+	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, its therefore possible for the user to select an optinal QR-reader from his application list.\\
 
 	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure ~\ref{fig:1b-i}. This is because it clearly gives the user feedback on whats happening and it doesnt mess up the GUI.\\
 
@@ -157,9 +157,9 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	The category selection as shown in Figure ~\ref{fig:2a} was done because it groups the applications and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and fast selects what to show. This is an fast way to change what to sort the application by and user friendly on a touch screen. ``Top hits'' and ``All'' was chosen because the database is currently small and its not necessary with a large amount of ``sort by'' tabs.\\
 
 	\textbf{Application view}\\
-	The application view, as shown in Figure ~\ref{fig:3a}, should show all the detail and information about an application that is usefull and interesting to the user. Rating, descriptiong, developer, application name and images was selected for trying to keep a ``standard''. By this its meant that both Google Market and AppStore uses this elements and is expected to be present by many users.
+	The application view, as shown in Figure ~\ref{fig:3a}, should show all the detail and information about an application that is usefull and interesting to the user. Rating, descriptiong, developer, application name and images was selected for trying to keep a ``standard''. By this its meant that both Google Market and AppStore uses this elements and is expected to be present by many users.\\
 
-	When the install button is clicked a confirmation box will pop up as shown in Figure ~\ref{3a-i}. This is because the user might have clicked the button on accident or is not informative about what device he/she is connected to. The device name will therefore be shown in this dialoge box.
+	When the install button is clicked a confirmation box will pop up as shown in Figure ~\ref{3a-i}. This is because the user might have clicked the button on accident or is not informative about what device he/she is connected to. The device name will therefore be shown in this dialoge box.\\
 
 	A progressbar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application. \\
 
@@ -167,9 +167,9 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	When the user clicks on the action overflow menu, he will expect some sort of settings. Thats why this menu contains settings. If the user will hide or show incompatible application to his arduino, this meny can toggle this preference as shown in Figure ~\ref{fig:Xa}.\\
 
 	\textbf{Changes to the design}
-	The action overflow meny have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.
+	The action overflow meny have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
 
-	The device list function is there because it should be possible to change device at all times, not only on startup.
+	The device list function is there because it should be possible to change device at all times, not only on startup.\\
 
 \section{Database implementation}
 
