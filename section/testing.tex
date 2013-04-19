@@ -48,24 +48,212 @@ assertEquals(expectedState, actualState);
 
 
 	\section{System Testing}
-	Functionality to be tested: (this is temporary and will be removed when all tests is written)
-	\begin{itemize}
-		\item{Connect with device using Device list}
-		\item{Connect with device using QR-code}
-		\item{Connect with device using Input serial}
-		\item{Search for desired application}
-		\item{Test that the application connects with the last connected device if it is in range}
-			\item{This will also test that the last connected device will be stored in settings and remembered when the application is killed}
-		\item{Browse apps in random fashion}
-		\item{Choose app and install it on a connected Arduino}
-		\item{Change connected Arduino: connect to one, then another}
+	In this section the system tests will be presented. Each test was written to test a specific part of the product, and applies to both the Android application, STK500 protocol and software installed on the Arduino device. Each test was executed separately, and the results will be presented in section \ref{testresults}.
+
+	\begin{table}[H]
+	\caption{Connect with device using device list}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST01}\\
+		\hline
+			Test name & Device list connect\\
+		\hline
+			Test description & Connect with an Arduino device from the Device list screen \\
+		\hline
+			Precondition & Arduino device is switched on with Bluetooth \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Press Device list from Action overflow}
+				\item{Press desired Arduino device}
+				\end{itemize} \\
+		\hline
+			Success condition & Android and Arduino device is connected via Bluetooth \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Connect with device using QR code}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST02}\\
+		\hline
+			Test name & QR code connect\\
+		\hline
+			Test description & Connect with an Arduino device using QR code reader \\
+		\hline
+			Precondition & Arduino device is switched on with Bluetooth \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Press Device list from Action overflow}
+				\item{Press Add device}
+				\item{Press Connect with QR code}
+				\item{Choose QR code reader}
+				\item{Scan QR code}
+				\end{itemize} \\
+		\hline
+			Success condition & Android and Arduino device is connected via Bluetooth \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Connect with device using serial}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST03}\\
+		\hline
+			Test name & Input serial connect \\
+		\hline
+			Test description & Connect with an Arduino device using serial \\
+		\hline
+			Precondition & Arduino device is switched on with Bluetooth \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Press Device list from Action overflow}
+				\item{Press Add device}
+				\item{Press Connect with QR code}
+				\item{Choose QR code reader}
+				\item{Scan QR code}
+				\end{itemize} \\
+		\hline
+			Success condition & Android and Arduino device is connected via Bluetooth \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Search for desired app}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST04}\\
+		\hline
+			Test name & Search \\
+		\hline
+			Test description & Search for a specific app \\
+		\hline
+			Precondition & Database is populated \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Press search icon}
+				\item{Type search string}
+				\end{itemize} \\
+		\hline
+			Search result is shown with matching apps \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Connect to last connected device when in range}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST05}\\
+		\hline
+			Test name & Last connected\\
+		\hline
+			Test description & Test that the Android application connects to the last connected Arduino device when it is in range and gives proper feedback \\
+		\hline
+			Precondition & Available Arudino device with Bluetooth \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Connect with an Arduino}
+				\item{Exit Android application completely}
+				\item{Start Android application}
+					\begin{itemize}
+						\item{When the Arduino device is in range}
+						\item{When the Arduino device is out of range/off}
+					\end{itemize}
+				\end{itemize} \\
+		\hline
+			Success condition & When the last connected Arudino device is on and in range, the Android device should connect to it immediately when the Android application is started and give feedback to the user. If the Arduino device is out of range or off, proper feedback should be given \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Browse apps test}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			Test ID & ST06\\
+		\hline
+			Test name & Browse apps\\
+		\hline
+			Test description & Browse apps in the Android application in a random fashion \\
+		\hline
+			Precondition & Database is populated \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Choose a category}
+				\item{Choose an app}
+				\item{Go back and choose different app}
+				\item{Swipe left/right to browse different sorting}
+				\end{itemize} \\
+		\hline
+			Success condition & User is able to browse apps \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Install application on Arduino device}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST07}\\
+		\hline
+			Test name & Install application on Arduino device\\
+		\hline
+			Test description & Choose a desired application to install on a connected Arduino device \\
+		\hline
+			Precondition & Android and Arduino device is connected via Bluetooth \\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Select desired app}
+				\item{Press Install}
+				\item{Press Confirm}
+				\end{itemize} \\
+		\hline
+			Success condition & Arduino app is installed on the connected Arduino device \\
+		\hline
+	\end{tabularx}
+	\end{table}
+
+	\begin{table}[H]
+	\caption{Change connected device}
+	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
+		\hline
+			{Test ID} & {ST08}\\
+		\hline
+			Test name & Change connected device\\
+		\hline
+			Test description & Test that it is possible to first connect to one Arduino, then another, thus changing which device the Android application is connected to \\
+		\hline
+			Precondition & Two available Arduinos with Bluetooth\\ 
+		\hline
+			Test steps & \begin{itemize}
+				\item{Start program}
+				\item{Connect with Arduino \#1}
+				\item{Connect with Arduino \#2}
+				\end{itemize} \\
+		\hline
+			Success condition & Both connections is successful, and the Android device is connected with Arduino \#2 \\
+		\hline
+	\end{tabularx}
+	\end{table}
 
 	\section{Test Results}
+	\label{testresults}
 		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown.
 
 		Table ~\ref{table:testresults} shows the test results of the Robotium Unit tests
 
-		\begin{table}[ht!]
+		\begin{table}[H]
 		\caption{Test Results}
 		\label{table:testresults}
 		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
