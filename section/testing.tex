@@ -1,5 +1,5 @@
 \chapter{Testing}
-	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product meets the requirements set. 
+	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product met the requirements set.
 	
 	\section{Testing strategy}
 		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing. Usability testing was performed after the main shop part of the project was completed. User acceptance testing was then performed by the customer after significant parts were complete.
@@ -28,9 +28,9 @@ assertEquals(expectedState, actualState);
 		All test subjects filled out a System Usability Scale form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognised as the proper amount. According to \cite{Nielsen}, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface.
 
 		\subsubsection{Tasks}
-			These were the tasks given to each tester. The tasks were created with the user cases previously mentioned as a basis. Each task is meant to be a vague description of what they are supposed to do in order for them having to think mostly for themselves and not given any answer as to what they are supposed to do. 
+			These were the tasks given to each tester. The tasks were created with the user cases previously mentioned as a basis. Each task is meant to be a vague description of what they are supposed to do in order for them having to think mostly for themselves and not given any answer as to what they are supposed to do.
 
-			The preface of these tasks were that they had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could have on this jacket.
+			The preface of these tasks was that they had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could have on this jacket.
 
 			\vspace{6 mm}
 			\begin{enumerate}
@@ -61,7 +61,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Connect with an Arduino device from the Device list screen \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\ 
+			Precondition & Arduino device is switched on with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -84,7 +84,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Connect with an Arduino device using QR code reader \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\ 
+			Precondition & Arduino device is switched on with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -110,7 +110,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Connect with an Arduino device using serial \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\ 
+			Precondition & Arduino device is switched on with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -136,7 +136,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Search for a specific app \\
 		\hline
-			Precondition & Database is populated \\ 
+			Precondition & Database is populated \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -159,7 +159,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Test that the Android application connects to the last connected Arduino device when it is in range and gives proper feedback \\
 		\hline
-			Precondition & Available Arudino device with Bluetooth \\ 
+			Precondition & Available Arudino device with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Connect with an Arduino}
@@ -186,7 +186,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Browse apps in the Android application in a random fashion \\
 		\hline
-			Precondition & Database is populated \\ 
+			Precondition & Database is populated \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -211,7 +211,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Choose a desired application to install on a connected Arduino device \\
 		\hline
-			Precondition & Android and Arduino device is connected via Bluetooth \\ 
+			Precondition & Android and Arduino device is connected via Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -235,7 +235,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Test that it is possible to first connect to one Arduino, then another, thus changing which device the Android application is connected to \\
 		\hline
-			Precondition & Two available Arduinos with Bluetooth\\ 
+			Precondition & Two available Arduinos with Bluetooth\\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -250,10 +250,10 @@ assertEquals(expectedState, actualState);
 
 	\section{Test Results}
 	\label{testresults}
-		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown. 
+		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown.
 
 		\subsection{Unit Testing}
-		All written Robotium tests run without encountering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere. 
+		All written Robotium tests run without encountering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere.
 
 		\subsection{Integration Testing}
 		When different units of the product was ready to be sown together, integration testing was performed. When bugs and errors was encountered, the person currently responsible for the integration testing would fix it. %Write more here?
@@ -294,7 +294,7 @@ assertEquals(expectedState, actualState);
 		User acceptance tests has not yet been performed.
 
 		\subsection{Summary}
-		Based on the test performed during and after development of the product, table x describes to what degree the initial requirements set by the customer were met. As described in the table \ref{functionalsummary}, some of the requirements were omitted during the project as some tasks proved more time consuming than expected. As a result of this, not all the initial requirements have been met. \\
+		Based on the test performed during and after development of the product, table x describes to what degree the initial requirements set by the customer were met. As described in the table \ref{table:functionalsummary}, some of the requirements were omitted during the project as some tasks proved more time consuming than expected. As a result of this, not all the initial requirements have been met. \\
 		\newline
 		Regarding the non-functional requirements, it is difficult to summarize to what degree some of these requirements have been met. As a result of this not all the non-functional requirements is included in the table below.
 
