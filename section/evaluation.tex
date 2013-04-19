@@ -3,6 +3,7 @@
 This chapter covers the evaluation of the final product, the process model and what the team learned in this course.
 
 \section{Problems and Difficulties}
+
 	The first problem the group encountered, was to not use incompatible licenses. This was quite hard because much is licensed as GPL 1 or 2 and are not compatible with Apache 2. \\
 
 	The second problem was the decision to write the protocol or use a middleware on a computer.
@@ -32,11 +33,14 @@ These issues prolonged the development of the system by a considerable amount, a
 of these could have been avoided by more careful initial investigation, while others would not have been apparent prior to implementing the protocol.
 
 \section{Interaction with the customer}
-	The communication with the customer was great. A regular meeting was held every Friday, and the customer had an insight to the projects repositories, so the customer always knew what was going on.
 
-\section{Usage of workhours}
-	The group decided from the beginning that every member should work approximately 20 hours every week.
-	In Table ~\ref{table:workhours} it is listed the total work hours for the group on every iteration.
+	The communication with the customer was great. A regular meeting was held every Friday, and the customer had an insight to the projects repositories, this way the customer always knew what was going on. 
+
+
+
+\section{Group interaction}
+	The group decided upon regular meetings three days a week, where people sat down and worked together, discussed issues and progress. It was said that during a larger course like this, every member should work approximately 20 hours every week, thus this was quickly agreed upon. Apart from the regular meetings, the members were able to work at flexible hours within the iterations.
+	In Table ~\ref{table:workhours} the total workhours for the group on every iteration is listed.
 
 	\begin{table}[H]
 	\caption{Iterations and time spent}
@@ -75,26 +79,37 @@ of these could have been avoided by more careful initial investigation, while ot
 	\section{Process}
 	The overall process has been going well. The group have learned to document issues and tasks on the way. This made the process flow steady forward and made it clear and organized. Every member always knew what to do when he or her checked the issue list on Git.
 
-	The communication in the group was also good when the group worked together almost every day and had a group meeting every week. The group could also contact each other via Skype, phone and email.
+	The communication in the group was also good, the group worked together almost every day and had a group meeting every week. The group could also contact each other via Skype, phone and email.
+
+	Mistakes were made however. During the first few weeks of the project, much of the focus was on the android application. Be it design or actual coding for android. The general consensus was that the android application would take approximately the same amount of time as the protocol for transferring files from the android device to the arduino device. This was on the background that a java implementation of the STK500 protocol existed, but poor research was done and it proved to be unusable.
 
 	\section{The System}
-	The $\mu$C Software Store application is almost ready to use. A few changes is still needed to be implemented before it can enter the market. \\
+	The $\mu$C Software Store application is almost ready to use. A few changes is still needed to be implemented before it can enter the market. First and foremost is the creation of proper applications within the store. The following is a short analysis of the system by the deadline of the project.\\
 
-	- Focused too much on the application\\
-	- Focused too little on the protocol
 
-		\subsection{Requirements met}
+
+		\subsection{Protocol}
+			- Used more time than expected\\
+			- Change from STK500v2 to STK500v1\\
+			- Had major impact on the project\\
+			- Not enough research on the protocol in the beginning of the project\\
+
+		\subsection{Bluetooth connection}
+
+		\subsection{Store application}
+
+	\section{Conclusion}
+    The project was successful and the most important requirements including the biggest problem (the protocol) was met. The frequent group meetings, customer meetings and the organized structure of issues, turned out to be a great achievement. \\
+
+    	\subsection{Requirements met}
+
 			- GUI\\
 			- Bluetooth connection\\
 			- QR-code and SerialInput\\
-			- Filter application by compatibility\\
 			- Retain a reliable connection to the connected device\\
 			- Remember the device from last time and try to reconnect\\
 
 		\subsection{Requirement not met}
 			- Sync Adapter\\
 			- External database\\
-			-
-
-	\section{Conclusion}
-    Placeholder text
+			- Filter application by compatibility\\

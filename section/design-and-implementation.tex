@@ -12,15 +12,15 @@ In this chapter the design and system architecture of the product will be presen
 	\vspace{0.2in}
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
-	Therefore it is designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
-	The design for the connection to other devices is done as follows:\\
+	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
+	The design for the connection to other devices was done as follows:\\
 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=130mm]{images/BTConnection.png}
 	\end{figure}
 
-	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, we implemented the STK500 protocol only.
+	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol was implemented.
 	The overall design solution for multiple connections will be like in the figure below:\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
@@ -28,16 +28,16 @@ In this chapter the design and system architecture of the product will be presen
 	\end{figure}
 
 \section{Design of Android application}
-One of the purposes of the Android application is to ease the process of installing PUOs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages is supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone is able to understand the different functions of the application. \\
+One of the purposes of the Android application was to ease the process of installing PUOs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
 \newline
-Before the programming of the Android application was started, a complete design guide were created. In this section we have presented the complete design of the application. This guide was made for primarily two reasons:
+Before the programming of the Android application was started, a complete design guide were created. In this section the complete design of the application is presented. This guide was made for primarily two reasons:
 \begin{itemize}
-	\item{Presentation for the customer.} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at a early stage, when it was easier to change the design.
-	\item{Avoid confusion.} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface is settled before the programming is started, there is less need to discuss this along the way.
+	\item{Presentation for the customer} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at an early stage, when it was easier to change the design.
+	\item{Avoid confusion} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface was settled before the programming was started, there was less need to discuss this along the way.
 \end{itemize}
 
 \subsection{Design guide}
-Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not showed, as it was unnecessary to design this screen.
+Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not showed, as it was unnecessary to design this screen since it is a standard for Android applications.
 
 \paragraph{Screen 1a - Device list}
 Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text has switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth$\textsuperscript{\textregistered}$ connection with the chosen device is made.
@@ -149,35 +149,35 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	\textbf{Device list}\\
 	It should be simple and fit as much devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered bluetooth devices as primary method of connection to an Arduino. Thats why the user will meet this screen first. The less frequently used methods for connecting to an Arduino like QR codes and serial input was therefore put separatly in another screen as shown in Figure~\ref{fig:screen1b}. \\
 
-	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, its therefore possible for the user to select an optinal QR-reader from his application list.\\
+	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, it is therefore possible for the user to select an optinal QR-reader from his application list.\\
 
 	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on whats happening and it doesnt mess up the GUI.\\
 
 	\textbf{Browse shop}\\
-	The category selection as shown in Figure~\ref{fig:screen2a} was done because it groups the applications and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and fast selects what to show. This is an fast way to change what to sort the application by and user friendly on a touch screen. ``Top hits'' and ``All'' was chosen because the database is currently small and its not necessary with a large amount of ``sort by'' tabs.\\
+	The category selection as shown in Figure~\ref{fig:screen2a} was done because it groups the applications and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and fast selects what to show. This is a fast way to change what to sort the application by and user friendly on a touch screen. ``Top hits'' and ``All'' was chosen because the database is currently small and its not necessary with a large amount of ``sort by'' tabs.\\
 
 	\textbf{Application view}\\
-	The application view, as shown in Figure~\ref{fig:screen3a}, should show all the detail and information about an application that is usefull and interesting to the user. Rating, descriptiong, developer, application name and images was selected for trying to keep a ``standard''. By this its meant that both Google Market and AppStore uses this elements and is expected to be present by many users.\\
+	The application view, as shown in Figure~\ref{fig:screen3a}, should show all the detail and information about an application that is useful and interesting to the user. Rating, description, developer, application name and images were selected for trying to keep a ``standard''. Meaning that both Google Market and AppStore uses these elements and are expected to be familiar for many users.\\
 
-	When the install button is clicked a confirmation box will pop up as shown in Figure~\ref{fig:screen3ai}. This is because the user might have clicked the button on accident or is not informative about what device he/she is connected to. The device name will therefore be shown in this dialoge box.\\
+	When the install button is clicked a confirmation box will pop up as shown in Figure~\ref{fig:screen3ai}. This is because the user might have clicked the button on accident or is not informed about what device he/she is connected to. The device name will therefore be shown in this dialog box.\\
 
-	A progressbar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application. \\
+	A progress bar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application. \\
 
 	\textbf{Action overflow menu}
-	When the user clicks on the action overflow menu, he will expect some sort of settings. Thats why this menu contains settings. If the user will hide or show incompatible application to his arduino, this meny can toggle this preference as shown in Figure~\ref{fig:screenXa}.\\
+	When the user clicks on the action overflow menu, he will expect some sort of settings. That is why this menu contains settings. If the user will hide or show incompatible application to his Arduino, this menu can toggle the preference as shown in Figure~\ref{fig:screenXa}.\\
 
 	\textbf{Changes to the design}
-	The action overflow meny have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
+	The action overflow menu have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
 
 	The device list function is there because it should be possible to change device at all times, not only on startup.\\
 
 \section{Database implementation}
 
-	SQLite was used as database language because it is integrated with Android and have lots of functionality that does it easy to use in an Android application. Because of changes to priorities the group and the customer got in an agreement to drop sync adapter and only use a local database.
+	SQLite was used as database language because it is integrated with Android and have much functionality that makes it easy to use in an Android application. Because of changes to priorities the group and the customer got in an agreement to drop sync adapter and only use a local database.
 
 	\subsection{Database model}
 
-		In Figure~\ref{fig:erdiagram} the database is shown as an ER Diagram. The pictures table was not used because of changes to the teams priorities. Things that had been done before was not important for the customer.
+		In figure~\ref{fig:erdiagram} the database is shown as an ER Diagram. The pictures table was not used because of changes to the teams priorities. Things that had been done before was not important for the customer.
 
 		\begin{figure}[H]
 		\includegraphics[scale=1]{images/ER_Diagram.png}
@@ -203,12 +203,12 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\subsubsection{Table: binaryfiles}
 
-			This table contains information about the hex-file (compiled arduino code). \\
+			This table contains information about the hex-file (compiled Arduino code). \\
 			{\bf \underline{binaryfileid}(integer):} auto-increment primary key for binary files \\
 			\textbf{appid(int 10):} foreign key to the application that owns this binary file \\
 			\textbf{file(BLOB 1000000):} The binary file in a BLOB \\
 
-			A BLOB is no datatype and stores data exactly as it was input. This database stores it as a binary array.
+			A BLOB is not a datatype and stores data exactly as it was input. This database stores it as a binary array.
 
 		\subsubsection{Table: developer}
 
@@ -223,13 +223,13 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 			{\bf \underline{requirementid}(integer):} auto-increment primary key for the requirement \\
 			\textbf{name(varchar 160):} name of the requirement \\
 			\textbf{description(varchar 200):} description of the requirement \\
-			\textbf{compatible(int 10):} integer that is converted to boolean when retreived from database. \\
+			\textbf{compatible(int 10):} integer that is converted to boolean when retrieved from database. \\
 
-			Compatible is an integer of 1 or 0. This indicates if the application refered to is compatible with pagers or not.
+			Compatible is an integer of 1 or 0. This indicates if the application referred to is compatible with pagers or not.
 
 		\subsubsection{Table: appusespins}
 
-			This table contains the information about which pins on the arduino that the application is using. \\
-			\textbf{appid(int 10):} foreig key to the application that uses this rule \\
+			This table contains the information about which pins on the Arduino that the application is using. \\
+			\textbf{appid(int 10):} foreign key to the application that uses this rule \\
 			\textbf{requirementid(int 10):} foreign key to the associated requirement \\
 
