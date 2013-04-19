@@ -18,7 +18,7 @@ is a plugin meant to integrate with other plugins that provide access to task, i
 provides access to several versions of the Android API through the use of an installation manager. This allows for simple updating when new versions of the API are released, as well as supporting older devices. A simulator for testing against different Android devices is also available.
 
 \subsubsection{Arduino IDE}
-The Arduino IDE is provided by the creators of the Arduino platform as a free and open source program. It provides syntax checking, example programs, as well as basic editing tools. The IDE handles compilation of Arduino code into C and C++ code the regular microcontroller tools can handle (the IDE includes and depends on tools developed by Atmel, the company behind the chip Arduino uses) and can pass it on to an integrated uploading tool (avr-dude) to get it running on the Arduino.\\
+The Arduino IDE is provided by the creators of the Arduino platform as a free and open source program. It provides syntax checking, example programs, as well as basic editing tools. The IDE handles compilation of Arduino code into C and C++ code the regular micro-controller tools can handle (the IDE includes and depends on tools developed by Atmel, the company behind the chip Arduino uses) and can pass it on to an integrated uploading tool (avr-dude) to get it running on the Arduino.\\
 \newline
 The official Arduino IDE was considered for coding the Arduino component in, but due to its limited text and code related feature set (lacking features such as auto complete), the IDE was not used for coding.
 
@@ -31,6 +31,7 @@ Git is a free, open source Version Control Software (VCS) with support for both 
 There are various terminal and front-end solutions available, including a GUI version from GitHub and Eclipse plugins. Past experiences with Git plugins for Eclipse led to a decision to use terminal software, as the GitHub program lacked advanced functionality regarding branching, among others. Another benefit with that solution was that the VCS then was IDE- and platform-independent and that there was no need to use the IDE for working with the report repository.
 
 \subsubsection{GitHub}
+\label{GitHub}
 GitHub hosts repositories for use with the Git VCS. They also provide basic issue tracking and social features, such as following other developers or projects. Paying customers can elect to hide their code, while free users have to share their code with everyone (one user can however keep one hidden project as long as he is the sole developer). The customer required source code to be uploaded to GitHub and also recommended use of GitHub for requesting assistance using issues - a recommendation that was followed.
 
 \section{Project management tools}
@@ -43,7 +44,7 @@ Google Docs is a free to use online office suite that allows users to simultaneo
 Microsoft Word is the de facto standard Word Processor, with support for many different effects (blinking letters, 3D text and so on). Content creation and formatting tasks are nearly completely intertwined, making it tricky to maintain a consistent document as the documents grow larger. Microsoft Word was used to generate certain graphs for the preliminary reports.
 
 \subsection{\LaTeX}
-\LaTeX ~is a macro-improved version of Tex used for typesetting documents. It is free and open source. The general idea is to separate content creation and formatting to create consistent documents effectively without being distracted by the appearance of the content. After the preliminary report, work on the report was written in \LaTeX.
+\LaTeX is a macro-improved version of Tex used for typesetting documents. It is free and open source. The general idea is to separate content creation and formatting to create consistent documents effectively without being distracted by the appearance of the content. After the preliminary report, work on the report was written in \LaTeX.
 
 \subsection{Google Calendar}
 Google Calendar is a free to use online calendar. It supports both private and public events. Google Calendar allows for simple calendar synchronization across different devices and platforms. A shared calendar in Google Calendar was created to make it easier to keep track of group meetings, meetings with the customer and so on.
@@ -58,7 +59,7 @@ These tools is sophisticated text editors that can be used for coding, markup an
 Wunderlist is a free todo list tool supporting shared lists. It supports sharing tasks between the participants of a to-do list with reminders and notes. Wunderlist was used to serve reminders for other, non-coding related tasks, like scheduling meetings or booking rooms.
 
 \subsection{Doodle}
-Doodle is a free online tool for scheduling events. It allows a user to create an event and aims to simplify scheduling of events by ''polling'' the participants when they are available. When the participants of the event have answered, one can easily view when all participants are available for meeting. Doodle was used to schedule the first meetings the group had, before regular meetings were established.
+Doodle is a free online tool for scheduling events. It allows a user to create an event and aims to simplify scheduling of events by `polling" the participants when they are available. When the participants of the event have answered, one can easily view when all participants are available for meeting. Doodle was used to schedule the first meetings the group had, before regular meetings were established.
 
 \subsection{Fritzing}
 Fritzing is a tool that lets you draw circuit boards and wiring diagrams. This makes simple diagrams that are easy to understand and easy to reproduce for users that do not understand electronics. Often used with the Arduino platform because usually the users of this platform have no electronic experience. Most of the standard electronic equipment used with the Arduino are included in this tool. Fritzing was used to create the wiring diagram of the Bluetooth$\textsuperscript{\textregistered}$ wiring and the iJacket clone.

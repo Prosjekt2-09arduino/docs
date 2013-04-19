@@ -21,6 +21,7 @@
 \usepackage[parfill]{parskip}
 \usepackage{pdfpages}
 \usepackage{listings}
+\usepackage{subfigure}
 
 
 % Begin chapter numbering
@@ -42,6 +43,10 @@
 
 \definecolor{Gray}{gray}{0.9}
 
+%Header packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Chapter: \thechapter}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -49,9 +54,12 @@
 \input{section/front-page}
 \newpage
 
+\input{section/abstract}
+
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
+
 \input{section/introduction}
 \input{section/prestudy}
 \input{section/project-management}
