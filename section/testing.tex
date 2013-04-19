@@ -20,34 +20,35 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 		\subsection{Integration testing}
-			Integration testing is based on combining different units and testing the interface and communication between them. It is a phase after the unit testing and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. Because our system is composed of more than one process (stk500 protocol and the market application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product. A persistent Bluetooth connection through the whole application was tested by checking if the service was providing a STATE\_CONNECTED at all times when we expected it to be connected. When the application was closed and reopened or if the phone was rebooted it should hold its state if possible (if the Arduino was turned on and in range). 
-
+		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.
 
 		\subsection{Usability test}
-		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure proper understanding of the test subject, the think aloud protocol was used, meaning the subject talked about their actions during the test. 
-
+		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure that the test subjects had a proper understanding of the product, the think aloud protocol was used, meaning the subject talked about their actions during the test. \\
+		\newline
 		All test subjects filled out a System Usability Scale form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognised as the proper amount. According to \cite{Nielsen}, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface.
 
 		\subsubsection{Tasks}
-		These were the tasks given to each tester. The tasks were created with the user cases previously mentioned as a basis. Each task is meant to be a vague description of what they are supposed to do in order for them having to think mostly for themselves and not given any answer as to what they are supposed to do. 
+			These were the tasks given to each tester. The tasks were created with the user cases previously mentioned as a basis. Each task is meant to be a vague description of what they are supposed to do in order for them having to think mostly for themselves and not given any answer as to what they are supposed to do. 
 
-		The preface of these tasks were that they had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could have on this jacket.
+			The preface of these tasks were that they had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could have on this jacket.
 
-		\begin{enumerate}
-		 \item Select your jacket
-		 \item Look for applications
-		 \item Filtrate the applications which doesn't work on your jacket
-		 \item Install the application
-		\end{enumerate}
+			\vspace{6 mm}
+			\begin{enumerate}
+			 \item Select your jacket
+			 \item Look for applications
+			 \item Filtrate the applications which doesn't work on your jacket
+			 \item Install the application
+			\end{enumerate}
+			\vspace{6 mm}
 
-		After the tests the test subjects were asked if there were any details or points during the test where they either were confused or found it difficult to do something. These points would be added or confirmed on a form where the observer would have noted any other details which may have risen during the test.
-
+			After the tests the test subjects were asked if there were any details or points during the test where they either were confused or found it difficult to do something. These points would be added or confirmed on a form where the observer would have noted any other details which may have risen during the test.
 
 		\subsection{User acceptance testing}
-			User acceptance testing was done by the customer in order to ensure that requirements were met and whether the customer had any improvement points or not. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
+		User acceptance testing was performed with the customer in order to ensure that requirements were met and to check whether or not the customer was satisfied. There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here.
 
 
 	\section{System Testing}
+	\label{systemtesting}
 	In this section the system tests will be presented. Each test was written to test a specific part of the product, and applies to both the Android application, STK500 protocol and software installed on the Arduino device. Each test was executed separately, and the results will be presented in section \ref{testresults}.
 
 	\begin{table}[H]
@@ -249,38 +250,79 @@ assertEquals(expectedState, actualState);
 
 	\section{Test Results}
 	\label{testresults}
-		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown.
+		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown. 
 
-		Table ~\ref{table:testresults} shows the test results of the Robotium Unit tests
+		\subsection{Unit Testing}
+		All written Robotium tests run without encountering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere. 
+
+		\subsection{Integration Testing}
+		When different units of the product was ready to be sown together, integration testing was performed. When bugs and errors was encountered, the person currently responsible for the integration testing would fix it. %Write more here?
+
+		\subsection{System testing}
+		The system testing was performed according to the description of the tests in section \ref{systemtesting}. In table~\ref{table:systemtestingtable} the results of each test is shown. These tests was performed when both unit testing an integration testing was done to ensure that the product met the requirements set by the customer.
 
 		\begin{table}[H]
-		\caption{Test Results}
-		\label{table:testresults}
+		\caption{System test results}
+		\label{table:systemtestingtable}
+		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
+			\hline
+				{\bf Test ID} & {\bf Result} & {\bf Comment}\\
+			\hline
+				ST01 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST02 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST03 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST04 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST05 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST06 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST07 & PENDING & System tests has not yet been executed \\
+			\hline
+				ST08 & PENDING & System tests has not yet been executed \\
+			\hline
+		\end{tabularx}
+		\end{table}
+
+		\subsection{Usability Testing}
+		Usability testing has not yet been performed.
+
+		\subsection{User Acceptance Testing}
+		User acceptance tests has not yet been performed.
+
+		\subsection{Summary}
+		Based on the test performed during and after development of the product, table x describes to what degree the initial requirements set by the customer were met. As described in the table \ref{functionalsummary}, some of the requirements were omitted during the project as some tasks proved more time consuming than expected. As a result of this, not all the initial requirements have been met. \\
+		\newline
+		Regarding the non-functional requirements, it is difficult to summarize to what degree some of these requirements have been met. As a result of this not all the non-functional requirements is included in the table below.
+
+		\begin{table}[H]
+		\caption{Functional requirements}
+		\label{table:functionalsummary}
 		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
 			\hline
 				{\bf Requirement code} & {\bf Result} & {\bf Comment}\\
 			\hline
 				FR01 & PENDING & This cannot be tested before the protocol is complete\\
 			\hline
-				FR02 & PASS & Usability testing was performed on SINTEF workshop\\
+				FR02 & PENDING & Usability testing will be performed at SINTEF workshop later\\
 			\hline
-				FR03 & PASS & \\
+				FR03 & PASS & Two example PUIs were made to prove the functionality of the product \\
 			\hline
-				FR04 & PASS & This is possible unless you uninstall and install the application\\
+				FR04 & PASS & A valid Bluetooth connection stays active even if the Android application is minimized. When the application is killed and restarted, it will connect to the last connected Arduino device if in range\\
 			\hline
-				FR05 & ERROR & There was no time to implement a standard for device compatibility validation\\
+				FR05 & FAIL & In agreement with the customer, this requirements was omitted \\
 			\hline
-				FR06 & PASS & The user can choose from a list a QR reader to use. The serialInput is a mac address\\
+				FR06 & PASS & The user of the Android application can connect with an Arduino using QR code reader, input serial or choose from a list of available Arduino devices\\
+			\hline
+				NFR02 & PASS & The Android application is stable, and the Bluetooth connection is persistent even throughout the program \\
+			\hline
+				NFR03 & PASS & All code written is open source and under Apache 2.0 licence \\
+			\hline
+				NFR04 & PASS & The Android application is at least compatible with Android 2.3 and newer \\
 			\hline
 		\end{tabularx}
 		\end{table}
 
-		\subsection{Unit Testing}
-		All written Robotium tests run without encoutering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere. 
-
-		\subsection{Integration Testing}
-
-		\subsection{Usability Testing}
-
-		\subsection{User Acceptance Testing}
-		What the customer thought 
