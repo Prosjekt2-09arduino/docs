@@ -59,15 +59,17 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
 
-\section{Use-Cases}
-
+\section{Use Cases}
 \label{usecases}
+The following illustrations and tables were the foundation for the iterations in the development process.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
 \caption{Use case 1}
 \end{figure}
+
+The first use case describes how an Android-owner can browse Google Play to install the $\mu$C Software Store (abbr. $\mu$CSS).
 
     \begin{table}[H]
         \caption{Use case 1}
@@ -101,6 +103,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \includegraphics[scale=0.7]{images/UseCase2}
 \caption{Use case 2}
 \end{figure}
+
+The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR-code reader on an Android. The $\mu$CSS automatically detects available QR-code readers on the Android device, and prompts the user to choose a QR-code reader to complete the action. $\mu$CSS automatically detects the QR-code read by the included action, and determines wether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR-code reader application installed on the Android, $\mu$CSS promts the user to install one.
 
 \begin{table}[H]
     \caption{Use case 2}
@@ -144,6 +148,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 3}
 \end{figure}
 
+The thirt use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the Bluetooth serial address. $\mu$CSS determines wether or not this is a valid serial for an Arduino device, and attempts to pair the Android with the Arduino. If the serial is invalid, $\mu$CSS promts the user to retry input.
+
 \begin{table}[H]
     \caption{Use case 3}
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -184,6 +190,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 4}
 \end{figure}
 
+The fourth use case describes how the user can choose an Arduino device from a list of available Bluetooth devices, and pair devices, from the menu in $\mu$CSS. 
+
 \begin{table}[H]
     \caption{Use case 4}
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -221,6 +229,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 5}
 \end{figure}
 
+The fifth use case describes how the user can browse apps in the $\mu$CSS, and filter them on categories. Browsing of apps can be done both with or without pairing of an Arduino device.
+
         \begin{table}[H]
                 \caption{Use case 5}
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -256,6 +266,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \includegraphics[scale=0.7]{images/UseCase5}
 \caption{Use case 6}
 \end{figure}
+
+The sixth use case describes
 
 \begin{table}[H]
                 \caption{Use case 6}
