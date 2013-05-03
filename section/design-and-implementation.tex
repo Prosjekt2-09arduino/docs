@@ -13,18 +13,40 @@ In this chapter the design and system architecture of the product will be presen
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
 	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
-	The design for the connection to other devices was done as follows:\\
+	The design for the connection to other devices was done as shown in Figure ~\ref{fig:btconnection}\\
 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=130mm]{images/BTConnection.png}
+	\caption{Bluetooth Connection between Android and Arduino stored in a service}
+	\label{fig:btconnection}
 	\end{figure}
 
 	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol was implemented.
-	The overall design solution for multiple connections will be like in the figure below:\\
+	The overall design solution for multiple connections will be like in Figure ~\ref{fig:otaarchitecture}\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
 	\caption{Over The Air Architecture}
+	\label{fig:otaarchitecture}
+	\end{figure}
+
+	The overall system architecture as shown in Figure ~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address).\\
+
+	The \textit{Service} holds and manages the bluetooth connection (\textit{BluetoothConnection}) and is taking care of the protocol for installing apps on the microcontroller. \\
+
+	The \textit{Memory card} is the memory card on the mobile phone where the database is stored (locally). SQLite was used for database engine because it is common and easy to implement in Android.\\
+
+	\textit{DatabaseHandler} is a class for taking care of the SQL transactions and is the access point for communication with the database. A helper class called \textit{Save} is used for easy access to the \textit{DatabaseHandler}.
+	When the application communicates with the Save module, the database communicates with the DatabaseHandler.
+	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional java classes) and makes sure its only one instance of the \textit{DatabaseHandler}.
+
+
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{images/System_architecture.png}
+	\caption(System Architecture){This shows the overall system architecture with the most important components}
+	\label{fig:systemarchitecture}
 	\end{figure}
 
 \section{Design of Android application}
