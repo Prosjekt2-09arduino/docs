@@ -67,7 +67,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
-				\item{Press Device list from Action overflow}
+				\item{Press Device list from Action overflow or from the Welcome screen}
 				\item{Press desired Arduino device}
 				\end{itemize} \\
 		\hline
@@ -146,7 +146,7 @@ assertEquals(expectedState, actualState);
 				\item{Type search string}
 				\end{itemize} \\
 		\hline
-			Search result is shown with matching apps \\
+			Success condition & Search result is shown with matching apps \\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -159,11 +159,12 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test name & Last connected\\
 		\hline
-			Test description & Test that the Android application connects to the last connected Arduino device when it is in range and gives proper feedback \\
+			Test description & Test that the Android application connects to the last connected Arduino device when it is in range and gives proper feedback to the user. The application should only reconnect when this option is selected. \\
 		\hline
 			Precondition & Available Arudino device with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
+				\item{Check option ''Automatically try to reconnect to last connected device''}
 				\item{Connect with an Arduino}
 				\item{Exit Android application completely}
 				\item{Start Android application}
@@ -270,21 +271,21 @@ assertEquals(expectedState, actualState);
 			\hline
 				{\bf Test ID} & {\bf Result} & {\bf Comment}\\
 			\hline
-				ST01 & PENDING & System tests has not yet been executed \\
+				ST01 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth using the Device List. \\
 			\hline
-				ST02 & PENDING & System tests has not yet been executed \\
+				ST02 & Passed & If the Arduino device is on and within range, and the QR code is correct, the Android application successfully connects with it via Bluetooth using optional QR reader. \\
 			\hline
-				ST03 & PENDING & System tests has not yet been executed \\
+				ST03 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth by providing the correct MAC address of the device to the Android application. \\
 			\hline
-				ST04 & PENDING & System tests has not yet been executed \\
+				ST04 & Failed & The application is crashing when a search is performed. \\
 			\hline
-				ST05 & PENDING & System tests has not yet been executed \\
+				ST05 & Passed & The application automatically tries to reconnect to the last connected device when this option is selected. It gives proper feedback to the user containing the result of the connection attempt. \\
 			\hline
-				ST06 & PENDING & System tests has not yet been executed \\
+				ST06 & Passed & It is possible to browse apps in the Android application in a random fashion without problems. \\
 			\hline
-				ST07 & PENDING & System tests has not yet been executed \\
+				ST07 & PENDING & This test has not yet been performed. \\
 			\hline
-				ST08 & PENDING & System tests has not yet been executed \\
+				ST08 & Passed & It is possible to change the connected device without disconnecting first.\\
 			\hline
 		\end{tabularx}
 		\end{table}
@@ -293,8 +294,6 @@ assertEquals(expectedState, actualState);
 		Usability testing has not yet been performed.
 
 		\subsection{User Acceptance Testing}
-		User acceptance tests has not yet been performed. \\
-		\newline
 		After the presentation by the customers request at the SINTEF offices, three people agreed to fill out SUS forms about their thoughts of the system. As there were still problems with the system, the scores were not too positive, but received an average score of 54 of a maximum of 100. The main ideas for improvements were stability and security. Stability was then worked on, but the security aspect was not recognized as an important focus point this late in the development. This was agreed upon by the customer after the meeting.
 
 		\subsection{Summary}
