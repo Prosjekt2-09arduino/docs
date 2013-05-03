@@ -47,22 +47,25 @@ In this chapter the design and system architecture of the product will be presen
 	\includegraphics[scale=0.8]{images/System_architecture.png}
 	\caption(System Architecture){This shows the overall system architecture with the most important components}
 	\label{fig:systemarchitecture}
+	\caption{The design for the connection of Bluetoot devices.}
+	\label{BTConnection}
 	\end{figure}
 
+
 \section{Design of Android application}
-One of the purposes of the Android application was to ease the process of installing PUOs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
+One of the purposes of the Android application was to ease the process of installing PUIs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
 \newline
 Before the programming of the Android application was started, a complete design guide were created. In this section the complete design of the application is presented. This guide was made for primarily two reasons:
 \begin{itemize}
-	\item{Presentation for the customer} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at an early stage, when it was easier to change the design.
-	\item{Avoid confusion} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface was settled before the programming was started, there was less need to discuss this along the way.
+	\item{Presentation for the customer:} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at an early stage, when it was easier to change the design.
+	\item{Avoid confusion:} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface was settled before the programming had started, there was less need to discuss this along the way.
 \end{itemize}
 
 \subsection{Design guide}
-Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not showed, as it was unnecessary to design this screen since it is a standard for Android applications.
+Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not shown, as it was unnecessary to design this screen since it is a standard for Android applications.
 
 \paragraph{Screen 1a - Device list}
-Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text has switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth$\textsuperscript{\textregistered}$ connection with the chosen device is made.
+Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text have switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth$\textsuperscript{\textregistered}$ connection with the chosen device is made.
 
 \begin{figure}[H]
 	\centering
@@ -169,14 +172,14 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 	\subsection{Decision of design}
 	\textbf{Device list}\\
-	It should be simple and fit as much devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered bluetooth devices as primary method of connection to an Arduino. Thats why the user will meet this screen first. The less frequently used methods for connecting to an Arduino like QR codes and serial input was therefore put separatly in another screen as shown in Figure~\ref{fig:screen1b}. \\
+	It should be simple and fit as many devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered Bluetooth devices as a primary method of connection to an Arduino. That is why the user will meet this screen first. The less frequently used methods for connecting to an Arduino, like QR codes and serial input, were therefore put separately in another screen, as shown in Figure~\ref{fig:screen1b}. \\
 
-	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, it is therefore possible for the user to select an optinal QR-reader from his application list.\\
+	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, it is therefore possible for the user to select the optimal QR-reader from his application list.\\
 
-	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on whats happening and it doesnt mess up the GUI.\\
+	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on what is happening and it does not add unnecessary clutter to the GUI.\\
 
 	\textbf{Browse shop}\\
-	The category selection as shown in Figure~\ref{fig:screen2a} was done because it groups the applications and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and fast selects what to show. This is a fast way to change what to sort the application by and user friendly on a touch screen. ``Top hits'' and ``All'' was chosen because the database is currently small and its not necessary with a large amount of ``sort by'' tabs.\\
+	The category selection as shown in Figure~\ref{fig:screen2a} was done because it groups the applications, and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and quickly selects what to show. This is a fast way to change what to sort the applications by, and is user friendly on a touch screen. ``Top hits'' and ``All'' were chosen because the database is currently small, and it is not necessary with a large amount of ``sort by'' tabs. Other tabs could be easily implemented if need be.\\
 
 	\textbf{Application view}\\
 	The application view, as shown in Figure~\ref{fig:screen3a}, should show all the detail and information about an application that is useful and interesting to the user. Rating, description, developer, application name and images were selected for trying to keep a ``standard''. Meaning that both Google Market and AppStore uses these elements and are expected to be familiar for many users.\\
@@ -186,7 +189,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	A progress bar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application. \\
 
 	\textbf{Action overflow menu}
-	When the user clicks on the action overflow menu, he will expect some sort of settings. That is why this menu contains settings. If the user will hide or show incompatible application to his Arduino, this menu can toggle the preference as shown in Figure~\ref{fig:screenXa}.\\
+	When the user clicks on the action overflow menu, he will expect some sort of settings. That is why this menu contains settings. If the user will hide or show incompatible application to his Arduino, this menu will toggle the preference as shown in Figure~\ref{fig:screenXa}.\\
 
 	\textbf{Changes to the design}
 	The action overflow menu have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
@@ -195,7 +198,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 \section{Database implementation}
 
-	SQLite was used as database language because it is integrated with Android and have much functionality that makes it easy to use in an Android application. Because of changes to priorities the group and the customer got in an agreement to drop sync adapter and only use a local database.
+	SQLite was used as database language because it is integrated with Android and have much functionality that makes it easy to use in an Android application. Because of changes to priorities the group and the customer got in an agreement to drop the sync adapter, and only use a local database.
 
 	\subsection{Database model}
 
@@ -203,7 +206,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\begin{figure}[H]
 		\includegraphics[scale=1]{images/ER_Diagram.png}
-		\caption{ER Diagram}
+		\caption{The ER Diagram describing the setup of the app database.}
 		\label{fig:erdiagram}
 		\end{figure}
 

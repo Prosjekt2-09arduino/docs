@@ -38,11 +38,14 @@
   fillstyle=solid,linecolor=black,framearc=0.3](0,0)(2.5,1.5){%
       \shortstack{#1}}\endpspicture}
 
-\begin{figure}
+\begin{figure}%Begin top level
 \hspace{0.309\textwidth}
 \pstree{\Tr[ref=b]{\PSB{$\mu$C Software\\store\\1}}}{%
-	}\end{figure}
+%	\pstree[]{\Tr}{\Tr{}}
+	}\end{figure}%End top level
+%Begin tree root level
 \pstree{\Tp}{\Tr[ref=lc]{\PSB{Project\\management\\1.1}}
+	%Begin branch 1.2
 	\pstree{\Tr[ref=l]{\PSB{Planning\\1.2}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Requirements\\specificaton\\1.2.1}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Determine\\project team\\1.2.2}}}{
@@ -50,7 +53,7 @@
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Plan and\\use cases\\1.2.4}}}{
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Research\\1.2.5}}}{
 		}}}}}
-	}
+	} %End branch 1.2, begin 1.3
 	\pstree{\Tr[ref=l]{\PSB{Execution\\1.3}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Project\\kickoff meeting\\1.3.1}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Verify \& \\validate user\\requirements\\1.3.2}}}{
@@ -60,20 +63,21 @@
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Bluetooth$\textsuperscript{\textregistered}$\\implementation\\1.3.6}}}{
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Documentation\\1.3.7}}}{
 		}}}}}}}
-	}
+	} %End branch 1.3, begin 1.4
 	\pstree{\Tr[ref=l]{\PSB{Testing\\1.4}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Develop\\unit tests\\1.4.1}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{User testing\\1.4.2}}}{
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Stress testing\\1.4.3}}}{
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{System testing\\1.4.4}}}{
 		}}}}
-	}
+	} %End branch 1.4, begin 1.5
 	\pstree{\Tr[ref=l]{\PSB{Closeout\\1.5}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Creating\\final report\\1.5.1}}}{%
 		\pstree[levelsep=20mm, thistreesep=3mm]{\Tr[ref=lc]{\PSB{Delivery to\\the customer\\1.5.2}}}{
 			%\Tr[ref=lc]{\PSB{1.5.3}} 
-		}}
-	}
-}
+		}%End branch 1.5.2
+		}%End branch 1.5.1
+	}%End branch 1.5
+}%End branch 1.1
 
 \end{document}

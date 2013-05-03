@@ -4,39 +4,41 @@ This document is the report required by the course IT2901 at the Norwegian Unive
 The task was to develop a market application on Android for Arduino programs, and installing those applications over Bluetooth.
 
 \section{The Course}
-IT2901 Informatikk Prosjektarbeid II is the course in which this project was done through. It is commonly taken the last semester of a bachelor in informatics. This report is written for the customer, supervisor and teachers of this course and thus may be difficult to understand for others.
+IT2901 Informatikk Prosjektarbeid II is the course in which this project was carried out. It is commonly taken the last semester of a bachelor in informatics. This report is written for the customer, supervisor and teachers of this course and thus may be difficult to understand for others.
 
 \section{The group}
 The group consisted of six students from Computer Science at NTNU, each possessing different technical skills, but all were third year students in the Informatics Bachelor program.
 
 \begin{description}
-	\item{\textbf{Bjørn Arve Fossum}}\hfill \\
+	\item[Bjørn Arve Fossum]\hfill \\
 		Experience with Java, MySQL, PHP and C\#.
-	\item{\textbf{Jeppe Eriksen}}\hfill \\
+	\item[Jeppe Eriksen]\hfill \\
 		Experience with Java, MySQL, and basic Android development.
-	\item{\textbf{Nina Margrethe Smørsgård}}\hfill \\
+	\item[Nina Margrethe Smørsgård]\hfill \\
 		Experience with Java, MySQL, \LaTeX, and basics Android development.
-	\item{\textbf{Robin Tordly}}\hfill \\
+	\item[Robin Tordly]\hfill \\
 		Experience with Java, Android, MySQL, PHP and SQLite.
-	\item{\textbf{Ståle Semb Hauknes}}\hfill \\
+	\item[Ståle Semb Hauknes]\hfill \\
 		Experience with Java, MySQL, PHP and Arduino$\texttrademark$.
-	\item{\textbf{Wilhelm Walberg Schive}}\hfill \\
+	\item[Wilhelm Walberg Schive]\hfill \\
 		Experience with Java, MySQL, and the basics of Arduino$\texttrademark$ project development.
-
 \end{description}
 
 \section{The Customer}
-SINTEF is the largest independent research organization in Scandinavia. It is an independent, non-commercial organization with close ties to NTNU and international activity with clients in 60 different countries. There is a joint effort by NTNU and SINTEF regarding lab work, many are employed by both and there are labs that are funded by both companies in order to facilitate continued research.
-
+SINTEF is the largest independent research organization in Scandinavia. It is a non-commercial organization with close ties to NTNU and international activity with clients in 60 different countries. There is a joint effort by NTNU and SINTEF regarding lab work, many are employed by both and there are labs that are funded by both companies in order to facilitate continued research. \\
+\newline
+Throughout the project, customer interraction was done through Babak Farshchian from SINTEF.\\
 \begin{figure}[H]
 \subfigure[]{
 	\label{fig:sintef}
 	\includegraphics[scale = 0.8]{images/sintef.png}
+	\caption{The SINTEF logo}
 	}%
 \hfill
 \subfigure[]{
 	\label{fig:ntnu}
 	\includegraphics[scale = 0.8]{images/ntnu.png}
+	\caption{The NTNU logo}
 	}%
 \caption{Customer}
 \end{figure}
@@ -54,26 +56,24 @@ The goal of the project task was to make Arduino$\texttrademark$ easier to use f
 This is a list of terms and abbreviations used throughout the project report in order to clarify and explain their meaning.
 
 \begin{description}
-
-\item[Android:]\hfill \\
-An operating system for mobile devices based on the Linux operating system. It is developed by Google and the Open Handset Alliance. Applications for Android devices are written in Java, and all the software is open source released under the Apache License.
-
-\item[Apache:] \hfill \\
-A software foundation focused on open source and community driven software.
-
-\item[Arduino$\texttrademark$:]\hfill \\
-A tool for making Physical User Interfaces (PUIs). It is an open-source physical computing platform based on a simple micro-controller board.
-
-\item[AVRDude:]\hfill \\
-This is a tool to upload programs to micro-controllers from the Unix command line. This software has a lot of features, such as reading and writing to the micro-controller's memory over a serial connection. This software can also compile your C code into an Intel Hex file, a file full of binary information, that can be sent to the Arduino$\texttrademark$ with the STK500 protocol. Normally this is done with a cable between a computer and the microcontroller.
-
-\item[STK500:]\hfill \\
-This is a standard protocol used by many micro-controllers to upload and download memory, including the Arduino$\texttrademark$.
-
-\item[PUI:]\hfill \\
-An acronym for Physical User Interface. A PUI is a user interface which interacts with digital information through the physical environment.
-
-\item[JUnit:]\hfill \\
-A unit testing framework specifically written for Java.
-
+	\item[Android:]\hfill \\
+		An operating system for mobile devices based on the Linux operating system. It is developed by Google and the Open Handset Alliance. Applications for Android devices are written in Java, and all the software is open source released under the Apache License.
+	\item[Apache:] \hfill \\
+		A software foundation focused on open source and community driven software.
+	\item[Arduino$\texttrademark$:]\hfill \\
+		A tool for making Physical User Interfaces (PUIs). It is an open-source physical computing platform based on a simple micro-controller board.
+	\item[AVRDude:]\hfill \\
+		This is a tool to upload programs to micro-controllers from the Unix command line. This software has a lot of features, such as reading and writing to the micro-controller's memory over a serial connection. This software can also compile your C code into an Intel Hex file, a file full of binary information, that can be sent to the Arduino$\texttrademark$ with the STK500 protocol. Normally this is done with a cable between a computer and the microcontroller.
+	\item[Baud rate:]\hfill \\
+		Baud rate refers to the number of signal or symbol changes that occur per second. A symbol is one of several voltage, frequency, or phase changes. \cite{baudrate}
+	\item[Content provider:]\hfill \\
+		The provider of content for a service. 
+	\item[JUnit:]\hfill \\
+		A unit testing framework specifically written for Java.
+	\item[PUI:]\hfill \\
+		An acronym for Physical User Interface. A PUI is a user interface which interacts with digital information through the physical environment.
+	\item[STK500:]\hfill \\
+		This is a standard protocol used by many micro-controllers to upload and download memory, including the Arduino$\texttrademark$.
+	\item[Sync adapter:]\hfill \\
+		A link between the content provider and server, updating either of the two to be in sync with the other.
 \end{description}

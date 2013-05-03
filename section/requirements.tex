@@ -7,35 +7,23 @@ The requirements of the project will be kept high level and vague, to facilitate
 	\begin{tabularx}{\linewidth}{lX}
 
 		\textbf{FR01} & \textbf{Over the air installation}\\
-
  		              & The Android application and the Arduino device should communicate over 
                         Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
 
 		\textbf{FR02} & \textbf{Easy to use interface}\\
-
-                      & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to 
-                        do anything on the Arduino except for starting it. On startup it should search for nearby 
-                        Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
+                      & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
 
  		\textbf{FR03} & \textbf{Example PUIs}\\
-
-                      & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action 
-                        on an Arduino.\\
+                      & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino, the group should create at least two example PUIs \\
 
 		\textbf{FR04} & \textbf{Reliable bluetooth connection with the Arduino}\\
-
-                      & There should be a connection with the Arduino at all times when its in range, and it should automatically
-                        try to connect to the last connected device when the Android application starts up.\\
+                      & There should be a connection with the Arduino at all times when its in range, and it should automatically try to connect to the last connected device when the Android application starts up.\\
 
         \textbf{FR05} & \textbf{Hide/Show incompatible applications}\\
-
-                      & The Android application should by default hide Arduino applications in $\mu$C Software Store which are
-                        incompatible with the Arduino device\\
+                      & The Android application should be able to hide Arduino applications in $\mu$C Software Store which are incompatible with the connected Arduino device\\
 
         \textbf{FR06} & \textbf{Different ways to connect the Android to the Arduino}\\
-
-                      & It should be possible to connect to the Arduino with QR-code, SerialInput and from a discovered
-                        device list\\
+                      & It should be possible to connect to the Arduino with QR-code, SerialInput and from a discovered device list\\
 
 	\end{tabularx}
 	\end{table}
@@ -45,13 +33,13 @@ The requirements of the project will be kept high level and vague, to facilitate
 	\begin{table}[H]
 	\begin{tabularx}{\linewidth}{lX}
 		\textbf{NFR01} & \textbf{Usability}\\
-		 & Both old and young persons should be able to understand how to use the application and install arduino-apps.\\
+		 & People of all ages should be able to understand how to use the Android application and install applications on an Arduino\\
 		\textbf{NFR02} & \textbf{Reliability}\\
-		 & The application on the Arduino should work and start if rebooted.\\
+		 & The Android application  Bluetooth connection should be stable\\
 		\textbf{NFR03} & \textbf{Open source}\\
-		 & The project is under European R\&D project SOCIETIES. All source code will be open source under Apache 2.0 license.\\
+		 & The project is under European R\&D project SOCIETIES. All source code should be open source under Apache 2.0 license\\
 		\textbf{NFR04} & \textbf{Platform compability}\\
-		 & Arduino Store should be compatible in Android 2.3 and newer. See FR04 for compatibility for Arduinos.\\
+		 & $\mu$CSS should be compatible with Android 2.3 and newer versions\\
 		\textbf{NFR05} & \textbf{Extensibility}\\
 		 & It should be easy to add features and extend this product later. The system should therefore be modular to simplify further development.\\
 	\end{tabularx}
@@ -71,15 +59,17 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
 
-\section{Use-Cases}
-
+\section{Use Cases}
 \label{usecases}
+The following illustrations and tables were the foundation for the iterations in the development process.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
 \caption{Use case 1}
 \end{figure}
+
+The first use case describes how an Android-owner can browse Google Play to install the $\mu$C Software Store (abbr. $\mu$CSS).
 
     \begin{table}[H]
         \caption{Use case 1}
@@ -113,6 +103,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \includegraphics[scale=0.7]{images/UseCase2}
 \caption{Use case 2}
 \end{figure}
+
+The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR-code reader on an Android. The $\mu$CSS automatically detects available QR-code readers on the Android device, and prompts the user to choose a QR-code reader to complete the action. $\mu$CSS automatically detects the QR-code read by the included action, and determines wether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR-code reader application installed on the Android, $\mu$CSS promts the user to install one.
 
 \begin{table}[H]
     \caption{Use case 2}
@@ -156,6 +148,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 3}
 \end{figure}
 
+The thirt use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the Bluetooth serial address. $\mu$CSS determines wether or not this is a valid serial for an Arduino device, and attempts to pair the Android with the Arduino. If the serial is invalid, $\mu$CSS promts the user to retry input.
+
 \begin{table}[H]
     \caption{Use case 3}
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -196,6 +190,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 4}
 \end{figure}
 
+The fourth use case describes how the user can choose an Arduino device from a list of available Bluetooth devices, and pair devices, from the menu in $\mu$CSS. 
+
 \begin{table}[H]
     \caption{Use case 4}
     \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -233,6 +229,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 5}
 \end{figure}
 
+The fifth use case describes how the user can browse apps in the $\mu$CSS, and filter them on categories. Browsing of apps can be done both with or without pairing of an Arduino device.
+
         \begin{table}[H]
                 \caption{Use case 5}
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -269,6 +267,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \caption{Use case 6}
 \end{figure}
 
+The sixth use case describes how the user can choose to filter apps in $\mu$CSS on compability with the paired Arduino device.
+
 \begin{table}[H]
                 \caption{Use case 6}
         \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
@@ -302,6 +302,8 @@ The goal of the project remained consistent with previous statements. A prototyp
 \includegraphics[scale=0.7]{images/UseCase6}
 \caption{Use case 7}
 \end{figure}
+
+The seventh use case describes the user sequence to choose and install an application from the $\mu$CSS to the paired Arduino device.
 
 \begin{table}[H]
     \caption{Use case 7}
