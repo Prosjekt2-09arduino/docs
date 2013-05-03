@@ -1,0 +1,100 @@
+\chapter{Introduction}
+This is the user manual for the $\mu$C Software Store application. It contains all the information needed regarding common use and options. $\mu$C Software Store is an application for the Android platform made as an app store for applications for Arduino based projects. You can browse different applications for Arduino projects and install them through a Bluetooth connection. It is assumed that $\mu$C Software Store and BarCode Scanner is installed on an Android device and that a properly configured Arduino project with Bluetooth is nearby.\\
+\newline
+Throughout this document, the application refers to $\mu$C Software Store while an app is one of the applications available within the store.
+
+\chapter{Welcome Screen}
+The first screen that will show when entering the application for the first time is the welcome screen. This screen allows the choice between either going directly to the shop or checking devices located in the area. \\
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/welcome_screen.png}
+	\caption{The welcome screen of the application}
+\end{figure}
+
+\newline
+After the first time the application was launched, on the foreground of this screen the application will attempt to automatically reconnect to the last device which was connected in the application. This is an option which can be turned off in the settings. 
+
+\chapter{Device List}
+Upon selecting the Device List button from the welcome screen or from the action overflow, this screen will appear. On this screen, Bluetooth devices within the reach of the telephone will appear in a list. If the device you want to connect to doesn't show, or you do not want to connect to a device just yet, you can press either the add device or browse shop button respectively.\\
+%Bilde!
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/device_list.png}
+	\caption{The device list with Bluetooth devices}
+\end{figure}
+\newline
+This list is capable of showing whether or not the Bluetooth device is an Arduino device or not. The icon to the left of the list indicates this.
+%Skrive spesifikt om screenshot. Den første er arduino osv. osv.
+To connect to a device, simply press the appropriate device in the list and a connection will be established. Some devices require a password in order for connection to be made, you will be prompted on this upon selecting this device. A dialog box will show whether the connection was established and the background of the now connected device in the list will go green to indicate that it is connected. \\
+\newline
+%nytt bilde med connected
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/connected.png}
+	\caption{The device list when connected to a device}
+\end{figure}
+
+\subsection{Adding Device}
+Pressing the add device button will give you a choice of how you want to add or connect to a device. You can attempt to connect to a device using either a QR-Code or a serial.
+%bilde
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/add_device.png}
+	\caption{The options for adding devices}
+\end{figure}
+
+\subsubsection{QR-Code}
+In order for you to connect with a QR-code, an app called BarCodeScanner must first be installed on the Android device. This will allow you to scan a QR-Code which the will enter the MAC address for the device it was made, and a connection will be created.\\
+
+\subsubsection{Serial}
+A connection can also be created by typing in a serial, which is the MAC address of the Arduino device. This serial is six groups of hexadecimal digits, meaning 0-9 and a-f, each group separated by a colon (:). You have to include the colon when typing this address, but it is not case sensitive which means you do not have to worry about capital letters.\\
+
+\chapter{The Shop}
+The first choice in the shop is the category screen.\\
+%bilde av category view
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/category_view.png}
+	\caption{The categories of the shop}
+\end{figure}
+\newline
+You can filter through all of the apps in the store through these buttons, or you can browse all the apps together by pressing ``All" or swiping to the right. There are two ways to sort the apps within the chosen category. Either not at all, which is the first screen that shows after selecting a category or by the given rating. \\
+%bilde av all apps view
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/all_apps.png}
+	\caption{Screenshot from the shop with all apps shown}
+\end{figure}
+
+\subsection{Searching}
+Wherever you are in the shop, you can start a search for an app you want. It doesn't matter how old or what buttons you have on your Android device, it is possible to start a search from all buttons and devices. The search results will show after pressing the search button, and if there are no results you will be back at the shop screen with a toast telling you there were no results.
+
+\chapter{App View}
+Upon selecting an app in the shop, you will be taken to the app view. This view displays more information about the app you selected, like required hardware, pictures, developer and most importantly, an install button. 
+%bilde
+\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.3]{images/Screenshots/app_view.png}
+	\caption{App View showing information about a single app}
+\end{figure}
+\newline
+Upon pressing the install button, as long as you are connected to an Arduino device you will be first asked to confirm the action. If you do the install will begin. If, however, you are not connected to a device, a dialog will open with the options of either going back to the app view, or go directly do the device list to connect to a device.
+
+\chapter{Settings}
+The settings available in $\mu$C Software Store are as follows:
+
+\begin{description}
+	\item[Hide/Show incompatible] \hfill \\
+		Allows you to hide/show all apps not compatible with the currently connected device.
+	\item[Connected device] \hfill \\
+		Shows the currently connected device. 
+	\item[Automatically reconnect] \hfill \\
+		 Controls whether the application should attempt to automatically reconnect at the welcome screen when reentering the application.
+\end{description}
