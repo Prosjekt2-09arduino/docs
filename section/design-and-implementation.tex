@@ -13,18 +13,21 @@ In this chapter the design and system architecture of the product will be presen
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
 	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
-	The design for the connection to other devices was done as follows:\\
+	The design for the connection to other devices was done as shown in figure \ref{BTConnection}.\\
 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=130mm]{images/BTConnection.png}
+	\caption{The design for the connection of Bluetoot devices.}
+	\label{BTConnection}
 	\end{figure}
 
 	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol was implemented.
-	The overall design solution for multiple connections will be like in the figure below:\\
+	The overall design solution for multiple connections will be like in figure \ref{OTAArchitecture}.\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
-	\caption{Over The Air Architecture}
+	\caption{Architecture for the over the air connection}
+	\label{fig:OTAArchitecture}
 	\end{figure}
 
 \section{Design of Android application}
@@ -181,7 +184,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\begin{figure}[H]
 		\includegraphics[scale=1]{images/ER_Diagram.png}
-		\caption{ER Diagram}
+		\caption{The ER Diagram describing the setup of the app database.}
 		\label{fig:erdiagram}
 		\end{figure}
 
