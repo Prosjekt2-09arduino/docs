@@ -20,7 +20,9 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 		\subsection{Integration testing}
-		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.
+		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units rather than having tests to ensure the units work correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.\\
+		\newline
+		Just as in unit testing, Robotium was used for integration testing as well. This is well supported as you can code the test to press different buttons or text and are therefore capable of navigating through the entire application, and/or units.\\
 
 		\subsection{Usability test}
 		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure that the test subjects had a proper understanding of the product, the think aloud protocol was used, meaning the subject talked about their actions during the test. \\
