@@ -16,7 +16,7 @@ The requirements of the project will be kept high level and vague, to facilitate
  		\textbf{FR03} & \textbf{Example PUIs}\\
                       & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino, the group should create at least two example PUIs \\
 
-		\textbf{FR04} & \textbf{Reliable bluetooth connection with the Arduino}\\
+		\textbf{FR04} & \textbf{Reliable Bluetooth connection with the Arduino}\\
                       & There should be a connection with the Arduino at all times when its in range, and it should automatically try to connect to the last connected device when the Android application starts up.\\
 
         \textbf{FR05} & \textbf{Hide/Show incompatible applications}\\
@@ -38,7 +38,7 @@ The requirements of the project will be kept high level and vague, to facilitate
 		 & The Android application  Bluetooth connection should be stable\\
 		\textbf{NFR03} & \textbf{Open source}\\
 		 & The project is under European R\&D project SOCIETIES. All source code should be open source under Apache 2.0 license\\
-		\textbf{NFR04} & \textbf{Platform compability}\\
+		\textbf{NFR04} & \textbf{Platform compatibility}\\
 		 & $\mu$CSS should be compatible with Android 2.3 and newer versions\\
 		\textbf{NFR05} & \textbf{Extensibility}\\
 		 & It should be easy to add features and extend this product later. The system should therefore be modular to simplify further development.\\
@@ -83,7 +83,7 @@ The first use case describes how an Android-owner can browse Google Play to inst
             \hline
                 Actors           & Android device owner\\
             \hline
-                Prequisite       & The actor have a Android device with Google Play\\
+                Prerequisite     & The actor have a Android device with Google Play\\
             \hline
                 Main Flow        &  1. Opens Google Play \\
                                  &  2. Search for ``$\mu$C Software Store'' \\
@@ -104,7 +104,7 @@ The first use case describes how an Android-owner can browse Google Play to inst
 \caption{Use case 2}
 \end{figure}
 
-The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR-code reader on an Android. The $\mu$CSS automatically detects available QR-code readers on the Android device, and prompts the user to choose a QR-code reader to complete the action. $\mu$CSS automatically detects the QR-code read by the included action, and determines wether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR-code reader application installed on the Android, $\mu$CSS promts the user to install one.
+The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR-code reader on an Android. The $\mu$CSS automatically detects available QR-code readers on the Android device, and prompts the user to choose a QR-code reader to complete the action. $\mu$CSS automatically detects the QR-code read by the included action, and determines whether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR-code reader application installed on the Android, $\mu$CSS prompts the user to install one.
 
 \begin{table}[H]
     \caption{Use case 2}
@@ -148,7 +148,7 @@ The second use case describes how the user can connect to an Arduino-device trou
 \caption{Use case 3}
 \end{figure}
 
-The thirt use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the Bluetooth serial address. $\mu$CSS determines wether or not this is a valid serial for an Arduino device, and attempts to pair the Android with the Arduino. If the serial is invalid, $\mu$CSS promts the user to retry input.
+The third use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the MAC address of the device. $\mu$CSS determines whether or not this is a valid MAC address, and attempts to pair the Android with the Arduino. If the MAC address is invalid, $\mu$CSS prompts the user to retry input.
 
 \begin{table}[H]
     \caption{Use case 3}
@@ -163,7 +163,7 @@ The thirt use case describes how the user can connect to an Arduino-device troug
             Actors           & Arduino device owner \\
         \hline
             Prerequisite     & Installed $\mu$CSS \\
-                             & Intstalled predefined QR-reader \\
+                             & Installed predefined QR-reader \\
         \hline
             End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
         \hline
@@ -241,7 +241,7 @@ The fifth use case describes how the user can browse apps in the $\mu$CSS, and f
             \hline
                 Actors           & Arduino device owner \\
             \hline
-                Prequisite       & Installed $\mu$CSS \\
+                Prerequisite     & Installed $\mu$CSS \\
             \hline
                 End Requirement  & None \\
             \hline
@@ -267,7 +267,7 @@ The fifth use case describes how the user can browse apps in the $\mu$CSS, and f
 \caption{Use case 6}
 \end{figure}
 
-The sixth use case describes how the user can choose to filter apps in $\mu$CSS on compability with the paired Arduino device.
+The sixth use case describes how the user can choose to filter apps in $\mu$CSS based on their compatibility with the paired Arduino device.
 
 \begin{table}[H]
                 \caption{Use case 6}
@@ -279,7 +279,7 @@ The sixth use case describes how the user can choose to filter apps in $\mu$CSS 
             \hline
                 Actors           & Arduino device owner \\
             \hline
-                Prequisite       & Installed $\mu$CSS \\
+                Prerequisite       & Installed $\mu$CSS \\
             \hline
                 End Requirement  & None \\
             \hline

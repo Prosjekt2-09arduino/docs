@@ -20,7 +20,9 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 		\subsection{Integration testing}
-		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.
+		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units rather than having tests to ensure the units work correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.\\
+		\newline
+		Just as in unit testing, Robotium was used for integration testing as well. This is well supported as you can code the test to press different buttons or text and are therefore capable of navigating through the entire application, and/or units.\\
 
 		\subsection{Usability test}
 		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure that the test subjects had a proper understanding of the product, the think aloud protocol was used, meaning the subject talked about their actions during the test. \\
@@ -36,7 +38,6 @@ assertEquals(expectedState, actualState);
 			\begin{enumerate}
 			 \item Select your jacket
 			 \item Look for applications
-			 \item Filtrate the applications which doesn't work on your jacket
 			 \item Install the application
 			\end{enumerate}
 			\vspace{6 mm}
@@ -277,7 +278,7 @@ assertEquals(expectedState, actualState);
 			\hline
 				ST03 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth by providing the correct MAC address of the device to the Android application. \\
 			\hline
-				ST04 & Failed & The application is crashing when a search is performed. \\
+				ST04 & Passed & It is possible to perform searches for apps in the Android application. Apps that fit the search criteria is presented to the user. \\
 			\hline
 				ST05 & Passed & The application automatically tries to reconnect to the last connected device when this option is selected. It gives proper feedback to the user containing the result of the connection attempt. \\
 			\hline
@@ -291,7 +292,8 @@ assertEquals(expectedState, actualState);
 		\end{table}
 
 		\subsection{Usability Testing}
-		Usability testing has not yet been performed.
+		The results of the usability testing was overall positive. The scores varied from 57,5 to 90 out of a 100 with an average of 78,3. In the end, six people were tested with different technological background. There were not much problems that occurred during the testing, one person did, however, have a small complaint about the consistency of the design of the application. After discussing it, it became apparent that this issue came from this person not being used to Android devices. 
+
 
 		\subsection{User Acceptance Testing}
 		After the presentation by the customers request at the SINTEF offices, three people agreed to fill out SUS forms about their thoughts of the system. As there were still problems with the system, the scores were not too positive, but received an average score of 54 of a maximum of 100. The main ideas for improvements were stability and security. Stability was then worked on, but the security aspect was not recognized as an important focus point this late in the development. This was agreed upon by the customer after the meeting.

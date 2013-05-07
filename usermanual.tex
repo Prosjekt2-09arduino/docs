@@ -11,7 +11,7 @@
 \usepackage{ltxtable}
 \usepackage{longtable}
 \usepackage{color, colortbl}
-\usepackage{caption}%\usepackage{subcaption}
+\usepackage{caption}
 \usepackage{ifpdf}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
@@ -22,7 +22,6 @@
 \usepackage{pdfpages}
 \usepackage{listings}
 \usepackage{subfigure}
-\usepackage{xcolor,colortbl}
 
 
 % Begin chapter numbering
@@ -52,23 +51,16 @@
 \begin{document}
 \pagenumbering{gobble}
 
-\input{section/front-page}
+%\input{section/front-page}
 \newpage
 
-\input{section/abstract}
+%\input{section/abstract}
 
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
 
-\input{section/introduction}
-\input{section/prestudy}
-\input{section/project-management}
-\input{section/requirements}
-\input{section/development-environment}
-\input{section/design-and-implementation}
-\input{section/testing}
-\input{section/evaluation}
+\input{UserManual/Main}
 
 \newpage
 \addcontentsline{toc}{chapter}{List of Tables}
@@ -77,14 +69,12 @@
 \listoffigures
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{plain}
-\input{section/bibliography}
+%\input{section/bibliography}
 
 \newpage
 \addcontentsline{toc}{chapter}{Appendixes} %this line may break your compilation, and may require recompiation
 \appendix
-\input{section/appendix-project-documents}
-\input{section/iterations}
-\input{section/standard-for-microcontrollers}
-
+%\input{section/appendix-project-documents}
+%\input{section/iterations}
 
 \end{document}

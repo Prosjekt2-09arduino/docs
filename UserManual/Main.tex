@@ -1,5 +1,5 @@
 \chapter{Introduction}
-This is the user manual for the $\mu$C Software Store application. It contains all the information needed regarding common use and options. $\mu$C Software Store is an application for the Android platform made as an app store for applications for Arduino based projects. You can browse different applications for Arduino projects and install them through a Bluetooth connection. It is assumed that $\mu$C Software Store and BarCode Scanner is installed on an Android device and that a properly configured Arduino project with Bluetooth is nearby.\\
+This is the user manual for the $\mu$C Software Store application. It contains all the information needed regarding common use and options. $\mu$C Software Store is an application for the Android platform made as an app store for applications for Arduino based projects. You can browse different applications for Arduino projects and install them through a Bluetooth connection. It is assumed that $\mu$C Software Store, and optionally a QR-code reader, is installed on an Android device and that a properly configured Arduino project with Bluetooth is nearby.\\
 \newline
 Throughout this document, the application refers to $\mu$C Software Store while an app is one of the applications available within the store.
 
@@ -12,8 +12,7 @@ The first screen that will show when entering the application for the first time
 	\caption{The welcome screen of the application}
 \end{figure}
 
-\newline
-After the first time the application was launched, on the foreground of this screen the application will attempt to automatically reconnect to the last device which was connected in the application. This is an option which can be turned off in the settings. 
+After the first time the application was launched, on the foreground of this screen the application will attempt to automatically reconnect to the last device which was connected through the application. This is an option which can be turned off in the settings. 
 
 \chapter{Device List}
 Upon selecting the Device List button from the welcome screen or from the action overflow, this screen will appear. On this screen, Bluetooth devices within the reach of the telephone will appear in a list. If the device you want to connect to doesn't show, or you do not want to connect to a device just yet, you can press either the add device or browse shop button respectively.\\
@@ -24,10 +23,7 @@ Upon selecting the Device List button from the welcome screen or from the action
 	\includegraphics[scale = 0.3]{images/Screenshots/device_list.png}
 	\caption{The device list with Bluetooth devices}
 \end{figure}
-\newline
-This list is capable of showing whether or not the Bluetooth device is an Arduino device or not. The icon to the left of the list indicates this.
-%Skrive spesifikt om screenshot. Den første er arduino osv. osv.
-To connect to a device, simply press the appropriate device in the list and a connection will be established. Some devices require a password in order for connection to be made, you will be prompted on this upon selecting this device. A dialog box will show whether the connection was established and the background of the now connected device in the list will go green to indicate that it is connected. \\
+ To connect to a device, simply press the appropriate device in the list and a connection will be established. Some devices require a password in order for connection to be made, you will be prompted on this upon selecting this device. A dialog box will show whether the connection was established and the background of the now connected device in the list will go green to indicate that it is connected. \\
 \newline
 %nytt bilde med connected
 \newline
@@ -62,8 +58,7 @@ The first choice in the shop is the category screen.\\
 	\includegraphics[scale = 0.3]{images/Screenshots/category_view.png}
 	\caption{The categories of the shop}
 \end{figure}
-\newline
-You can filter through all of the apps in the store through these buttons, or you can browse all the apps together by pressing ``All" or swiping to the right. There are two ways to sort the apps within the chosen category. Either not at all, which is the first screen that shows after selecting a category or by the given rating. \\
+You can filter through all of the apps in the store through these buttons. You can also browse all the apps together by pressing ``All" or swiping to the right. There are two ways to sort the apps within the chosen category. Either not at all, which is the first screen that shows after selecting a category, or by the given rating. \\
 %bilde av all apps view
 \newline
 \begin{figure}[H]
@@ -84,7 +79,6 @@ Upon selecting an app in the shop, you will be taken to the app view. This view 
 	\includegraphics[scale = 0.3]{images/Screenshots/app_view.png}
 	\caption{App View showing information about a single app}
 \end{figure}
-\newline
 Upon pressing the install button, as long as you are connected to an Arduino device you will be first asked to confirm the action. If you do the install will begin. If, however, you are not connected to a device, a dialog will open with the options of either going back to the app view, or go directly do the device list to connect to a device.
 
 \chapter{Settings}
