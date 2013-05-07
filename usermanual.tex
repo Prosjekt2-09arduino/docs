@@ -1,0 +1,80 @@
+\documentclass[11pt, a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{ltxtable}
+\usepackage{longtable}
+\usepackage{color, colortbl}
+\usepackage{caption}
+\usepackage{ifpdf}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{xtab}
+\usepackage[hmargin=3cm,vmargin=3cm]{geometry}
+\usepackage[norsk, english]{babel} 
+\usepackage[parfill]{parskip}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{subfigure}
+
+
+% Begin chapter numbering
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+% End chapter numbering
+
+% Add numbering to subsubsection
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+%\newcommand{\newCommandName}{text to insert} % Defines a variable in LaTeX
+\newcommand{\comment}[1]{} \comment{This is a block comment wrapped in curly brackets}
+%\renewcommand{\thefootnote}{\roman{footnote}}
+
+\definecolor{Gray}{gray}{0.9}
+
+%Header packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Chapter: \thechapter}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%\input{section/front-page}
+\newpage
+
+%\input{section/abstract}
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\input{UserManual/Main}
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plain}
+%\input{section/bibliography}
+
+\newpage
+\addcontentsline{toc}{chapter}{Appendixes} %this line may break your compilation, and may require recompiation
+\appendix
+%\input{section/appendix-project-documents}
+%\input{section/iterations}
+
+\end{document}
