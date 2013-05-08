@@ -76,7 +76,7 @@ This is a summary of existing solutions similar to the project assignment. This 
 
 It did have a way for developers to follow each other, which would help creating a community for the developers. For further development of $\mu$CSS, UbiBazaar would also be able to support the development of applications aimed at, for example, raspberry pi. This was not included as the goal of our project and therefore discarded.
 
-\paragraph{Google Play} is the market application for Android provided by Google. It is an application that allows for easy browsing and installation of applications on Android devices. It also detects what model of phone that is being used, and only shows applications that are supported by that phone. This functionality is similar to the requirements for the Android application in the project. Since Android users most likely are used to this user interface, shown in figure \ref{googleplay}, it was desirable to emulate this user interface.\\
+\paragraph{Google Play} is the market application for Android provided by Google. It is an application that allows for easy browsing and installation of applications on Android devices. It also detects what model of phone that is being used, and only shows applications that are supported by that phone. This functionality is similar to the requirements for the Android application in the project. Since Android users most likely are used to this user interface, shown in Figure~\ref{fig:googleplay}, it was desirable to emulate this user interface.\\
 
 \begin{figure}[H]
 \centering
@@ -90,7 +90,7 @@ Google Play fits the assignment in the way that is is a market applications wher
 
 
 \subsection{Pebble}
-Pebble is a watch, shown in figure \ref{pebblewatch}, that offers over the air transfer of applications. The main differences between this watch and a standard Arduino$\texttrademark$, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth$\textsuperscript{\textregistered}$ connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that it is much easier to develop an operating system for it.\\
+Pebble is a watch, shown in Figure~\ref{fig:pebblewatch}, that offers over the air transfer of applications. The main differences between this watch and a standard Arduino$\texttrademark$, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth$\textsuperscript{\textregistered}$ connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that it is much easier to develop an operating system for it.\\
 \\
 To transfer a new application to the watch, the user connects the mobile phone to the watch using Bluetooth$\textsuperscript{\textregistered}$. The user can then open the Pebble application store and upload applications made for this watch.
 
@@ -102,7 +102,7 @@ To transfer a new application to the watch, the user connects the mobile phone t
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential for reuse in this project appears minimal.
 
 \section{Over the air transfer}
-Usually when you program the Arduino$\texttrademark$ you use a computer with a USB-cable connected to the Arduino$\texttrademark$ board. This is used because it is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you are programming the Arduino$\texttrademark$ and move the software over to an Android device. To remove the USB-cable we had to use Bluetooth$\textsuperscript{\textregistered}$ to communicate between the devices. To connect the Bluetooth$\textsuperscript{\textregistered}$ to the Arduino$\texttrademark$ it was wired as shown in figure \ref{SimpleArduinoWiring}.
+Usually when you program the Arduino$\texttrademark$ you use a computer with a USB-cable connected to the Arduino$\texttrademark$ board. This is used because it is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you are programming the Arduino$\texttrademark$ and move the software over to an Android device. To remove the USB-cable we had to use Bluetooth$\textsuperscript{\textregistered}$ to communicate between the devices. To connect the Bluetooth$\textsuperscript{\textregistered}$ to the Arduino$\texttrademark$ it was wired as shown in Figure~\ref{fig:SimpleArduinoWiring}.
 \\
 \begin{figure}[H]
 \centering
