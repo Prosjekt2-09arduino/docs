@@ -7,7 +7,7 @@ A thorough study of the problem area, existing solutions, development methods et
 \section{Development methods}
 Several development methods were examined in the beginning of the project to ensure that a suitable model was chosen. In the following section the research performed on different development methods will be presented. Regarding the choice of development method, the decision of the group will be presented in Chapter \ref{development-method}.
 
-\subsection{Rational Unified Process}
+\subsection{Rational unified process}
 Rational Unified Process (RUP) is an iterative and incremental software development process model. It is a process model that aims to capture the best practices in modern software development and present them in a tailorable form.\cite{kruchten} Each iteration in this model results in an increment, which is a release of a prototype and an improvement of the previous iteration. Most of the iterations will, in addition to work on prototypes, also contain work on requirements, design, implementation, testing and so on.\\
 \newline
 A feature of this model is that it is use case driven. Every iteration takes a set of use case scenarios from the requirements and use those for the content of the iteration. The model also requires the team to focus on the critical risks of the project early in the development process. This ensures that problem areas and uncertainties is dealt with before severe problems arise. An illustration of the model is shown in Figure~\ref{fig:rup}.
@@ -96,7 +96,7 @@ To transfer a new application to the watch, the user connects the mobile phone t
 
 \begin{figure}[H]
 \includegraphics[scale=0.7]{images/Pebble-Smartphone-Watch.jpeg}
-\caption[Pebble Watch]{Pebble Watches with different applications changing the watch-faces.}
+\caption[Pebble watch]{Pebble Watches with different applications changing the watch-faces.}
 \label{fig:pebblewatch}
 \end{figure}
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential for reuse in this project appears minimal.
@@ -111,7 +111,7 @@ Usually when you program the Arduino$\texttrademark$ you use a computer with a U
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
-% ref til RN-42
+%TODO ref til RN-42
 After a lot of research we made a wireless connection between the Android and the Arduino$\texttrademark$ with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 because it was well documented and easy to connect to the Arduino$\texttrademark$.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud rate, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
