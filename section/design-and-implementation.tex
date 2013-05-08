@@ -18,7 +18,7 @@ In this chapter the design and system architecture of the product will be presen
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=130mm]{images/BTConnection.png}
-	\caption{Bluetooth Connection between Android and Arduino stored in a service}
+	\caption[BT connection in service]{The bluetooth connection is stored and managed in a service that provides the STK500 protocol.}
 	\label{fig:btconnection}
 	\end{figure}
 
@@ -26,7 +26,7 @@ In this chapter the design and system architecture of the product will be presen
 	The overall design solution for multiple connections will be like in Figure~\ref{fig:otaarchitecture}\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
-	\caption{Over The Air Architecture}
+	\caption[Over The Air Architecture]{The installation module is a class that manages all the services that the application will support. Each service has a protocol for installing over-the-air to a desired microcontroller.}
 	\label{fig:otaarchitecture}
 	\end{figure}
 
@@ -40,15 +40,11 @@ In this chapter the design and system architecture of the product will be presen
 	When the application communicates with the Save module, the database communicates with the DatabaseHandler.
 	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional java classes) and makes sure its only one instance of the \textit{DatabaseHandler}.
 
-
-
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{images/System_architecture.png}
-	\caption(System Architecture){This shows the overall system architecture with the most important components}
+	\caption[System Architecture]{This shows the overall system architecture with the most important components.}
 	\label{fig:systemarchitecture}
-	\caption{The design for the connection of Bluetoot devices.}
-	\label{BTConnection}
 	\end{figure}
 
 
@@ -206,7 +202,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\begin{figure}[H]
 		\includegraphics[scale=1]{images/ER_Diagram.png}
-		\caption{The ER Diagram describing the setup of the app database.}
+		\caption[ER Diagram]{The ER Diagram describing the setup of the app database.}
 		\label{fig:erdiagram}
 		\end{figure}
 
