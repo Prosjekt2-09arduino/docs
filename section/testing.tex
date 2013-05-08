@@ -2,10 +2,10 @@
 	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product met the requirements set.
 	
 	\section{Testing strategy}
-		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing. Usability testing was performed after the main shop part of the project was completed. User acceptance testing was then performed by the customer after significant parts were complete.
+		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing. Usability testing was performed after the main shop part of the project was completed. User acceptance testing was then performed by the customer after significant parts were complete. \cite{testing-overview}
 
 		\subsection{Unit testing}
-			For testing of the Android application, Robotium was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. During the development of the application, different units were tested with Robotium after they were finished. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with a Arduino device is as expected. \\
+			For testing of the Android application, Robotium was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. During the development of the application, different units were tested with Robotium after they were finished. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with a Arduino device is as expected. \cite{unit-testing1} \cite{unit-testing2} \cite{unit-testing3} \\
 
 			\begin{lstlisting}
 solo.clickOnActionBarItem(R.id.settings);
@@ -20,7 +20,7 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 		\subsection{Integration testing}
-		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units rather than having tests to ensure the units work correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.\\
+		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units rather than having tests to ensure the units work correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together.\\ \cite{integration-testing1} \cite{integration-testing2}
 		\newline
 		Just as in unit testing, Robotium was used for integration testing as well. This is well supported as you can code the test to press different buttons or text and are therefore capable of navigating through the entire application, and/or units.\\
 
