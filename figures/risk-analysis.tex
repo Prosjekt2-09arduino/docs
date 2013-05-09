@@ -1,10 +1,23 @@
 \captionof{table}{Risk analysis}
 \label{fig:risktable}
-\begin{table}[H]
-\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.1 \textwidth}|m{0.1 \textwidth}|m{0.1 \textwidth}|X|X|}
+\begin{longtable}{|m{0.15 \textwidth}|m{0.1 \textwidth}|m{0.1 \textwidth}|m{0.1 \textwidth}|m{0.23 \textwidth}|m{0.23 \textwidth}|}
 \hline
-	\textbf{Description} & \textbf{Likeli{-}hood} & \textbf{Impact} & \textbf{Impor{-}tance} & \textbf{Preventive Action} & \textbf{Remedial Action}\\
+	\rowcolor{Gray}
+	\textbf{Description} & \textbf{Likeli{-}hood} & \textbf{Impact} & \textbf{Impor{-}tance} & \textbf{Preventive\newline Action} & \textbf{Remedial\newline Action}\\
+	\endfirsthead%
+	\multicolumn{6}{l}%
+	{{\bfseries Continued from previous page}} \\ \hline
+	\rowcolor{Gray}
+	\textbf{Description} & \textbf{Likeli{-}hood} & \textbf{Impact} & \textbf{Impor{-}tance} & \textbf{Preventive\newline Action} & \textbf{Remedial\newline Action}\\
 \hline
+	\endhead%
+	\hline
+
+	\hline \multicolumn{6}{|l|}{{Continued on next page}} \\ \hline
+	\endfoot%
+
+	\endlastfoot%
+
 	Illness & 7 & 2 & 14 & Good communication and effective use of GitHub & Increase workhours and exchange tasks and responsibilities\\
 \hline
 	Project\newline complexity & 6 & 5 & 30 & Don't take on too much work & Cut down the demands\\
@@ -19,5 +32,4 @@
 \hline
 	Personal matters & 8 & 5 & 40 & Not much preventative action can be taken & Keep in touch and stay updated. In case you still can do tasks, claim one and tell the others\\
 \hline
-\end{tabularx}
-\end{table}
+\end{longtable}
