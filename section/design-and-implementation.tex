@@ -30,7 +30,14 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:otaarchitecture}
 	\end{figure}
 
-	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address).\\
+	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address). This is illustrated in Figure~\ref{fig:adddevicescreenuml} \\
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{images/UML/adddevicescreen.png}
+	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the bluetooth connection.}
+	\label{fig:adddevicescreenuml}
+	\end{figure}
 
 	The \textit{Service} holds and manages the bluetooth connection (\textit{BluetoothConnection}) and is taking care of the protocol for installing apps on the microcontroller. \\
 
@@ -193,6 +200,15 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	The action overflow menu have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
 
 	The device list function is there because it should be possible to change device at all times, not only on startup.\\
+
+	Another change is the ``Welcome Screen''. This is the first screen that will be met when the application is started. This makes it easier to navigate between ``Devices'' and ``Browse Shop''. This screen also provides an option (checkbox) that allows the user to chose wheter or not they will automatically reconnect on startup. Figure~\ref{fig:welcomescreen} shows a simple connection between the reconnect option and the welcome screen.
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{images/UML/welcomescreen.png}
+	\caption[UML - Welcome Screen]{The Welcome Screen will reconnect to last connected device if the user have this option enabled. When the user clicks on ``Devices'' or ``Browse Shop'' a new activity is started.}
+	\label{fig:welcomescreen}
+	\end{figure}
 
 \section{Database implementation}
 
