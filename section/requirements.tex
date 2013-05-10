@@ -61,7 +61,7 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \section{Use cases}
 \label{usecases}
-The following illustrations and tables were the foundation for the iterations in the development process.
+The following illustrations and tables were the foundation for the iterations in the development process. Whenever a use case includes ``Opens $\mu$CSS", use case 8 is gone through. 
 
 \begin{figure}[H]
 \centering
@@ -332,6 +332,43 @@ The seventh use case describes the user sequence to choose and install an applic
             Parent UC        & 1, 2, 3, 4, 5, 6 \\
         \hline
             Child UC         & None \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/UseCase_welcome_screen}
+\caption{Use case 8}
+\end{figure}
+
+The eighth use case is the welcome screen which shows every time $\mu$CSS is opened. 
+
+\begin{table}[H]
+    \caption{Use case 8}
+    \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
+        \hline
+            ID               & 8 \\
+        \hline
+            Name             & Welcome screen \\
+        \hline
+            Goal             & Open the application \\
+        \hline
+            Actors           & Android application owner \\
+        \hline
+            Prerequisite     &  Installed $\mu$CSS \\
+        \hline
+            End requirement  & The application is opened \\
+        \hline
+            Main flow        &  The user selects the $\mu$CSS application \\
+                             & $\mu$CSS is opened and the welcome screen is displayed
+
+        \hline
+            Alternative flow & none \\
+        \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & 2, 3, 4, 5, 6, 7 \\
         \hline
     \end{tabularx}
 \end{table}
