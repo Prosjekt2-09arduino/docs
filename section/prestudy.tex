@@ -50,7 +50,6 @@ The waterfall model is among the first process models to be introduced. In this 
 \subsection{Spiral model}
 The spiral model is a software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product, as prototypes. \cite{sommerville}
 
-%TODO Check if it is written anything about this in the Systemutviklings-bok.
 \subsection{Lean software development}
 \label{leandev}
 Lean is an agile software development methodology that is defined by seven principles\cite{poppendieck}:
@@ -111,7 +110,7 @@ Usually when you program the Arduino$\texttrademark$ you use a computer with a U
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
-%TODO ref til RN-42
-After a lot of research we made a wireless connection between the Android and the Arduino$\texttrademark$ with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 because it was well documented and easy to connect to the Arduino$\texttrademark$.\\
+%TODO check if rn-42 citation is correct
+After a lot of research we made a wireless connection between the Android and the Arduino$\texttrademark$ with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 \cite{rn-42} because it was well documented and easy to connect to the Arduino$\texttrademark$.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud rate, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
