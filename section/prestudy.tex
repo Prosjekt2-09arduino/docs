@@ -84,14 +84,14 @@ It did have a way for developers to follow each other, which would help creating
 \label{fig:googleplay}
 \end{figure}
 
-Google Play fits the assignment in the way that is is a market applications where one can download applications. This was useful for the development of the product, since it was possible to use the same principles in the assignment. It was also similar in the way that it was possible to browse for applications on the computer, and ``push'' the application to a mobile telephone. This, however, did not connect via Bluetooth$\textsuperscript{\textregistered}$, as the task assignment stated the finished product should. Google Play is not open source and could therefore only be used as a source of inspiration for the project. It was not possible to reuse the code or other parts of the application in the development.
+Google Play fits the assignment in the way that is is a market applications where one can download applications. This was useful for the development of the product, since it was possible to use the same principles in the assignment. It was also similar in the way that it was possible to browse for applications on the computer, and ``push'' the application to a mobile telephone. This, however, did not connect via Bluetooth, as the task assignment stated the finished product should. Google Play is not open source and could therefore only be used as a source of inspiration for the project. It was not possible to reuse the code or other parts of the application in the development.
 
 
 
 \subsection{Pebble}
-Pebble is a watch, shown in Figure~\ref{fig:pebblewatch}, that offers over the air transfer of applications. The main differences between this watch and a standard Arduino$\texttrademark$, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth$\textsuperscript{\textregistered}$ connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that it is much easier to develop an operating system for it.\\
+Pebble is a watch, shown in Figure~\ref{fig:pebblewatch}, that offers over the air transfer of applications. The main differences between this watch and a standard Arduino, is that Pebble have written a custom operating system in C for this device and contains a Bluetooth connection. Pebble is also using a microcontroller that is significantly faster and contains a lot more memory, which means that it is much easier to develop an operating system for it.\\
 \\
-To transfer a new application to the watch, the user connects the mobile phone to the watch using Bluetooth$\textsuperscript{\textregistered}$. The user can then open the Pebble application store and upload applications made for this watch.
+To transfer a new application to the watch, the user connects the mobile phone to the watch using Bluetooth. The user can then open the Pebble application store and upload applications made for this watch.
 
 \begin{figure}[H]
 \includegraphics[scale=0.7]{images/Pebble-Smartphone-Watch.jpeg}
@@ -101,16 +101,16 @@ To transfer a new application to the watch, the user connects the mobile phone t
 The principles are quite similar to what we planned to develop, but this platform is not made to expand to other platforms. There was very little documentation on the Pebble website, so the potential for reuse in this project appears minimal.
 
 \section{Over the air transfer}
-Usually when you program the Arduino$\texttrademark$ you use a computer with a USB-cable connected to the Arduino$\texttrademark$ board. This is used because it is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you are programming the Arduino$\texttrademark$ and move the software over to an Android device. To remove the USB-cable we had to use Bluetooth$\textsuperscript{\textregistered}$ to communicate between the devices. To connect the Bluetooth$\textsuperscript{\textregistered}$ to the Arduino$\texttrademark$ it was wired as shown in Figure~\ref{fig:SimpleArduinoWiring}.
+Usually when you program the Arduino you use a computer with a USB-cable connected to the Arduino board. This is used because it is a stable connection and a standardized cable that everybody has available. This project's main goal was to remove the cable when you are programming the Arduino and move the software over to an Android device. To remove the USB-cable we had to use Bluetooth to communicate between the devices. To connect the Bluetooth to the Arduino it was wired as shown in Figure~\ref{fig:SimpleArduinoWiring}.
 \\
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.2]{images/wiring_simple.png}
-\caption[Wiring Diagram for BT module]{How a Bluetooth$\textsuperscript{\textregistered}$ piece is connected on an Arduino$\texttrademark$ device.}
+\caption[Wiring Diagram for BT module]{How a Bluetooth piece is connected on an Arduino device.}
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
 %TODO check if rn-42 citation is correct
-After a lot of research we made a wireless connection between the Android and the Arduino$\texttrademark$ with a Bluetooth$\textsuperscript{\textregistered}$ module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth$\textsuperscript{\textregistered}$ module RN-42 \cite{rn-42} because it was well documented and easy to connect to the Arduino$\texttrademark$.\\
+After a lot of research we made a wireless connection between the Android and the Arduino with a Bluetooth module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth module RN-42 \cite{rn-42} because it was well documented and easy to connect to the Arduino.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud rate, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
