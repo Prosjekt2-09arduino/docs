@@ -3,7 +3,7 @@ This chapter describes what work that remains in this project and a pointer to h
 
 %This is capitalized because its a name.
 \section{The $\mu$C Software Store application}
-This section focuses on areas of improvement regarding the $\mu$C Software Store. Some of the points mentioned in this section is important that is elaborated for the application to be fully usable to the general user, while others is of less importance. The importance of each area will be mentioned in the corresponding subsection.
+This section focuses on areas of improvement regarding the $\mu$C Software Store. Some of the points mentioned in this section is important that is elaborated for the application to be fully usable to the general user, while others is of less importance.
 
 	\subsection{Database}
 	One of the most pressing matters that needs to be elaborated in future work is the implementation of a remote database. The delivered version of the application uses a local database that is automatically filled with data when the application is installed on an Android device. The use of a local database makes it difficult for general users of the application to add his or hers personal apps to the $\mu$C Software Store database, since this data would need to be hard coded into the application. With more time available the group would have implemented a remote database that would contain all the apps that would be offered through $\mu$C Software Store. Content providers and sync adapters provided by Ubibazar could be used to achieve this.
@@ -26,14 +26,12 @@ This section focuses on areas of improvement regarding the $\mu$C Software Store
 	\subsection{GUI}
 	The Android developer design guide teaches the developers of Android applications how to design applications that fits the Android platform. Further work on the $\mu$C Software Store should make sure that the application follows the design guide provided at http://developer.android.com/. This implies correct use of colours, scaling of the application to fit different screen sizes, use of patterns etc. 
 
-\section{STK500}
-This section describes the further work of the protocol.
+\section{STK500 and over the air installation}
+This section focuses on the areas of improvement regarding the implementation of the STK500 protocol, and over the air installation of apps on Arduino. Although the functional requirements set by the customer were met and it is possible to  install apps on an Arduino using the $\mu$C Software Store there is still some areas of improvement regarding the implementation.
 
 	\subsection{Hard reset}
-	If something goes wrong during the installation over-the-air, the Arduino needs to be hard reset (back to its initial state).
-	The group managed to hard reset the Arduino programmatically, but did not have time to implement it.
 
-		\subsubsection{How to hard reset}
-		This is how to hard reset an Arduino:
+	\subsubsection{How to hard reset}
 		
 	\subsection{Security}
+	
