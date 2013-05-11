@@ -260,19 +260,32 @@ assertEquals(expectedState, actualState);
 		All written Robotium tests run without encountering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere.
 
 		\subsection{Integration testing}
-		When different units of the product was ready to be sown together, integration testing was performed. When bugs and errors was encountered, the person currently responsible for the integration testing would fix it. %Write more here?
+		When different units of the product was ready to be sown together, integration testing was performed. When bugs and errors was encountered, the person currently responsible for the integration testing would fix it. %TODO Write more here?
 
 		\subsection{System testing}
 		The system testing was performed according to the description of the tests in section \ref{systemtesting}. In table~\ref{table:systemtestingtable} the results of each test is shown. These tests was performed when both unit testing an integration testing was done to ensure that the product met the requirements set by the customer.
 
-		\begin{table}[H]
-		\caption{System test results}
-		\label{table:systemtestingtable}
-		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
-			\hline
-			\rowcolor{Gray}
-				{\bf Test ID} & {\bf Result} & {\bf Comment}\\
-			\hline
+	\captionof{table}{System test results}
+	\label{table:systemtestingtable}
+	\begin{longtable}{|m{0.15 \textwidth}|m{0.15 \textwidth}|m{0.6 \textwidth}|}
+\hline
+	\rowcolor{Gray}
+	\textbf{Test ID} & \textbf{Result} & \textbf{Comment}\\
+	\endfirsthead%
+	\multicolumn{3}{l}%
+	{{\bfseries Continued from previous page}} \\ \hline
+	\rowcolor{Gray}
+	\textbf{Test ID} & \textbf{Result} & \textbf{Comment}\\
+\hline
+
+	\endhead%
+	\hline
+
+	\hline \multicolumn{3}{|l|}{{Continued on next page}} \\ \hline
+	\endfoot%
+
+	\endlastfoot%
+				
 				ST01 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth using the Device List. \\
 			\hline
 				ST02 & Passed & If the Arduino device is on and within range, and the QR Code is correct, the Android application successfully connects with it via Bluetooth using optional QR reader. \\
@@ -289,8 +302,8 @@ assertEquals(expectedState, actualState);
 			\hline
 				ST08 & Passed & It is possible to change the connected device without disconnecting first.\\
 			\hline
-		\end{tabularx}
-		\end{table}
+		\end{longtable}
+
 
 		\subsection{Usability testing}
 		The results of the usability testing was overall positive. The scores varied from 57,5 to 90 out of a 100 with an average of 78,3. In the end, six people were tested with different technological background. There were not much problems that occurred during the testing, one person did, however, have a small complaint about the consistency of the design of the application. After discussing it, it became apparent that this issue came from this person not being used to Android devices. 
