@@ -16,19 +16,15 @@ This section focuses on areas of improvement regarding the $\mu$C Software Store
 	\paragraph{Security.} Allowing individual developers to upload their own apps to the database would require an administrator or moderator to review the submitted apps. This is important to avoid uploading of malicious apps and duplicates in the system.
 
 	\subsection{Standard for defining $\mu$C Software Store compatible microcontroller based devices}
-	As part of the assignment, the group were supposed to implement filtering of apps that is incompatible with the connected device. As mentioned in section \ref{removals}
-	Standardization for identifying microcontrollers. This is necessary to know which $\mu$C applications that is compatible with ``your'' microcontroller. This is documented in appendix C.
+	As part of the assignment, the group were supposed to implement filtering of apps that is incompatible with the connected device. As mentioned in section \ref{removals} this requirement was omitted due to lack of time. Instead of implementing the actual filtering into the application, it was decided that the group should produce a standard for defining $\mu$C Software Store compatible microcontroller based devices. This standard can be viewed in appendix \ref{microcontroller_standard}. \\
+	\newline
+	Future work should encompass implementing this, or a similar standard, into the $\mu$C Software Store. Allowing users to filter apps according to compatibility with the connected device will empower the application and increase its usability. 
 
 	\subsection{Performance}
-	If you move out of range, the user should be notified.
+	Given more time, the group would have had a higher focus on the performance of the $\mu$C Software Store. Although the performance is satisfactory, is is possible to increase it. Future work on this issue should encompass profiling of the application to identify non-optimized sections in the code. Optimization of battery usage should also be looked into.
 
 	\subsection{GUI}
-
-	\subsection{Security}
-
-	\subsection{General improvements}
-	Sorting: top hits etc.
-
+	The Android developer design guide teaches the developers of Android applications how to design applications that fits the Android platform. Further work on the $\mu$C Software Store should make sure that the application follows the design guide provided at http://developer.android.com/. This implies correct use of colours, scaling of the application to fit different screen sizes, use of patterns etc. 
 
 \section{STK500}
 This section describes the further work of the protocol.
@@ -40,3 +36,4 @@ This section describes the further work of the protocol.
 		\subsubsection{How to hard reset}
 		This is how to hard reset an Arduino:
 		
+	\subsection{Security}
