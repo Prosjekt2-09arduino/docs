@@ -290,9 +290,9 @@ assertEquals(expectedState, actualState);
 			\hline
 				ST02 & Passed & If the Arduino device is on and within range, and the QR Code is correct, the Android application successfully connects with it via Bluetooth using optional QR reader. \\
 			\hline
-				ST03 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth by providing the correct MAC address of the device to the Android application. \\
+				ST03 & Passed & If the Arduino device is on and within range, the Android application\newline successfully connects with it via Bluetooth by providing the correct MAC address of the device to the Android application. \\
 			\hline
-				ST04 & Passed & It is possible to perform searches for apps in the Android application. Apps that fit the search criteria is presented to the user. \\
+				ST04 & Passed & It is possible to perform searches for apps in the\newline Android application. Apps that fit the search criteria is presented to the user. \\
 			\hline
 				ST05 & Passed & The application automatically tries to reconnect to the last connected device when this option is selected. It gives proper feedback to the user containing the result of the connection attempt. \\
 			\hline
@@ -317,32 +317,44 @@ assertEquals(expectedState, actualState);
 		\newline
 		Regarding the non-functional requirements, it is difficult to summarize to what degree some of these requirements have been met. As a result of this not all the non-functional requirements is included in the table below.
 
-		\begin{table}[H]
-		\caption{Functional requirements}
-		\label{table:functionalsummary}
-		\begin{tabularx}\linewidth{|m{0.15 \textwidth}|m{0.15 \textwidth}|X|}
-			\hline
-			\rowcolor{Gray}
-				{\bf Requirement code} & {\bf Result} & {\bf Comment}\\
-			\hline
-				FR01 & PENDING & This cannot be tested before the protocol is complete\\
-			\hline
-				FR02 & PENDING & Usability testing will be performed at SINTEF workshop later\\
-			\hline
-				FR03 & PASS & Two example PUIs were made to prove the functionality of the product \\
-			\hline
-				FR04 & PASS & A valid Bluetooth connection stays active even if the Android application is minimized. When the application is killed and restarted, it will connect to the last connected Arduino device if in range\\
-			\hline
-				FR05 & FAIL & In agreement with the customer, this requirements was omitted \\
-			\hline
-				FR06 & PASS & The user of the Android application can connect with an Arduino using QR Code reader, input serial or choose from a list of available Arduino devices\\
-			\hline
-				NFR02 & PASS & The Android application is stable, and the Bluetooth connection is persistent even throughout the program \\
-			\hline
-				NFR03 & PASS & All code written is open source and under Apache 2.0 licence \\
-			\hline
-				NFR04 & PASS & The Android application is at least compatible with Android 2.3 and newer \\
-			\hline
-		\end{tabularx}
-		\end{table}
 
+		\captionof{table}{Functional requirements}
+		\label{table:functionalsummary}
+		\begin{longtable}{|m{0.15 \textwidth}|m{0.15 \textwidth}|m{0.6 \textwidth}|}
+		\hline
+			\rowcolor{Gray}
+			\textbf{Requirement code} & \textbf{Result} & \textbf{Comment}\\
+			\endfirsthead%
+			\multicolumn{3}{l}%
+			{{\bfseries Continued from previous page}} \\ \hline
+			\rowcolor{Gray}
+			\textbf{Requirement code} & \textbf{Result} & \textbf{Comment}\\
+		\hline
+
+			\endhead%
+			\hline
+
+			\hline \multicolumn{3}{|l|}{{Continued on next page}} \\ \hline
+			\endfoot%
+
+			\endlastfoot%
+%TODO still pending?
+				FR01 & Pending & This cannot be tested before the protocol is complete\\
+			\hline
+				FR02 & Pass & Usability testing was performed at SINTEF\newline workshop, and in the hallway at NTNU.\\
+			\hline
+				FR03 & Pass & Two example PUIs were made to prove the functionality of the product \\
+			\hline
+				FR04 & Pass & A valid Bluetooth connection stays active even if the Android application is minimized. When the application is killed and restarted, it will connect to the last connected Arduino device if in range\\
+			\hline
+				FR05 & Invalid & In agreement with the customer, this requirements was omitted \\
+			\hline
+				FR06 & Pass & The user of the Android application can connect with an Arduino using QR Code reader, input serial or choose from a list of available Arduino devices\\
+			\hline
+				NFR02 & Pass & The Android application is stable, and the Bluetooth connection is persistent even throughout the program \\
+			\hline
+				NFR03 & Pass & All code written is open source and under Apache 2.0 licence \\
+			\hline
+				NFR04 & Pass & The Android application is at least compatible with Android 2.3 and newer \\
+			\hline
+		\end{longtable}
