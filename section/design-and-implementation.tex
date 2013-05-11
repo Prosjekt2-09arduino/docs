@@ -266,6 +266,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 		\subsubsection{Table: binaryfiles}
 
 			This table contains information about the hex-file (compiled Arduino code). \\
+			
 			{\bf \underline{binaryfileid}(integer):} auto-increment primary key for binary files \\
 			\textbf{appid(int 10):} foreign key to the application that owns this binary file \\
 			\textbf{file(BLOB 1000000):} The binary file in a BLOB \\
@@ -274,14 +275,16 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\subsubsection{Table: developer}
 
-			This table contains information about the developer. \\
+			This table contains information about the developer.\\
+			
 			{\bf \underline{developerid}(integer):} auto-increment primary key for developers \\
 			\textbf{name(varchar 160):} name of the developer \\
 			\textbf{website(varchar 200):} website of the developer \\
 
 		\subsubsection{Table: requirements}
 
-			This table contains the requirements for the application. \\
+			This table contains the requirements for the application.\\
+			
 			{\bf \underline{requirementid}(integer):} auto-increment primary key for the requirement \\
 			\textbf{name(varchar 160):} name of the requirement \\
 			\textbf{description(varchar 200):} description of the requirement \\
@@ -291,7 +294,8 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 
 		\subsubsection{Table: appusespins}
 
-			This table contains the information about which pins on the Arduino that the application is using. \\
+			This table contains the information about which pins on the Arduino that the application is using.\\
+			
 			\textbf{appid(int 10):} foreign key to the application that uses this rule \\
 			\textbf{requirementid(int 10):} foreign key to the associated requirement \\
 
