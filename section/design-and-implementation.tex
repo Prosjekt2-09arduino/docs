@@ -73,15 +73,28 @@ In this chapter the design and system architecture of the product will be presen
 
 	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that is under the selected category.\\
 
-	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same adapter as \textit{All} and \textit{TopHits}. 
+	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same adapter as \textit{All} and \textit{TopHits}.
 
 	\subsection{STK500v1}
-	In Figure~\ref{fig:stk500v1uml} we see blabla
+	In Figure~\ref{fig:stk500v1uml} the general design of the protocol component is shown. The STK500v1 class
+    handles most of the logic and actual programming; this is the class called upon by the application when
+    an app is to be uploaded. The Constants class holds important commands and responses used when communicating
+    with the Arduino.
+    The Hex class deals with interpreting and verifying the app to be programmed. It provides the raw bytes
+    requested by the protocol class.\\
+    
+    The rest are for abstracting and dealing with reading from the Bluetooth connection; the current
+    implementation allows for avoiding blocking by only reading buffered bytes. The Reader behaves differently while
+    %TODO: reference state pattern
+    reading or during timeouts, based on a state pattern implementation. As shown, the different states are both
+    states and readers.
 
+    %TODO: Update uml (readwrapper no longer used, new classes added (see dropbox -> design)
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.5]{images/UML/stk500v1.png}
-	\caption[UML - Main GUI]{description}
+    % What's the meaning of "UML - Main GUI"?
+	\caption[UML - Main GUI]{The most important classes used for programming}
 	\label{fig:stk500v1uml}
 	\end{figure}
 
@@ -197,7 +210,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 \end{figure}
 
 	\subsection{Design decisions}
-	This section explains the reasoning behind the different aspects of the design. 
+	This section explains the reasoning behind the different aspects of the design.
 
 	\textbf{Device list}\\
 	It should be simple and fit as many devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered Bluetooth devices as a primary method of connection to an Arduino. That is why the user will meet this screen first. The less frequently used methods for connecting to an Arduino, like QR codes and serial input, were therefore put separately in another screen, as shown in Figure~\ref{fig:screen1b}. \\
