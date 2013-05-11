@@ -1,0 +1,23 @@
+\chapter{Roadmap for further development}
+This chapter describes what work that remains in this project and a pointer to how this could be done.
+
+%This is capitalized because its a name.
+\section{The $\mu$C Software Store application}
+This section goes into what further work that is necessary for the software store application.
+
+	\subsection{Database}
+	Synchronization with a remote database. Ubibazar's content provider and sync adapter could be used.
+
+	\subsection{Standard for microcontrollers}
+	Standardization for identifying microcontrollers. This is necessary to know which $\mu$C applications that is compatible with ``your'' microcontroller. This is documented in appendix C.
+
+\section{STK500}
+This section describes the further work of the protocol.
+
+	\subsection{Hard reset}
+	If something goes wrong during the installation over-the-air, the Arduino needs to be hard reset (back to its initial state).
+	The group managed to hard reset the Arduino programmatically, but did not have time to implement it.
+
+		\subsubsection{How to hard reset}
+		This is how to hard reset an Arduino:
+		

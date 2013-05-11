@@ -8,27 +8,29 @@ This chapter covers the evaluation of the final product, the process model and w
 	\subsection{Licensing}
 	No member of the group had any experience with licensing before this project. When the customer then told us to freely copy open-source material for use in the project. This project in its entirety is licensed with Apache 2, meaning that systems licensed under GPL 1 or 2 could not be used. Thus instead of using these systems, or parts of them, they had to be written from scratch.
 
-\subsection{Protocol}\label{sec:protocol-issues}
-There were several difficulties related to programming the Arduino. There were few existing solutions for programming it in general, and none for Android or Java. The official implementation was available in C, but in the incompatible GPL license.\\
+	\subsection{Protocol}\label{sec:protocol-issues}
+	There were several difficulties related to programming the Arduino. There were few existing solutions for programming it in general, and none for Android or Java. The official implementation was available in C, but in the incompatible GPL license.\\
 
-The existence of certain programs written in Java with the purpose of programming Arduinos,
-led the group into assuming one of these could be utilized, as the license was compatible. When the time came to make use of it, it was discovered to internally use AVRDUDE as well - an embedded version was available for several platforms.\\
+	The existence of certain programs written in Java with the purpose of programming Arduinos,
+	led the group into assuming one of these could be utilized, as the license was compatible. When the time came to make use of it, it was discovered to internally use AVRDUDE as well - an embedded version was available for several platforms.\\
 
-This realization came somewhat late in the process, see Iteration 4 in chapter \ref{sec:Iteration4}. Following this and the emergency meeting with the customer, it was decided to implement the protocol for programming Arduinos. Unfortunately, the documentation for these were a bit confusing; the most detailed and professional protocol document turned out to describe version 2 of the protocol\cite{AVR068}, which was incompatible with the bootloader installed on the Arduino by default (Optiboot v4.4 on Arduino Uno). This was also the version that was partially implemented before the protocol differences and lack of backwards compatibility was discovered.\\
+	This realization came somewhat late in the process, see Iteration 4 in chapter \ref{sec:Iteration4}. Following this and the emergency meeting with the customer, it was decided to implement the protocol for programming Arduinos. Unfortunately, the documentation for these were a bit confusing; the most detailed and professional protocol document turned out to describe version 2 of the protocol\cite{AVR068}, which was incompatible with the bootloader installed on the Arduino by default (Optiboot v4.4 on Arduino Uno). This was also the version that was partially implemented before the protocol differences and lack of backwards compatibility was discovered.\\
 
-The incompatibility could have been discovered earlier, but testing of the protocol had to be postponed due to a lack of available working serial communication libraries for PC's compatible with the Arduino Uno USB interface, so a simple Android I/O app was added for testing purposes. Even then, the reason for the failure to communicate with the Arduino was hard to pin down, until a second Arduino was wired up to echo back the information the pair received.\\
+	The incompatibility could have been discovered earlier, but testing of the protocol had to be postponed due to a lack of available working serial communication libraries for PC's compatible with the Arduino Uno USB interface, so a simple Android I/O app was added for testing purposes. Even then, the reason for the failure to communicate with the Arduino was hard to pin down, until a second Arduino was wired up to echo back the information the pair received.\\
 
-Changing the bootloader to utilize version 2 of the protocol could not be done due to it being licensed under GPL. Some attempts were made at finding compiled bootloaders for the Uno, but did not bear fruit. Attempts at compiling bootloaders using version 2 for the chip failed due to unresolved dependencies in the bootloader projects discovered, like the Stk-Boot\cite{StkBoot} and uOS-Embedded\cite{uOS-Embedded}.\\
+	Changing the bootloader to utilize version 2 of the protocol could not be done due to it being licensed under GPL. Some attempts were made at finding compiled bootloaders for the Uno, but did not bear fruit. Attempts at compiling bootloaders using version 2 for the chip failed due to unresolved dependencies in the bootloader projects discovered, like the Stk-Boot\cite{StkBoot} and uOS-Embedded\cite{uOS-Embedded}.\\
 
-The solution, then, was to implement version 2 of the protocol, and write off most of the protocol work as waste (a bit less than a week); some of it could be reused despite the protocols being radically different, however. The second version of the protocol has a standardized message format with checksums and static tokens inside the messages to aid in error discovery; this would have been beneficial for communicating over Bluetooth.\\
+	The solution, then, was to implement version 2 of the protocol, and write off most of the protocol work as waste (a bit less than a week); some of it could be reused despite the protocols being radically different, however. The second version of the protocol has a standardized message format with checksums and static tokens inside the messages to aid in error discovery; this would have been beneficial for communicating over Bluetooth.\\
 
-It was known that Optiboot didn't make use of all the commands specified in the protocol document AVR061\cite{AVR061}, but documentation on which commands were required or superfluous was lackluster. Since it would simply report that everything is fine when encountering such a command, discovering which were implemented or not had to be done by trial and error or investigating the source (which is designed to be very compact, to fit in the 512kB threshold, which, if exceeded, would make the bootloader occupy 1024kB).\\
+	It was known that Optiboot didn't make use of all the commands specified in the protocol document AVR061\cite{AVR061}, but documentation on which commands were required or superfluous was lackluster. Since it would simply report that everything is fine when encountering such a command, discovering which were implemented or not had to be done by trial and error or investigating the source (which is designed to be very compact, to fit in the 512kB threshold, which, if exceeded, would make the bootloader occupy 1024kB).\\
 
-Communicating with the Arduino proved fairly straight forward, but dealing with false positives was an issue.
-The Arduino would report that writing took place successfully, but writing would occur only in partial sections of the memory areas requested, for example. The only way erroneous writing could be discovered, was to read afterwards to verify the contents (or observe the Arduino not starting run the code it was supposedly programmed with).\\
+	Communicating with the Arduino proved fairly straight forward, but dealing with false positives was an issue.
+	The Arduino would report that writing took place successfully, but writing would occur only in partial sections of the memory areas requested, for example. The only way erroneous writing could be discovered, was to read afterwards to verify the contents (or observe the Arduino not starting run the code it was supposedly programmed with).\\
 
-These issues prolonged the development of the system by a considerable amount, and had a major impact on the project. Some
-of these could have been avoided by more careful initial investigation, while others would not have been apparent prior to implementing the protocol.
+	These issues prolonged the development of the system by a considerable amount, and had a major impact on the project. Some
+	of these could have been avoided by more careful initial investigation, while others would not have been apparent prior to implementing the protocol.
+
+	\subsection{Hard reset}
 
 
 \section{Interaction with the customer}
@@ -84,38 +86,26 @@ of these could have been avoided by more careful initial investigation, while ot
 
 	Mistakes were made however. During the first few weeks of the project, much of the focus was on the Android application; be it design or actual coding for Android. The general consensus was that the Android application would take approximately the same amount of time as the protocol for transferring files from the Android device to the Arduino device. This was on the basis that a Java implementation of the STK500 protocol existed, but poor research was done and it proved to be unusable (see chapter \ref{sec:protocol-issues} for details).
 
-	\section{The System}
-	The $\mu$C Software Store application is almost ready to use. A few changes are still needed to be implemented before it can enter the market. First and foremost is the creation of proper applications within the store. The following is a short analysis of the system by the deadline of the project.\\
-
-
-
-		\subsection{Protocol}
-			- Used more time than expected\\
-			- Change from STK500v2 to STK500v1\\
-			- Had major impact on the project\\
-			- Not enough research on the protocol in the beginning of the project\\
-
-		\subsection{Bluetooth connection}
-
-		\subsection{Store application}
 
 	\section{Conclusion}
     The project was successful and the most important requirements including the biggest problem (the protocol) was met. The frequent group meetings, customer meetings and the organized structure of issues, turned out to be a great success. \\
 
     	\subsection{Requirements met}
+    		The graphical user interface was completed and met every requirement.\\
 
+<<<<<<< HEAD
 			- GUI\\
 			- Bluetooth connection\\
 			- QR Code and SerialInput\\
 			- Retain a reliable connection to the connected device\\
 			- Remember the device from last time and try to reconnect\\
+    		Bluetooth connection was complete and met every requirement. This part of the project was taken from the UbiCollab/iJacket project and spared the group a lot of workhours. The disadvantage of this usage, was that the bluetooth connection protocol turned out to be unstable.\\
+
+    		The system will automatically try to connect to the last sucessfully connected device on startup, and gives the user the option to turn this feature on and off. This works perfectly if the content on the Arduino is correct. This requirement is considered as fully met.\\
 
 		\subsection{Requirements not met}
-			- Sync Adapter\\
-			- External database\\
-			- Filter application by compatibility\\
+			Content provider with sync adapter towards a remote database was not implemented. This was not prioritized because it has been done by many other projects and this was agreed upon with the customer. \\
 
-	\subsection{}%TODO
+			Filtering applications by compatibility was not implemented because of the lack of time the project had. It was a complex problem that was considered to take a period of at least one month past the project schedule. Nevertheless the team managed to write a standard for microcontrollers, that describes how this could be implemented. A document of this standardization can be found in appendix C. \\
 
-	\subsection{What could have been done differently}
-
+		\subsection{What could have been done differently}

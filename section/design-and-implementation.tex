@@ -4,7 +4,7 @@ In this chapter the design and system architecture of the product will be presen
 \section{System architecture}
 	The design was divided into several modules:
 	\begin{itemize}
-		\item{Bluetooth$\textsuperscript{\textregistered}$ connection between the Android and the Arduino}
+		\item{Bluetooth connection between the Android and the Arduino}
 		\item{Synchronization with the local SQLite database}
 		\item{Android application view (the visible design)}
 		\item{A service that contains the protocol for installing ``over the air''}
@@ -13,16 +13,21 @@ In this chapter the design and system architecture of the product will be presen
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
 	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
-	The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection}\\
+	The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}\\
 
 	\begin{figure}[H]
-	\centering
-	\includegraphics[width=130mm]{images/BTConnection.png}
-	\caption[BT connection in service]{The bluetooth connection is stored and managed in a service that provides the STK500 protocol.}
-	\label{fig:btconnection}
+	\hspace*{-1.0in}
+	\includegraphics[scale=0.55]{images/UML/btconnection_service_stk500.png}
+	\caption[BT connection in service]{The Bluetooth connection is stored and managed in a service that provides the STK500 protocol.}
+	\label{fig:btconnection_service_stk500}
 	\end{figure}
 
-	Devices.java is an Activity and can therefore be considered as a view in the application. To add a new service a few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol was implemented.
+	\textit{Devices} as shown in Figure~\ref{fig:btconnection_service_stk500} is an activity that manages the discovered Bluetooth devices. A device is discovered by listening to the Bluetooth API on the Android. This happens in the \textit{MyBroadcastReceiver} that works like an listener. When this listener gets notified with a device as input, the discovered device will be put in a list in \textit{Devices}.\\
+
+	If the user choose to connect to a device from the list of discovered devices, a service (BtArduinoService) will be created. This service will create and manage the \textit{BluetoothConnection} that manages the Bluetooth connection between the microcontroller (Arduino in this case) and the Android. The service uses \textit{STK500v1} for transfering bytes over the \textit{BluetoothConnection} to the connected device.\\
+
+	To add support for other microcontrollers than Arduino, few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol and one service was implemented.\\
+
 	The overall design solution for multiple connections will be like in Figure~\ref{fig:otaarchitecture}\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
@@ -32,6 +37,22 @@ In this chapter the design and system architecture of the product will be presen
 
 	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR Code or MAC-address).\\
 
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{images/System_architecture.png}
+	\caption[System Architecture]{This shows the overall system architecture with the most important components.}
+	\label{fig:systemarchitecture}
+	\end{figure}
+
+	The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address). This is illustrated in Figure~\ref{fig:adddevicescreenuml} \\
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{images/UML/adddevicescreen.png}
+	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the bluetooth connection.}
+	\label{fig:adddevicescreenuml}
+	\end{figure}
+
 	The \textit{Service} holds and manages the bluetooth connection (\textit{BluetoothConnection}) and is taking care of the protocol for installing apps on the microcontroller. \\
 
 	The \textit{Memory card} is the memory card on the mobile phone where the database is stored (locally). SQLite was used for database engine because it is common and easy to implement in Android.\\
@@ -40,13 +61,29 @@ In this chapter the design and system architecture of the product will be presen
 	When the application communicates with the Save module, the database communicates with the DatabaseHandler.
 	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional java classes) and makes sure its only one instance of the \textit{DatabaseHandler}.
 
+	\subsection{Browse Shop}
+	This is the shop where the user can see the $\mu$C apps, choose categories and swipe though different fragments. In  Figure~\ref{fig:maingui} we see the \textit{MainActivity} that is the activity of the shop. It creates \textit{MyFragmentPagerAdapter} that holds and manages the different fragments. One fragment is one of the three view that can be swiped through. \textit{Categories}, \textit{All} and \textit{TopHits} are these three fragments. Each fragment consist of a list, and needs an Adapter for this list. \textit{Categories} have its own list-adapter because the list is slightly different from the other lists: it has bigger elements and have no rating or developer. \textit{All} an \textit{TopHits} uses the same list-adapter because they contains the same type of elements.\\
+
 	\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.8]{images/System_architecture.png}
-	\caption[System Architecture]{This shows the overall system architecture with the most important components.}
-	\label{fig:systemarchitecture}
+	\hspace*{-1.1in}
+	\includegraphics[scale=0.55]{images/UML/main.png}
+	\caption[UML - Main GUI]{Here we see a FragmentAdapter that contains fragments (Categories, All and TopHits). The fragments contains an adapter (ListAdapterCategory and ListAdapter). These adapters holds a list of elements.}
+	\label{fig:maingui}
 	\end{figure}
 
+	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that is under the selected category.\\
+
+	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same adapter as \textit{All} and \textit{TopHits}. 
+
+	\subsection{STK500v1}
+	In Figure~\ref{fig:stk500v1uml} we see blabla
+
+	\begin{figure}[H]
+	\hspace*{-1.0in}
+	\includegraphics[scale=0.5]{images/UML/stk500v1.png}
+	\caption[UML - Main GUI]{description}
+	\label{fig:stk500v1uml}
+	\end{figure}
 
 \section{Design of Android application}
 One of the purposes of the Android application was to ease the process of installing PUIs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
@@ -61,108 +98,101 @@ Before the programming of the Android application was started, a complete design
 Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not shown, as it was unnecessary to design this screen since it is a standard for Android applications.
 
 \paragraph{Screen 1a - Device list}
-Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text have switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth$\textsuperscript{\textregistered}$ connection with the chosen device is made.
+Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text have switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth connection with the chosen device is made.
 
 \begin{figure}[H]
 	\centering
 		\includegraphics[scale=0.2]{images/Design_guide/Screen1a.png}
-	\caption{Screen 1a - Device list}
+	\caption[Screen 1a - Device list]{The design for the device list of the discovered bluetooth devices}
 	\label{fig:screen1a}
 \end{figure}
 
 
 \paragraph{Screen 1b - Add device manually}
-Screen that appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR Code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
+Screen that appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
 
 \begin{figure}[H]
 	\centering
 		\includegraphics[scale=0.2]{images/Design_guide/Screen1b.png}
-	\caption{Screen 1b - Add device manually}
+	\caption[Screen 1b - Add device manually]{The design for how to add devices alternatively}
 	\label{fig:screen1b}
 \end{figure}
 
 
 \paragraph{Screen 1b-i - Input serial}
-%TODO Link to Screen 1b-i
 Screen that appears when the ``Input serial'' button is clicked.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen1b-i.png}
-\caption{Screen 1b-i - Input serial}
+\caption[Screen 1b-i - Input serial]{The design for input serial popup box.}
 \label{fig:screen1bi}
 \end{figure}
 
 
 \paragraph{Screen 2a - Browse shop}
-%TODO Link to Screen 2a
 Screen for browsing all the applications for Arduino in the shop. More categories have been added. The user can here swipe left/right to sort the available applications in different ways. See next paragraph.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen2a.png}
-\caption{Screen 2a - Browse shop}
+\caption[Screen 2a - Browse shop]{Design for category selection in the shop.}
 \label{fig:screen2a}
 \end{figure}
 
 
 \paragraph{Screen 2b - Browse shop by category}
-%TODO Link to Screen 2b
 Screen that shows a list of all applications in chosen category. Category ``All'' is chosen.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen2b.png}
-\caption{Screen 2b - Browse shop by category}
+\caption[Screen 2b - Browse shop by category]{Design for the list of application that belongs to the selected category.}
 \label{fig:screen2b}
 \end{figure}
 
 
 \paragraph{Screen 3a - Application view}
-%TODO Link to Screen 3a
 Screen with overview of an chosen application. Small changes were needed, as the comments field and reviews were given a lower priority at mid-term.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen3a.png}
-\caption{Screen 3a - Application view}
+\caption[Screen 3a - Application view]{The design for application view. This is the screen you see when you look at the details about an application}
 \label{fig:screen3a}
 \end{figure}
 
 
 \paragraph{Screen 3a-i - Installation confirmation}
-%TODO Link to Screen 3a-i
 Screen that appears when the ``Install'' button in Screen 3a is pressed. Shows the name of the chosen device.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen3a-i.png}
-\caption{Screen 3a-i - Installation confirmation}
+\caption[Screen 3a-i - Installation confirmation]{When the user click ``install'' , this box will show up to warn and confirm the users choice}
 \label{fig:screen3ai}
 \end{figure}
 
 
 \paragraph{Screen 3a-ii - Progress of installation}
-%TODO Link to Screen 3a-ii
 Screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed.
 The user is warned not to move the Android device out of range of the Arduino.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen3a-ii.png}
-\caption{Screen 3a-ii - Progress of installation}
+\caption[Screen 3a-ii - Progress of installation]{The progressbar that will shop up during the installation over-the-air.}
 \label{fig:screen3aii}
 \end{figure}
 
 
 \paragraph{Screen Xa - Action overflow}
-%Link to Screen Xa
 Screen that appears when the ``Action overflow'' button is clicked. This menu is available from all the screen in the application with the exception of the preferences screen.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/ScreenXa.png}
-\caption{Screen Xa - Action overflow}
+\caption[Screen Xa - Action overflow]{The menu bar that contains settings and properties.}
 \label{fig:screenXa}
 \end{figure}
 
@@ -193,6 +223,15 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	The action overflow menu have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
 
 	The device list function is there because it should be possible to change device at all times, not only on startup.\\
+
+	Another change is the ``Welcome Screen''. This is the first screen that will be met when the application is started. This makes it easier to navigate between ``Devices'' and ``Browse Shop''. This screen also provides an option (checkbox) that allows the user to chose wheter or not they will automatically reconnect on startup. Figure~\ref{fig:welcomescreen} shows a simple connection between the reconnect option and the welcome screen.
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{images/UML/welcomescreen.png}
+	\caption[UML - Welcome Screen]{The Welcome Screen will reconnect to last connected device if the user have this option enabled. When the user clicks on ``Devices'' or ``Browse Shop'' a new activity is started.}
+	\label{fig:welcomescreen}
+	\end{figure}
 
 \section{Database implementation}
 

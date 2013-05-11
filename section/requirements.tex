@@ -8,10 +8,10 @@ The requirements of the project will be kept high level and vague, to facilitate
 
 		\textbf{FR01} & \textbf{Over the air installation}\\
  		              & The Android application and the Arduino device should communicate over 
-                        Bluetooth$\textsuperscript{\textregistered}$  and install an arbitrary application from the Arduino Store in a simple two step process.\\
+                        Bluetooth  and install an arbitrary application from the Arduino Store in a simple two step process.\\
 
 		\textbf{FR02} & \textbf{Easy to use interface}\\
-                      & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth$\textsuperscript{\textregistered}$  connections with paired devices.\\
+                      & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth  connections with paired devices.\\
 
  		\textbf{FR03} & \textbf{Example PUIs}\\
                       & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino, the group should create at least two example PUIs \\
@@ -61,12 +61,12 @@ The goal of the project remained consistent with previous statements. A prototyp
 
 \section{Use cases}
 \label{usecases}
-The following illustrations and tables were the foundation for the iterations in the development process.
+The following illustrations and tables were the foundation for the iterations in the development process. Whenever a use case includes ``Opens $\mu$CSS", use case 8 is gone through. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
-\caption{Use case 1}
+\caption[Yse case 1]{The user opens Google Play and finds and installs the $\mu$C Software Store application}
 \end{figure}
 
 The first use case describes how an Android-owner can browse Google Play to install the $\mu$C Software Store (abbr. $\mu$CSS).
@@ -101,7 +101,7 @@ The first use case describes how an Android-owner can browse Google Play to inst
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase2}
-\caption{Use case 2}
+\caption[Use case 2]{The user connects to the Arduino with QR code}
 \end{figure}
 
 The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR Code reader on an Android. The $\mu$CSS automatically detects available QR Code readers on the Android device, and prompts the user to choose a QR Code reader to complete the action. $\mu$CSS automatically detects the QR Code read by the included action, and determines whether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR Code reader application installed on the Android, $\mu$CSS prompts the user to install one.
@@ -121,7 +121,7 @@ The second use case describes how the user can connect to an Arduino-device trou
             Prerequisite     & Installed $\mu$CSS \\
                              & Installed predefined QR-reader\\
         \hline
-            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
+            End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
                              &  2. User presses the button indicating that he wants to pair with the Arduino device using QR Code \\
@@ -145,7 +145,7 @@ The second use case describes how the user can connect to an Arduino-device trou
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase3}
-\caption{Use case 3}
+\caption[Use case 3]{The user connects to the Arduino with Serial input}
 \end{figure}
 
 The third use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the MAC address of the device. $\mu$CSS determines whether or not this is a valid MAC address, and attempts to pair the Android with the Arduino. If the MAC address is invalid, $\mu$CSS prompts the user to retry input.
@@ -165,7 +165,7 @@ The third use case describes how the user can connect to an Arduino-device troug
             Prerequisite     & Installed $\mu$CSS \\
                              & Installed predefined QR-reader \\
         \hline
-            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
+            End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
                              &  2. User presses the button indicating that he
@@ -187,7 +187,7 @@ The third use case describes how the user can connect to an Arduino-device troug
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase7}
-\caption{Use case 4}
+\caption[Use case 4]{User uses the bluetooth to scan for available connections.}
 \end{figure}
 
 The fourth use case describes how the user can choose an Arduino device from a list of available Bluetooth devices, and pair devices, from the menu in $\mu$CSS. 
@@ -206,11 +206,11 @@ The fourth use case describes how the user can choose an Arduino device from a l
         \hline
             Prerequisite     & Installed $\mu$CSS \\
         \hline
-            End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
+            End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
                              &  2. User presses the device list button \\
-                             &  3. System opens the list of available Bluetooth$\textsuperscript{\textregistered}$ devices\\
+                             &  3. System opens the list of available Bluetooth devices\\
                              &  4. The user presses the device to connect to \\
                              &  5. The system pairs with the Arduino device \\
         \hline
@@ -226,7 +226,7 @@ The fourth use case describes how the user can choose an Arduino device from a l
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase4}
-\caption{Use case 5}
+\caption[Use case 5]{The user selects a category and browses the applications}
 \end{figure}
 
 The fifth use case describes how the user can browse apps in the $\mu$CSS, and filter them on categories. Browsing of apps can be done both with or without pairing of an Arduino device.
@@ -264,7 +264,7 @@ The fifth use case describes how the user can browse apps in the $\mu$CSS, and f
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase5}
-\caption{Use case 6}
+\caption[Use case 6]{The user can open the action overflow bar and hide/show incompatible applications}
 \end{figure}
 
 The sixth use case describes how the user can choose to filter apps in $\mu$CSS based on their compatibility with the paired Arduino device.
@@ -300,7 +300,7 @@ The sixth use case describes how the user can choose to filter apps in $\mu$CSS 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase6}
-\caption{Use case 7}
+\caption[Use case 7]{The user selects an application, presses the install button and confirms it.}
 \end{figure}
 
 The seventh use case describes the user sequence to choose and install an application from the $\mu$CSS to the paired Arduino device.
@@ -332,6 +332,42 @@ The seventh use case describes the user sequence to choose and install an applic
             Parent UC        & 1, 2, 3, 4, 5, 6 \\
         \hline
             Child UC         & None \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/UseCase_welcome_screen}
+\caption[Use case 8]{When the user starts the application this screen will be shown where the user can choose to select device list or browse the shop.}
+\end{figure}
+
+The eighth use case is the welcome screen which shows every time $\mu$CSS is opened. 
+
+\begin{table}[H]
+    \caption{Use case 8}
+    \begin{tabularx}\linewidth{ |m{0.3 \textwidth} |X| }
+        \hline
+            ID               & 8 \\
+        \hline
+            Name             & Welcome screen \\
+        \hline
+            Goal             & Open the application \\
+        \hline
+            Actors           & Android application owner \\
+        \hline
+            Prerequisite     &  Installed $\mu$CSS \\
+        \hline
+            End requirement  & The application is opened \\
+        \hline
+            Main flow        &  The user selects the $\mu$CSS application \\
+                             & $\mu$CSS is opened and the welcome screen is displayed\\
+        \hline
+            Alternative flow & none \\
+        \hline
+            Parent UC        & 1 \\
+        \hline
+            Child UC         & 2, 3, 4, 5, 6, 7 \\
         \hline
     \end{tabularx}
 \end{table}
