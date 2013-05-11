@@ -1,15 +1,34 @@
 \chapter{Roadmap for further development}
-This chapter describes what work that remains in this project and a pointer to how this could be done.
+This chapter describes what work that remains in this project and a pointer to how this could be done. The different points of improvements mentioned in this chapter is a review of what the group would have focused on if given more time.
 
 %This is capitalized because its a name.
 \section{The $\mu$C Software Store application}
-This section goes into what further work that is necessary for the software store application.
+This section focuses on areas of improvement regarding the $\mu$C Software Store. Some of the points mentioned in this section is important that is elaborated for the application to be fully usable to the general user, while others is of less importance. The importance of each area will be mentioned in the corresponding subsection.
 
 	\subsection{Database}
+	One of the most pressing matters that needs to be elaborated in future work is the implementation of a remote database. The delivered version of the application uses a local database that is automatically filled with data when the application is installed on an Android device. The use of a local database makes it difficult for general users of the application to add his or hers personal apps to the $\mu$C Software Store database, since this data would need to be hard coded into the application. With more time available the group would have implemented a remote database that would contain all the apps that would be offered through $\mu$C Software Store. Content providers and sync adapters provided by Ubibazar could be used to achieve this.
+
+	\subsubsection{Uploading interface}
+	Although outside the scope the assignment given for the project, future work should encompass implementing an interface for easy uploading of apps to the $\mu$C Software Store. A possible solution for this could be something like system used by Google Play, where registered users easily can submit and upload their own application through a web interface provided by Google Play. Allowing users to upload their own apps would enrich the product greatly, opening for a much wider user group.\\
+	\newline
+	It is envisioned that the use of a separate web site for uploading of apps would be best for this solution. At this web site the users should be able to view the existing apps in the database as well as submitting their own; much like play.google.com.
+
+	\paragraph{Security.} Allowing individual developers to upload their own apps to the database would require an administrator or moderator to review the submitted apps. This is important to avoid uploading of malicious apps and duplicates in the system.
 	Synchronization with a remote database. Ubibazar's content provider and sync adapter could be used.
 
 	\subsection{Standard for microcontrollers}
 	Standardization for identifying microcontrollers. This is necessary to know which $\mu$C applications that is compatible with ``your'' microcontroller. This is documented in appendix C.
+
+	\subsection{Performance}
+	If you move out of range, the user should be notified.
+
+	\subsection{GUI}
+
+	\subsection{Security}
+
+	\subsection{General improvements}
+	Sorting: top hits etc.
+
 
 \section{STK500}
 This section describes the further work of the protocol.
