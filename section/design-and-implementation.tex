@@ -30,7 +30,7 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:otaarchitecture}
 	\end{figure}
 
-	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address).\\
+	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR Code or MAC-address).\\
 
 	The \textit{Service} holds and manages the bluetooth connection (\textit{BluetoothConnection}) and is taking care of the protocol for installing apps on the microcontroller. \\
 
@@ -72,7 +72,7 @@ Screen that shows the list of available Arduino devices. In the final design the
 
 
 \paragraph{Screen 1b - Add device manually}
-Screen that appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
+Screen that appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth$\textsuperscript{\textregistered}$ settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR Code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
 
 \begin{figure}[H]
 	\centering
@@ -172,7 +172,7 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	\textbf{Device list}\\
 	It should be simple and fit as many devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered Bluetooth devices as a primary method of connection to an Arduino. That is why the user will meet this screen first. The less frequently used methods for connecting to an Arduino, like QR codes and serial input, were therefore put separately in another screen, as shown in Figure~\ref{fig:screen1b}. \\
 
-	Because of license compatibility issues, it was necessary to use external QR-code readers. To give the user more flexibility, it is therefore possible for the user to select the optimal QR-reader from his application list.\\
+	Because of license compatibility issues, it was necessary to use external QR Code readers. To give the user more flexibility, it is therefore possible for the user to select the optimal QR-reader from his application list.\\
 
 	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on what is happening and it does not add unnecessary clutter to the GUI.\\
 

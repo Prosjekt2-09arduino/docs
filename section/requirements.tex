@@ -23,7 +23,7 @@ The requirements of the project will be kept high level and vague, to facilitate
                       & The Android application should be able to hide Arduino applications in $\mu$C Software Store which are incompatible with the connected Arduino device\\
 
         \textbf{FR06} & \textbf{Different ways to connect the Android to the Arduino}\\
-                      & It should be possible to connect to the Arduino with QR-code, SerialInput and from a discovered device list\\
+                      & It should be possible to connect to the Arduino with QR Code, SerialInput and from a discovered device list\\
 
 	\end{tabularx}
 	\end{table}
@@ -104,7 +104,7 @@ The first use case describes how an Android-owner can browse Google Play to inst
 \caption{Use case 2}
 \end{figure}
 
-The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR-code reader on an Android. The $\mu$CSS automatically detects available QR-code readers on the Android device, and prompts the user to choose a QR-code reader to complete the action. $\mu$CSS automatically detects the QR-code read by the included action, and determines whether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR-code reader application installed on the Android, $\mu$CSS prompts the user to install one.
+The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR Code reader on an Android. The $\mu$CSS automatically detects available QR Code readers on the Android device, and prompts the user to choose a QR Code reader to complete the action. $\mu$CSS automatically detects the QR Code read by the included action, and determines whether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR Code reader application installed on the Android, $\mu$CSS prompts the user to install one.
 
 \begin{table}[H]
     \caption{Use case 2}
@@ -112,9 +112,9 @@ The second use case describes how the user can connect to an Arduino-device trou
         \hline
             ID               & 2 \\
         \hline
-            Name             & Pair Arduino device and Android device with QR code\\
+            Name             & Pair Arduino device and Android device with QR Code\\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR code\\
+            Goal             & Connect the Arduino device to the Android application with the use of QR Code\\
         \hline
             Actors           & Arduino device owner\\
         \hline
@@ -124,15 +124,15 @@ The second use case describes how the user can connect to an Arduino-device trou
             End requirement  & The Arduino device is connected to the phone via Bluetooth$\textsuperscript{\textregistered}$ \\
         \hline
             Main flow        &  1. User opens $\mu$CSS \\
-                             &  2. User presses the button indicating that he wants to pair with the Arduino device using QR code \\
+                             &  2. User presses the button indicating that he wants to pair with the Arduino device using QR Code \\
                              &  3. The system opens the QR reader application \\
-                             &  4. The QR reader application reads the QR code and returns the information it contains\\
+                             &  4. The QR reader application reads the QR Code and returns the information it contains\\
                              &  5. The system pairs with the Arduino device \\
         \hline
-            Alternative flow &  3.a. The user does not have the right QR code reader installed \\
-                             &  3.b. The system prompts the user if he wants to install the QR code reader \\
+            Alternative flow &  3.a. The user does not have the right QR Code reader installed \\
+                             &  3.b. The system prompts the user if he wants to install the QR Code reader \\
                              &  3.c. If no: stop \\
-                             &  4.a. The QR reader is unable to read the QR code \\
+                             &  4.a. The QR reader is unable to read the QR Code \\
                              &  4.b. Try again or stop\\
         \hline
             Parent UC        & 1\\
@@ -158,7 +158,7 @@ The third use case describes how the user can connect to an Arduino-device troug
         \hline
             Name             & Pair Arduino device with Android device using serial \\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR code \\
+            Goal             & Connect the Arduino device to the Android application with the use of QR Code \\
         \hline
             Actors           & Arduino device owner \\
         \hline
@@ -313,7 +313,7 @@ The seventh use case describes the user sequence to choose and install an applic
         \hline
             Name             & Install application on Arduino device \\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR code \\
+            Goal             & Connect the Arduino device to the Android application with the use of QR Code \\
         \hline
             Actors           & Arduino device owner \\
         \hline
