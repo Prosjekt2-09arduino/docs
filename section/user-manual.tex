@@ -1,4 +1,4 @@
-\chapter{User manual}
+\chapter{$\mu$CSS User manual}
 	\section{Introduction}
 		This is the user manual for the $\mu$C Software Store application. It contains all the information needed regarding common use and options. $\mu$C Software Store is an application for the Android platform made as an app store for applications for Arduino based projects. You can browse different applications for Arduino projects and install them through a Bluetooth connection. It is assumed that $\mu$C Software Store, and optionally a QR-code reader, is installed on an Android device and that a properly configured Arduino project with Bluetooth is nearby.\\
 		\newline
@@ -9,7 +9,7 @@
 		\newline
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/welcome_screen.png}
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/welcome_screen.png}
 			\caption{The welcome screen of the application}
 		\end{figure}
 
@@ -17,22 +17,21 @@
 		\newpage
 	\section{Device List}
 		Upon selecting the Device List button from the welcome screen or from the action overflow, this screen will appear. On this screen, Bluetooth devices within the reach of the telephone will appear in a list. If the device you want to connect to doesn't show, or you do not want to connect to a device just yet, you can press either the add device or browse shop button respectively.\\
-		%Bilde!
-		\newline
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/device_list.png}
-			\caption{The device list with Bluetooth devices}
-		\end{figure}
+	\begin{figure}[H]
+		\subfigure[]{
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/device_list.png}
+			\label{fig:bt-list}
+			}%
+\hfill
+		%nytt bilde med connected		
+		\subfigure[]{
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/connected.png}
+			\label{fig:bt-connected}
+		}%
+		\caption{\protect{\ref{fig:bt-list}} The device list with Bluetooth devices. \protect{\ref{fig:bt-connected}} The device list when connected to a device.}
+	\end{figure}
+
 		 To connect to a device, simply press the appropriate device in the list and a connection will be established. Some devices require a password in order for connection to be made, you will be prompted on this upon selecting this device. A dialog box will show whether the connection was established and the background of the now connected device in the list will go green to indicate that it is connected. \\
-		\newline
-		%nytt bilde med connected
-		\newline
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/connected.png}
-			\caption{The device list when connected to a device}
-		\end{figure}
 
 		\subsection{Adding Device}
 			Pressing the add device button will give you a choice of how you want to add or connect to a device. You can attempt to connect to a device using either a QR-Code or a serial.
@@ -40,7 +39,7 @@
 		\newline
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/add_device.png}
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/add_device.png}
 			\caption{The options for adding devices}
 		\end{figure}
 
@@ -52,32 +51,33 @@
 
 	\section{The Shop}
 		The first choice in the shop is the category screen.\\
+	\begin{figure}[H]
 		%bilde av category view
-		\newline
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/category_view.png}
-			\caption{The categories of the shop}
-		\end{figure}
-		You can filter through all of the apps in the store through these buttons. You can also browse all the apps together by pressing ``All" or swiping to the right. There are two ways to sort the apps within the chosen category. Either not at all, which is the first screen that shows after selecting a category, or by the given rating. \\
-		%bilde av all apps view
-		\newline
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale = 0.3]{images/Screenshots/all_apps.png}
-			\caption{Screenshot from the shop with all apps shown}
-		\end{figure}
+		\subfigure[]{
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/category_view.png}
+			\label{fig:category-list}
+		}%
+		\hfill
+		%bilde av all apps view	
+		\subfigure[]{
+			\includegraphics[width=0.5 \textwidth]{images/Screenshots/all_apps.png}
+			\label{fig:all-apps}
+		}%
+		\caption{\protect{\ref{fig:category-list}} The device list with Bluetooth devices. \protect{\ref{fig:all-apps}} Screenshot from the shop with all apps shown.}
+	\end{figure}
+		
+		You can filter through all of the apps in the store through these buttons. You can also browse all the apps together by pressing ``All" or swiping to the right. There are two ways to sort the apps within the chosen category. Either not at all, which is the first screen that shows after selecting a category, or by the given rating.\\
 
 		\subsection{Searching}
 			Wherever you are in the shop, you can start a search for an app you want. It doesn't matter how old or what buttons you have on your Android device, it is possible to start a search from all buttons and devices. The search results will show after pressing the search button, and if there are no results you will be back at the shop screen with a toast telling you there were no results.
-
+\newpage
 	\section{App View}
 	Upon selecting an app in the shop, you will be taken to the app view. This view displays more information about the app you selected, like required hardware, pictures, developer and most importantly, an install button. 
 	%bilde
 	\newline
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale = 0.3]{images/Screenshots/app_view.png}
+		\includegraphics[width=0.5 \textwidth]{images/Screenshots/app_view.png}
 		\caption{App View showing information about a single app}
 	\end{figure}
 	Upon pressing the install button, as long as you are connected to an Arduino device you will be first asked to confirm the action. If you do the install will begin. If, however, you are not connected to a device, a dialog will open with the options of either going back to the app view, or go directly do the device list to connect to a device.
