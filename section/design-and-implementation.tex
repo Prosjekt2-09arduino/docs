@@ -98,16 +98,24 @@ In this chapter the design and system architecture of the product will be presen
     implementation allows for avoiding blocking by only reading buffered bytes. The Reader behaves differently while
     %TODO: reference state pattern
     reading or during timeouts, based on a state pattern implementation. As shown, the different states are both
-    states and readers.
+    states and readers.\\
 
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.58]{images/UML/stk500v1.png}
-    % What's the meaning of "UML - Main GUI"?
 	\caption[UML - Protocol]{The most important classes used for programming}
 	\label{fig:stk500v1uml}
 	\end{figure}
 
+	In Figure~\ref{fig:stk500_sequence_diagram} a simplified view of the programming process is shown. ArduinoStore is here a representation of any application requesting an app to be uploaded to the Arduino,
+	and the Arduino represents a microcontroller to be programmed.\\
+	
+	Note that the IReader has already been instantiated before the starting call, and that stopping doesn't
+	destroy the object.\\
+	
+	Most of the simplification occurs within the programming loop, as several different types of commands
+	are sent to the device, depending on the responses received; for details on this communication, see the AVR061 documentation~\cite{AVR061}. Communication details with the Hex class and IReader-related classes have also been reduced slightly in the diagram.\\
+	
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.6]{images/Sequence_diagram.png}
