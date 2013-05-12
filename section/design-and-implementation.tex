@@ -22,20 +22,20 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:btconnection_service_stk500}
 	\end{figure}
 
-	\textit{Devices} as shown in Figure~\ref{fig:btconnection_service_stk500} is an activity that manages the discovered Bluetooth devices. A device is discovered by listening to the Bluetooth API on the Android. This happens in the \textit{MyBroadcastReceiver} that works like an listener. When this listener gets notified with a device as input, the discovered device will be put in a list in \textit{Devices}.\\
+	\textit{Devices} as shown in Figure~\ref{fig:btconnection_service_stk500} is an activity that manages the discovered Bluetooth devices. A device is discovered by listening to the Bluetooth API on the Android. This happens in the \textit{MyBroadcastReceiver} that works like a listener. When this listener gets notified with a device as input, the discovered device will be put in a list in \textit{Devices}.\\
 
-	If the user choose to connect to a device from the list of discovered devices, a service (BtArduinoService) will be created. This service will create and manage the \textit{BluetoothConnection} that manages the Bluetooth connection between the microcontroller (Arduino in this case) and the Android. The service uses \textit{STK500v1} for transfering bytes over the \textit{BluetoothConnection} to the connected device.\\
+	If the user choose to connect to a device from the list of discovered devices, a service (BtArduinoService) will be created. This service will create and manage the \textit{BluetoothConnection} that manages the Bluetooth connection between the Android device and a Bluetooth device. The service uses \textit{STK500v1} for transferring bytes over the \textit{BluetoothConnection} to the connected device.\\
 
-	To add support for other microcontrollers than Arduino, few changes to Devices.java would have to be done. Another service and a protocol towards a desired device must be implemented, or support for multiple services. Since this project only considers connections between Android and Arduino, only the STK500 protocol and one service was implemented.\\
+	To add support for other microcontrollers than Arduino, only few changes to Devices.java would have to be done. Another service and a protocol communicating with a desired device must be implemented, or support for multiple simultaneous services. Since this project only considered connections between Android and Arduino, only the STK500v1 protocol and one service was implemented.\\
 
-	The overall design solution for multiple connections will be like in Figure~\ref{fig:otaarchitecture}\\
+	The overall design solution for multiple connections is described in Figure~\ref{fig:otaarchitecture}.\\
 	\begin{figure}[H]
 	\includegraphics[scale=0.7]{figures/OTAArchitecture.pdf}
-	\caption[Over The Air Architecture]{The installation module is a class that manages all the services that the application will support. Each service has a protocol for installing over-the-air to a desired microcontroller.}
+	\caption[Over The Air Architecture]{The installation module is a class that manages all the services that the application may support. Each service has a protocol for installing software over-the-air to a desired microcontroller.}
 	\label{fig:otaarchitecture}
 	\end{figure}
 
-	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR Code or MAC-address).\\
+	The overall system architecture as shown in Figure~\ref{fig:systemarchitecture} and Figure~\ref{fig:adddevicescreenuml} illustrates the core components of the system and the relationship between these components. The \textit{Market Application} is the centre of the application and is where most of the GUI and functionality visible to the user is shown. \textit{Device List} is the list of devices that the user can choose from and connect to. This is also the location of the \textit{Add Device} functionality, where the user can connect to a device in an alternative way (QR Code or MAC-address).\\
 
 	\begin{figure}[H]
 	\centering
@@ -44,18 +44,16 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:systemarchitecture}
 	\end{figure}
 
-	The \textit{Market Application} is the center of the application and is where most the GUI and functionality to the user is taking place. \textit{Device List} is the list of devices that the user can choose from and connect to. It is also here the \textit{Add Device} functionality is, where the user can connect to a device on an alternative way (QR or MAC-address). This is illustrated in Figure~\ref{fig:adddevicescreenuml} \\
-
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.85]{images/UML/adddevicescreen.png}
-	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the bluetooth connection process.}
+	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the Bluetooth connection process.}
 	\label{fig:adddevicescreenuml}
 	\end{figure}
 
-	The \textit{Service} holds and manages the bluetooth connection (\textit{BluetoothConnection}) and is taking care of the protocol for installing apps on the microcontroller. \\
+	The \textit{Service} holds and manages the Bluetooth connection (\textit{BluetoothConnection}) and is managing the protocol for installing apps on the microcontroller. \\
 
-	The \textit{Memory card} is the memory card on the mobile phone where the database is stored (locally). SQLite was used for database engine because it is common and easy to implement in Android.\\
+	The \textit{Memory card} represents the local storage solution on the mobile phone where the database is stored. SQLite was used as the database engine because it is common and easy to implement on Android.\\
 
 	\textit{DatabaseHandler} is a class for taking care of the SQL transactions and is the access point for communication with the database. A helper class called \textit{Save} is used for easy access to the \textit{DatabaseHandler}.
 	When the application communicates with the Save module, the database communicates with the DatabaseHandler.
