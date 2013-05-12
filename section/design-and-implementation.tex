@@ -16,8 +16,9 @@ In this chapter the design and system architecture of the product will be presen
 	The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}\\
 
 	\begin{figure}[H]
-	\hspace*{-1.0in}
-	\includegraphics[scale=0.55]{images/UML/btconnection_service_stk500.png}
+	\centering
+	\hspace*{-0.75in}
+	\includegraphics[scale=0.85]{images/UML/btconnection_service_stk500.png}
 	\caption[BT connection in service]{The Bluetooth connection is stored and managed in a service that provides the STK500 protocol.}
 	\label{fig:btconnection_service_stk500}
 	\end{figure}
@@ -49,7 +50,7 @@ In this chapter the design and system architecture of the product will be presen
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.85]{images/UML/adddevicescreen.png}
-	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the bluetooth connection.}
+	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the bluetooth connection process.}
 	\label{fig:adddevicescreenuml}
 	\end{figure}
 
@@ -62,18 +63,28 @@ In this chapter the design and system architecture of the product will be presen
 	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional java classes) and makes sure its only one instance of the \textit{DatabaseHandler}.
 
 	\subsection{Browse Shop}
-	This is the shop where the user can see the $\mu$C apps, choose categories and swipe though different fragments. In  Figure~\ref{fig:maingui} we see the \textit{MainActivity} that is the activity of the shop. It creates \textit{MyFragmentPagerAdapter} that holds and manages the different fragments. One fragment is one of the three view that can be swiped through. \textit{Categories}, \textit{All} and \textit{TopHits} are these three fragments. Each fragment consist of a list, and needs an Adapter for this list. \textit{Categories} have its own list-adapter because the list is slightly different from the other lists: it has bigger elements and have no rating or developer. \textit{All} an \textit{TopHits} uses the same list-adapter because they contains the same type of elements.\\
+	This is the shop where the user can see the $\mu$C apps, choose categories and swipe though different fragments. In  Figure~\ref{fig:categoriesuml} we see the \textit{MainActivity} that is the activity for the category selection of the shop. 
+	When a category is selected, a new activity \textit{MainFragmentActivity} (see Figure~\ref{fig:maingui}) is started with the intent information about which category that was selected.
 
 	\begin{figure}[H]
-	\hspace*{-1.1in}
+	\centering
+	\includegraphics[scale=0.85]{images/UML/categories.png}
+	\caption[UML - Categories]{The MainActivity is an activity with a ListView that uses ListAdapterCategory as an adapter. When a category is selected, the ``MainFragmentActivity'' is started with intent information about which category that was selected.}
+	\label{fig:categoriesuml}
+	\end{figure}
+
+	In Figure~\ref{fig:maingui} the \textit{MainFragmentActivity} is started when a category is selected. This activity creates an FragmentPagerAdapter that manages the fragments. One fragment is one of the views that can be swiped thorugh. \textit{All} and \textit{TopHits} are these fragments. Each fragment consist of a list, and have an Adapter for this list (ListAdapter).
+
+	\begin{figure}[H]
+	\hspace*{-1.0in}
 	\includegraphics[scale=0.55]{images/UML/main.png}
-	\caption[UML - Main GUI]{Here we see a FragmentAdapter that contains fragments (Categories, All and TopHits). The fragments contains an adapter (ListAdapterCategory and ListAdapter). These adapters holds a list of elements.}
+	\caption[UML - Main GUI]{Here we see a FragmentPagerAdapter that manages all the fragments. Each fragment uses an ListAdapter that structures the list items.}
 	\label{fig:maingui}
 	\end{figure}
 
-	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that is under the selected category.\\
+	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. This enum is sent as a intent to the MainFragmentActivity when started. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that belongs to the selected category.\\
 
-	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same adapter as \textit{All} and \textit{TopHits}. 
+	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same list adapter as \textit{All} and \textit{TopHits}. 
 
 	\subsection{STK500v1}
 	In Figure~\ref{fig:stk500v1uml} we see blabla
