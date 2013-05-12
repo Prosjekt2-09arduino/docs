@@ -9,7 +9,7 @@ Several development methods were examined in the beginning of the project to ens
 
 \subsection{Rational unified process}
 \label{sec:rup}
-Rational Unified Process (RUP) is an iterative and incremental software development process model. It is a process model that aims to capture the best practices in modern software development and present them in a tailorable form.\cite{kruchten} Each iteration in this model results in an increment, which is a release of a prototype and an improvement of the previous iteration. Most of the iterations will, in addition to work on prototypes, also contain work on requirements, design, implementation, testing and so on.\\
+Rational Unified Process (RUP) is an iterative and incremental software development process model. It is a process model that aims to capture the best practices in modern software development and present them in a tailorable form~\cite{kruchten}. Each iteration in this model results in an increment, which is a release of a prototype and an improvement of the previous iteration. Most of the iterations will, in addition to work on prototypes, also contain work on requirements, design, implementation, testing and so on.\\
 \newline
 A feature of this model is that it is use case driven. Every iteration takes a set of use case scenarios from the requirements and use those for the content of the iteration. The model also requires the team to focus on the critical risks of the project early in the development process. This ensures that problem areas and uncertainties is dealt with before severe problems arise. An illustration of the model is shown in Figure~\ref{fig:rup}.
 \newline
@@ -38,7 +38,7 @@ The model consists of four phases:
 \end{figure}
 
 \subsection{Scrum}
-Scrum is an iterative and incremental development framework for development of complex information systems. When using Scrum, the development of the product is developed in small pieces, with each piece building upon previously created pieces. The use of Scrum requires the team to be divided into specific roles, where each role has its own responsibility. The following are the core roles of the Scrum team\cite{scrum}\cite{sommerville}:
+Scrum is an iterative and incremental development framework for development of complex information systems. When using Scrum, the development of the product is developed in small pieces, with each piece building upon previously created pieces. The use of Scrum requires the team to be divided into specific roles, where each role has its own responsibility. The following are the core roles of the Scrum team~\cite{scrum}~\cite{sommerville}:
 \begin{description}
 	\item[Product owner:]{The product owner represents the stakeholders in the project, and is the voice of the customer. It is the product owner's responsibility to ensure that the Scrum team at all times is working with the right things seen from a business perspective.}
 	\item[Scrum master:]{The scrum master should act as a buffer between the development team and distracting influences, so that the development team can deliver potentially shippable products at the end of each sprint. The scrum master should keep the development team focused at all times.}
@@ -46,14 +46,14 @@ Scrum is an iterative and incremental development framework for development of c
 \end{description}
 
 \subsection{Waterfall model}
-The waterfall model is among the first process models to be introduced. In this model, each phase in the development must be completed before one can advance to the next phase. At the end of each phase in the development, a review takes place. In this review it is determined if the project is on the right path and if it should continue or not. The phases in the development do not overlap. \cite{sommerville}
+The waterfall model is among the first process models to be introduced. In this model, each phase in the development must be completed before one can advance to the next phase. At the end of each phase in the development, a review takes place. In this review it is determined if the project is on the right path and if it should continue or not. The phases in the development do not overlap~\cite{sommerville}.
 
 \subsection{Spiral model}
-The spiral model is a software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product, as prototypes. \cite{sommerville}
+The spiral model is a software development model intended for large and complicated projects. It combines elements from the waterfall model and prototyping models, and uses an iterative approach. Based on this it allows for incremental releases of the product, as prototypes~\cite{sommerville}.
 
 \subsection{Lean software development}
 \label{leandev}
-Lean is an agile software development methodology that is defined by seven principles\cite{poppendieck}:
+Lean is an agile software development methodology that is defined by seven principles~\cite{poppendieck}:
 \begin{description}
 	\item[Eliminate waste.]{Everything that does not add any value to the customer is considered a waste.}
 	\item[Amplify learning.]{The development environment should the designed so it amplifies the learning process of the developers. Defects should be prevented by running tests as soon as the code is written.}
@@ -114,7 +114,6 @@ Usually when you program the Arduino you use a computer with a USB-cable connect
 \label{fig:SimpleArduinoWiring}
 \end{figure}
 
-%TODO check if rn-42 citation is correct
-After a lot of research we made a wireless connection between the Android and the Arduino with a Bluetooth module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth module RN-42 \cite{rn-42} because it was well documented and easy to connect to the Arduino.\\
+After a lot of research we made a wireless connection between the Android and the Arduino with a Bluetooth module, with the wiring as shown in figure~\ref{fig:SimpleArduinoWiring}. We used the Bluetooth module RN-42~\cite{rn-42} because it was well documented and easy to connect to the Arduino.\\
 \\
 The protocol to upload new code to the microcontroller is quite advanced. This must be done without any errors and with the correct baud rate, therefore we rely on the stability of the wireless communication. If an error occurs while uploading the code, it has to start over again.
