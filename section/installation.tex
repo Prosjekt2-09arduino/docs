@@ -1,0 +1,58 @@
+\chapter{Installation guide}
+This installation guide guides you through how you install apps on your arduino. If you are building your own arduino, we recommend you to have programming expertise and how serial communications works.\\
+
+If you have bought a finished product, you can skip to the \ref{sec:install-android-application} section.
+
+	\section{Upload the first application}
+	Before you can use the application store, you need a standard application running on your Arduino, or else our application store will not recognise your arduino as a supported device and will not install any new application.
+	
+		\subsection{Arduino IDE}
+		\begin{enumerate}
+		\item To transfer the first application to your Arduino, you need the Arduino IDE. Download the latest version of Arduino IDE from \url{http://arduino.cc} and install this.
+	
+		\item Download the latest version of the ComputerSerial library from \url{https://github.com/Prosjekt2-09arduino/ArduinoStore/tree/master/Arduino/} and import this into Arduino IDE. How this is done, you can read here \url{http://arduino.cc/en/Guide/Libraries/}.
+	
+		\item Plug an USB cable into your arduino and make sure you don't have anything plugged into the digital port 0 and 1, where the bluetooth module usally is plugged into. This is because these pins are used for programming the device, and if you have something plugged in here the device will not get programmed over USB.
+		
+		\item Now you can download a test application from \url{https://github.com/Prosjekt2-09arduino/ArduinoStore/tree/master/Arduino/}. Open this in the Arduino IDE and transfer it to your Arduino by clicking upload.
+		\end{enumerate}
+		
+		
+		
+		\subsection{Configure bluetooth module}
+		To program the arduino over bluetooth the arduino requires a baud rate at 115200. Standard configuration of bluetooth modules is usally configured to use a lower baud rate so you have to reprogram it to use the right baud.\\
+		
+		\begin{enumerate}
+		\item First you have to upload an application that does not use the serial communication. The Arduino IDE comes with a lot of example applications and you can use one of them, like Blink.
+		
+		\item Switch the wires from the bluetooth module (TX on the arduino to TX on the bluetooth module, same with RX). This is done to communicate with the bluetooth module from the USB cable.
+		
+		\item Open the serial monitor.
+		
+		\item Change from ''Newline'' to ''Both NL \& CR''.
+		
+		\item Change baud rate to the baud of the bluetooth module. If you're not sure what baud rate you should use, you can try different baud rates until you find the right.
+		
+		\item Now you can send commands to the bluetooth module.
+		\end{enumerate}
+
+			\subsection{Supported bluetooth modules}
+			You can use any bluetooth module you want, but this is the modules we have tested. Remember to power off the modules after they are reprogrammed to activate the new configuration.
+			
+				\subsubsection{RN-42}
+				To enter programming mode, just write ''\$\$\$'' and enter. You should get AOK back when you entered programming mode. To change baud to 115200, write SU,11 and hit enter. You should now get AOK back.\\
+				
+				Other supported commands can be found here \url{https://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf}
+
+				\subsubsection{HC-05}
+				Make sure you pull the KEY pin to 3.3v/5v (depends on what model of this model you have) before powering it up. This will allow you to enter the programming mode.\\
+				
+				After you have successfully connected to the bluetooth module, just write ''AT'' and enter. You should get AOK back when you entered programming mode. To change baud to 115200, write ''AT+UART=115200,0,0''. You should now get AOK back.\\
+				
+				Other supported commands can be found here \url{http://elecfreaks.com/store/download/datasheet/Bluetooth/HC-0305%20serail%20module%20AT%20commamd%20set%20201104%20revised.pdf}
+				
+	\section{Android application}\label{sec:install-android-application}
+	.......
+	
+	\section{Devolope your own apps}
+	To develop your own applications we assume you have programming experience. Arduino is a language based on C, so any C experience would work. To learn how things work, you can take a look at some tutorials here \url{http://arduino.cc/en/Tutorial/HomePage}.\\
