@@ -100,14 +100,21 @@ In this chapter the design and system architecture of the product will be presen
     reading or during timeouts, based on a state pattern implementation. As shown, the different states are both
     states and readers.
 
-    %TODO: Update uml (readwrapper no longer used, new classes added (see dropbox -> design)
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.58]{images/UML/stk500v1.png}
     % What's the meaning of "UML - Main GUI"?
-	\caption[UML - Main GUI]{The most important classes used for programming}
+	\caption[UML - Protocol]{The most important classes used for programming}
 	\label{fig:stk500v1uml}
 	\end{figure}
+
+	\begin{figure}[H]
+	\hspace*{-1.0in}
+	\includegraphics[scale=0.6]{images/Sequence_diagram.png}
+	\caption[Sequence diagram of the protocol]{}
+	\label{fig:stk500_sequence_diagram}
+	\end{figure}
+
 
 \section{Design of Android application}
 One of the purposes of the Android application was to ease the process of installing PUIs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
