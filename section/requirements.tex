@@ -6,7 +6,7 @@ The requirements of the project will be kept high level and vague, to facilitate
 	\begin{table}[H]
 	\begin{tabularx}{\linewidth}{lX}
 
-		\textbf{FR01} & \textbf{Over the air installation}\\
+		\textbf{FR01} & \textbf{Over-the-air installation}\\
  		              & The Android application and the Arduino device should communicate over 
                         Bluetooth and install an arbitrary application from the Arduino Store in a simple two step process.\\
 
@@ -14,7 +14,7 @@ The requirements of the project will be kept high level and vague, to facilitate
                       & The Arduino Store application should be easy to use and easy to understand. It should not be necessary to do anything on the Arduino except for starting it. On startup it should search for nearby Bluetooth connections with paired devices.\\
 
  		\textbf{FR03} & \textbf{Example PUIs}\\
-                      & To demonstrate the Arduino Store (on Android), over the air installation, and the application in action on an Arduino, the group should create at least two example PUIs \\
+                      & To demonstrate the Arduino Store (on Android), over-the-air installation, and the application in action on an Arduino, the group should create at least two example PUIs \\
 
 		\textbf{FR04} & \textbf{Reliable Bluetooth connection with the Arduino}\\
                       & There should be a connection with the Arduino at all times when its in range, and it should automatically try to connect to the last connected device when the Android application starts up.\\
@@ -23,7 +23,7 @@ The requirements of the project will be kept high level and vague, to facilitate
                       & The Android application should be able to hide Arduino applications in $\mu$C Software Store which are incompatible with the connected Arduino device\\
 
         \textbf{FR06} & \textbf{Different ways to connect the Android to the Arduino}\\
-                      & It should be possible to connect to the Arduino with QR Code, SerialInput and from a discovered device list\\
+                      & It should be possible to connect to the Arduino with QR Code, manual input of MAC address and from a list of discovered devices.\\
 
 	\end{tabularx}
 	\end{table}
@@ -46,34 +46,34 @@ The requirements of the project will be kept high level and vague, to facilitate
 	\end{table}
 
 \section{Changes in requirements}
-It was discovered that the over the air transfer of PUI apps to an Arduino device proved to be more demanding than planned. After an extraordinary meeting with the customer it was decided to change the focus of the assignment. \\
+It was discovered that the over the air transfer of PUI apps to an Arduino device proved to be more demanding than first anticipated. Initial research done by the group on this area showed that a Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. After an extraordinary meeting with the customer it was decided to change the focus of the assignment.\\
 \newline
-The goal of the project remained consistent with previous statements. A prototype of the Android store application had been made, though not all functionality was implemented and tested. Further work on the Android application were temporarily put on halt. At this point the resources were primarily focused on implementing the STK500 protocol in Java to allow for programming of Arduino from an Android device. Se below for concrete additions and removals on the requirements.
+The goal of the project remained consistent with previous statements. A prototype of the Android store application was completed, though not all functionality was implemented and tested. Further work on the Android application was temporarily put on halt. At this point the resources were primarily focused on implementing the STK500 protocol in Java to allow for programming of Arduino from an Android device. For challenges and issues regarding the implementation of the protocol, see Chapter \ref{sec:protocol-issues}. See below for concrete additions and removals of the requirements.
 
 \subsection{Removals}
 \label{removals}
-\paragraph{$\mu$CSS server component} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other more critical tasks.
+\paragraph{$\mu$CSS server component:} In agreement with the customer it was decided to remove the server side component of the assignment from the requirements. This was decided to pool resources to other, more critical tasks.
 
-\paragraph{Sync adapter} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
+\paragraph{Sync adapter:} As the server component of the assignment was removed from the requirements, there was no need for the sync adapter.
 
-\paragraph{Filtering of incompatible apps} Due to lack of time, it was in agreement with the customer decided to omit functional requirement FR04 - Hide/show incompatible applications. As the functionality for hiding incompatible apps already had been implemented in the GUI at this point, it was decided to keep it there to illustrate the functionality. In the final version of the application the ``Hide incompatible'' option hides the empty illustration apps from the user.
+\paragraph{Filtering of incompatible apps:} Due to lack of time, it was in agreement with the customer decided to omit functional requirement FR04 - Hide/show incompatible applications. As the functionality for hiding incompatible apps already had been implemented in the GUI at this point, it was decided to keep it there to illustrate the functionality. In the final version of the application the ``Hide incompatible'' option hides the empty illustration apps from the user.
 
 \subsection{Additions}
-\paragraph{STK500 protocol} As mentioned above, implementing the STK500 protocol proved more demanding than expected. Initial research done by the group on this area showed that an Java implementation of AVRDude already existed. Further research on the implementation, however, showed that it could not be used as it required programs not available on Android to be installed on the device. As of midterm, implementing the STK500 protocol in Java were added to the requirements.
+\paragraph{STK500 protocol:} As of midterm, implementing the STK500v1 protocol in Java was added to the requirements.
 
-\paragraph{Standard for defining $\mu$C Software Store compatible microcontroller based devices} As FR04 - Hide/show incompatible applications was removed from the functional requirements, a proposal for implementation of this requirement were to be specified instead. This document were to contain a standard for how this functionality could be designed and implemented in future work.
+\paragraph{Standard for defining $\mu$C Software Store compatible microcontroller based devices:} As FR04 - Hide/show incompatible applications was removed from the functional requirements, a proposal for an implementation of this requirement were to be specified instead. This document were to contain a standard for how this functionality could be designed and implemented in future work.
 
 \section{Use cases}
 \label{usecases}
-The following illustrations and tables were the foundation for the iterations in the development process. Whenever a use case includes ``Opens $\mu$CSS", use case 8 is gone through. 
+The following illustrations and tables were the foundation for the iterations in the development process.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase1}
-\caption[Yse case 1]{The user opens Google Play and finds and installs the $\mu$C Software Store application}
+\caption[Use case 1]{Use case 1: The user opens Google Play and finds and installs the $\mu$C Software Store application}
 \end{figure}
 
-The first use case describes how an Android-owner can browse Google Play to install the $\mu$C Software Store (abbr. $\mu$CSS).
+The first use case describes how an Android-owner can browse Google Play to install the $\mu$C Software Store.
 
     \begin{table}[H]
         \caption{Use case 1}
@@ -87,10 +87,12 @@ The first use case describes how an Android-owner can browse Google Play to inst
             \hline
                 Actors           & Android device owner\\
             \hline
-                Prerequisite     & The actor have a Android device with Google Play\\
+                Precondition     & None \\
+            \hline
+                Prerequisite     & The actor has an Android device with Google Play\\
             \hline
                 Main Flow        &  1. Opens Google Play \\
-                                 &  2. Search for ``$\mu$C Software Store'' \\
+                                 &  2. Searches for ``$\mu$C Software Store'' \\
                                  &  3. Installs the application \\
             \hline
                 Alternative Flow & None\\
@@ -105,10 +107,10 @@ The first use case describes how an Android-owner can browse Google Play to inst
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase2}
-\caption[Use case 2]{The user connects to the Arduino with QR code}
+\caption[Use case 2]{Use case 2: The user connects to the Arduino with QR code}
 \end{figure}
 
-The second use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by using a previously downloaded QR Code reader on an Android. The $\mu$CSS automatically detects available QR Code readers on the Android device, and prompts the user to choose a QR Code reader to complete the action. $\mu$CSS automatically detects the QR Code read by the included action, and determines whether or not this is a valid code for an Arduino device, and attempts to pair the Android with the Arduino. If there's no QR Code reader application installed on the Android, $\mu$CSS prompts the user to install one.
+The second use case describes how the user can connect to an Arduino device through the $\mu$C Software Store, by using a previously downloaded QR Code reader on an Android. The $\mu$CSS automatically detects available QR Code readers on the Android device, and prompts the user to choose a QR Code reader to complete the action. $\mu$CSS automatically detects the QR Code read by the included action, and determines whether or not this is a valid MAC address for a Bluetooth device. It then attempts to pair the Android with the Arduino. If there is no QR Code reader application installed on the Android, $\mu$CSS prompts the user to install one.
 
 \begin{table}[H]
     \caption{Use case 2}
@@ -122,22 +124,23 @@ The second use case describes how the user can connect to an Arduino-device trou
         \hline
             Actors           & Arduino device owner\\
         \hline
+            Precondition     & Actor on ``Add device'' screen \\
+        \hline
             Prerequisite     & Installed $\mu$CSS \\
                              & Installed predefined QR-reader\\
         \hline
             End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
-            Main flow        &  1. User opens $\mu$CSS \\
-                             &  2. User presses the button indicating that he wants to pair with the Arduino device using QR Code \\
-                             &  3. The system opens the QR reader application \\
-                             &  4. The QR reader application reads the QR Code and returns the information it contains\\
-                             &  5. The system pairs with the Arduino device \\
+            Main flow        &  1. User presses the button indicating that he wants to pair with the Arduino device using QR Code \\
+                             &  2. The system opens the QR reader application \\
+                             &  3. The QR reader application reads the QR Code and returns the information it contains\\
+                             &  4. The system pairs with the Arduino device \\
         \hline
-            Alternative flow &  3.a. The user does not have the right QR Code reader installed \\
-                             &  3.b. The system prompts the user if he wants to install the QR Code reader \\
-                             &  3.c. If no: stop \\
-                             &  4.a. The QR reader is unable to read the QR Code \\
-                             &  4.b. Try again or stop\\
+            Alternative flow &  2.a. The user does not have the a QR Code reader installed \\
+                             &  2.b. The system prompts the user if he wants to install a QR Code reader \\
+                             &  2.c. If no: stop \\
+                             &  3.a. The QR reader is unable to read the QR Code \\
+                             &  3.b. Try again or stop\\
         \hline
             Parent UC        & 1\\
         \hline
@@ -149,7 +152,7 @@ The second use case describes how the user can connect to an Arduino-device trou
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase3}
-\caption[Use case 3]{The user connects to the Arduino with Serial input}
+\caption[Use case 3]{Use case 3: The user connects to the Arduino by manual input of MAC address}
 \end{figure}
 
 The third use case describes how the user can connect to an Arduino-device trough the $\mu$C Software Store, by inputting the MAC address of the device. $\mu$CSS determines whether or not this is a valid MAC address, and attempts to pair the Android with the Arduino. If the MAC address is invalid, $\mu$CSS prompts the user to retry input.
@@ -160,26 +163,26 @@ The third use case describes how the user can connect to an Arduino-device troug
         \hline
             ID               & 3 \\
         \hline
-            Name             & Pair Arduino device with Android device using serial \\
+            Name             & Pair Arduino device with Android device manually entering MAC address \\
         \hline
-            Goal             & Connect the Arduino device to the Android application with the use of QR Code \\
+            Goal             & Connect the Arduino device to the Android application with the use of manual entering of                 MAC address \\
         \hline
             Actors           & Arduino device owner \\
         \hline
+            Precondition     & Actor on ``Add device'' screen \\
+        \hline
             Prerequisite     & Installed $\mu$CSS \\
-                             & Installed predefined QR-reader \\
         \hline
             End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
-            Main flow        &  1. User opens $\mu$CSS \\
-                             &  2. User presses the button indicating that he
-                                    wants to pair with the Arduino device using a serial code \\
-                             &  3. System opens dialog box for input\\
-                             &  4. The user types the serial \\
-                             &  5. The system pairs with the Arduino device \\
+            Main flow        &  1. User presses the button indicating that he
+                                    wants to pair with the Arduino device using the MAC address \\
+                             &  2. System opens dialog box for input\\
+                             &  3. The user types the MAC address \\
+                             &  4. The system pairs with the Arduino device \\
         \hline
-            Alternative flow &  4.a. The user misspells the serial \\
-                             &  4.b. The system displays an error, and prompts again \\
+            Alternative flow &  3.a. The user misspells the MAC address \\
+                             &  3.b. The system displays an error, and prompts again \\
         \hline
             Parent UC        & 1 \\
         \hline
@@ -191,7 +194,7 @@ The third use case describes how the user can connect to an Arduino-device troug
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase7}
-\caption[Use case 4]{User uses the bluetooth to scan for available connections.}
+\caption[Use case 4]{Use case 4: User uses the Bluetooth to scan for available connections.}
 \end{figure}
 
 The fourth use case describes how the user can choose an Arduino device from a list of available Bluetooth devices, and pair devices, from the menu in $\mu$CSS. 
@@ -208,15 +211,16 @@ The fourth use case describes how the user can choose an Arduino device from a l
         \hline
             Actors           & Arduino device owner \\
         \hline
+            Precondition     & Actor on ``Devices'' screen \\
+        \hline
             Prerequisite     & Installed $\mu$CSS \\
         \hline
             End requirement  & The Arduino device is connected to the phone via Bluetooth \\
         \hline
-            Main flow        &  1. User opens $\mu$CSS \\
-                             &  2. User presses the device list button \\
-                             &  3. System opens the list of available Bluetooth devices\\
-                             &  4. The user presses the device to connect to \\
-                             &  5. The system pairs with the Arduino device \\
+            Main flow        &  1. User presses the device list button \\
+                             &  2. System opens the list of available Bluetooth devices\\
+                             &  3. The user presses the device to connect to \\
+                             &  4. The system pairs with the Arduino device \\
         \hline
             Alternative flow &  None \\
         \hline
@@ -230,7 +234,7 @@ The fourth use case describes how the user can choose an Arduino device from a l
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase4}
-\caption[Use case 5]{The user selects a category and browses the applications}
+\caption[Use case 5]{Use case 5: The user selects a category and browses the applications}
 \end{figure}
 
 The fifth use case describes how the user can browse apps in the $\mu$CSS, and filter them on categories. Browsing of apps can be done both with or without pairing of an Arduino device.
@@ -247,14 +251,15 @@ The fifth use case describes how the user can browse apps in the $\mu$CSS, and f
             \hline
                 Prerequisite     & Installed $\mu$CSS \\
             \hline
+                Precondition        & Actor on ``Device list'' \\
+            \hline
                 End Requirement  & None \\
             \hline
-                Main Flow        &  1. The user opens $\mu$CSS \\
-                                 &  2. The user selects the an Arduino device \\
-                                 &  3. The user selects category (One category is named ``all'') \\
-                                 &  4. The user browses apps \\
+                Main Flow        &  1. The user selects an Arduino device \\
+                                 &  2. The user selects category (One category is named ``all'') \\
+                                 &  3. The user browses apps \\
             \hline
-             Alternative Flow    & 2.a. The user does not select Arduino device, but browses anyway \\
+             Alternative Flow    & 1.a. The user does not select Arduino device, but browses anyway \\
            \hline
             Parent UC        & 1 \\
         \hline
@@ -268,7 +273,7 @@ The fifth use case describes how the user can browse apps in the $\mu$CSS, and f
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase5}
-\caption[Use case 6]{The user can open the action overflow bar and hide/show incompatible applications}
+\caption[Use case 6]{Use case 6: The user can open the action overflow bar and hide/show incompatible applications}
 \end{figure}
 
 The sixth use case describes how the user can choose to filter apps in $\mu$CSS based on their compatibility with the paired Arduino device.
@@ -285,6 +290,8 @@ The sixth use case describes how the user can choose to filter apps in $\mu$CSS 
             \hline
                 Prerequisite       & Installed $\mu$CSS \\
             \hline
+                Precondition        & Actor has chosen a category \\
+            \hline
                 End Requirement  & None \\
             \hline
                 Main Flow        &  1. The user presses action overflow button \\
@@ -292,7 +299,7 @@ The sixth use case describes how the user can choose to filter apps in $\mu$CSS 
                                  &  3. The application hides all incompatible applications from the user \\
                                  &  4. The user browses compatible apps \\
             \hline
-             Alternative Flow    & none \\
+             Alternative Flow    & None \\
            \hline
             Parent UC        & 1 \\
         \hline
@@ -304,7 +311,7 @@ The sixth use case describes how the user can choose to filter apps in $\mu$CSS 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase6}
-\caption[Use case 7]{The user selects an application, presses the install button and confirms it.}
+\caption[Use case 7]{Use case 7: The user selects an application, presses the install button and confirms the installation.}
 \end{figure}
 
 The seventh use case describes the user sequence to choose and install an application from the $\mu$CSS to the paired Arduino device.
@@ -324,14 +331,16 @@ The seventh use case describes the user sequence to choose and install an applic
             Prerequisite     &  Installed $\mu$CSS \\
                              &  Arduino device connected to $\mu$CSS \\
         \hline
+            Precondition        & Actor on ``Device list'' \\
+        \hline
             End requirement  & The application is installed on the Arduino device \\
         \hline
-            Main flow        &  The user selects the desired application \\
-                             &  The user presses the ``install'' button \\
-                             &  The user confirms the installation \\
-                             &  The application is installed at the Arduino device \\
+            Main flow        &  1. The user selects the desired application \\
+                             &  2. The user presses the ``install'' button \\
+                             &  3. The user confirms the installation \\
+                             &  4. The application is installed at the Arduino device \\
         \hline
-            Alternative flow & none \\
+            Alternative flow & 3.a. The user cancels \\
         \hline
             Parent UC        & 1, 2, 3, 4, 5, 6 \\
         \hline
@@ -343,7 +352,7 @@ The seventh use case describes the user sequence to choose and install an applic
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/UseCase_welcome_screen}
-\caption[Use case 8]{When the user starts the application this screen will be shown where the user can choose to select device list or browse the shop.}
+\caption[Use case 8]{Use case 8: When the user starts the application this screen will be shown where the user can choose to select device list or browse the shop.}
 \end{figure}
 
 The eighth use case is the welcome screen which shows every time $\mu$CSS is opened. 
@@ -362,12 +371,14 @@ The eighth use case is the welcome screen which shows every time $\mu$CSS is ope
         \hline
             Prerequisite     &  Installed $\mu$CSS \\
         \hline
+            Precondition        & None
+        \hline
             End requirement  & The application is opened \\
         \hline
-            Main flow        &  The user selects the $\mu$CSS application \\
-                             & $\mu$CSS is opened and the welcome screen is displayed\\
+            Main flow        & 1. The user selects the $\mu$CSS application \\
+                             & 2.$\mu$CSS is opened and the welcome screen is displayed\\
         \hline
-            Alternative flow & none \\
+            Alternative flow & None \\
         \hline
             Parent UC        & 1 \\
         \hline

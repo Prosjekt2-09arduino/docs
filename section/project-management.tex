@@ -3,19 +3,19 @@ The following sections details the project management decisions of the project. 
 
 \section{Development method}
 \label{development-method}
-Based on the customer requirement of short iterations, it was early decided to adapt an iterative and incremental development method for the project. By working in an iterative manner, it was possible to present prototypes and work done to the customer every week, and at the same time receive feedback. In this fashion it was possible for the customer to continuously present his thoughts on the product, and propose changes where he thought it was necessary. The iterative approach on the project also made it easier for the group to set deadlines and milestones of specific parts of the product. A summary and overview of each iteration is described in appendix B.\\
+Based on the customer requirement of short iterations, it was decided early on to adapt an iterative and incremental development method for the project. By working in an iterative manner, it was possible to present prototypes and work done to the customer every week, and at the same time receive feedback. In this fashion it was possible for the customer to continuously present his thoughts on the product, and propose changes where he thought it was necessary. The iterative approach on the project also made it easier for the group to set deadlines and milestones for specific parts of the product. A summary and overview of each iteration is described in appendix \ref{apendix-iterations}\\
 \newline
-All the members of the group have taken the course TDT4140 - Systemutvikling, and therefore have some knowledge about different development methods. The Rational Unified Process (RUP) model, as described in Chapter~\ref{prestudy} - Prestudy, is an extensible framework~\cite{kruchten} that met the requirements the group had for a process model. RUP was chosen as process model for the project above the other models described in Chapter~\ref{prestudy} as it best met the needs of the group. The fact that the model was tailorable and divided the entire development process into phases that was easy to adapt to made it preferable to the other models examined. It was also appealing that the model required the team to focus on critical risks early in the development to avoid surprises.
+All the members of the group have taken the course TDT4140 - Systemutvikling, and therefore have some knowledge about different development methods. The Rational Unified Process (RUP) model, as described in Chapter~\ref{prestudy}, is an extensible framework~\cite{kruchten} that met the requirements the group had for a process model. RUP was chosen as process model for the project above the other models described in Chapter~\ref{prestudy} as it best met the needs of the group. The fact that the model was tailorable and divided the entire development process into phases that were easy to adapt to, made it preferable to the other models examined. It was also appealing that the model required the team to focus on critical risks early in the development to avoid surprises.
 
 \subsection{Changes to description}
-As mentioned in the previous section, it was clear that the use of an iterative model was in order. The specific documentation of the development method was deferred for three weeks, however. This was due to the uncertain future of the project (over the air installation was said to potentially be impossible) and the need to get the first iteration presented to the customer; precisely documenting the development method was deemed to be wasteful at that point in time. The development method description was also refined between the preliminary version and the midterm version of the report.\\
+As mentioned in the previous section, it was clear that the use of an iterative model was in order. The specific documentation of the development method was deferred for three weeks, however. This was due to the uncertain future of the project (over-the-air installation was said to potentially be impossible) and the need to get the first iteration presented to the customer; precisely documenting the development method was deemed to be wasteful at that point in time. The development method description was also refined over the course of the project.\\
 \newline
-It was decided to adopt RUP as process model, though with some minor changes. First of all, the Transition phase of the model was deemed unnecessary. This was mainly due to the lack of time and resources for beta testing and new versions of the product. This phase was instead replaced by the closeout phase, described in chapter~\ref{projectplanning}. Further, no cost estimates were developed for the project. Because no money were involved in the production of the product, this was also deemed unnecessary. Time and resource estimates, however, were established during the Inception phase. \\
+It was decided to adopt RUP as process model, though with some minor changes. First of all, the Transition phase of the model was deemed unnecessary. This was mainly due to the lack of time and resources for beta testing and new versions of the product. This phase was instead replaced by the closeout phase, described in chapter~\ref{projectplanning}. Further, no cost estimates were developed for the project. Because no money was involved in the production of the product, this was also deemed unnecessary. Time and resource estimates, however, were established during the Inception phase. \\
 \newline
-In addition to the changes mentioned above, use of Lean principles was adapted from the start of the project. As described in the section about Lean Software Development, this methodology is defined by seven principles. Of these, especially \emph{Eliminate waste} and \emph{Build integrity} were used actively by the team during the development of the product and project report. These principles is described in chapter~\ref{leandev}.
+In addition to the changes mentioned above, use of Lean principles were adapted from the start of the project. As described in the section about Lean Software Development, this methodology is defined by seven principles. Of these, especially \emph{Eliminate waste} and \emph{Build integrity} were used actively by the team during the development of the product and project report. These principles is described in chapter~\ref{leandev}.
 
 \section{Team roles}
-The group was organized in different roles based on skill and experience. Each team member was given a responsibility for some code-packages. Further, the team was divided into six subgroups where each member was held responsible for his or her group. These groups was respectively: group leader, documentation and substitute leader, Android and GUI, Arduino and PUI, over the air and test.
+The group was organized in different roles based on skill and experience. Each team member was given a responsibility for some code-packages. Further, the team was divided into six subgroups where each member was held responsible for his or her group. These groups were respectively: group leader, documentation and substitute leader, Android and GUI, Arduino and PUI, over-the-air and test.
 The distribution of team roles are listed in Table~\ref{table:teamroles}
 
 \subsection{Role description}
@@ -26,7 +26,7 @@ The division of the group was an important feature. Every member knew who to con
 	\item[Documentation and substitute leader]{was responsible for management of documentation and reports. In absence of the group leader, this person took on the group leader's responsibilities. This person was also responsible for contact with the customer and supervisor.}
 	\item[Android and GUI developer]{was responsible for the Android development of the project.}
 	\item[Arduino and PUI developer]{was responsible for the Arduino part of the project. This implies contacting the Arduino-lab, requisitions for hardware, the coding part and over-the-air installation. This role was also responsible for development of the PUI examples.}
-	\item[Over the air developer]{was responsible for programming the Arduino over the air. This person was also responsible for making the first prototype with a Bluetooth  connection.}
+	\item[Over-the-air developer]{was responsible for programming the Arduino over the air. This person was also responsible for making the first prototype with a Bluetooth  connection.}
 	\item[Test developer]{was responsible for developing and executing tests for the complete project.}
 \end{description}
 
@@ -46,7 +46,7 @@ The division of the group was an important feature. Every member knew who to con
 \hline
 	Bjørn Arve Fossum & Arduino and PUI developer\\
 \hline
-	Ståle Semb Hauknes & Over the air developer\\
+	Ståle Semb Hauknes & Over-the-air developer\\
 \hline
 	Wilhelm Walberg Schive & Test developer\\
 \hline
@@ -54,30 +54,29 @@ The division of the group was an important feature. Every member knew who to con
 \end{table}
 
 \subsection{Division of labor}
-The division of labor between the members of the group was largely done through the use of issues on GitHub (chapter~\ref{sec:GitHub}). On this site, whenever a task arose, it was created as an issue. This way, all the members could see what needed to be done, assign different issues to themselves, see what others were working on and therefore choose an appropriate issue to start working on.
+The division of labor between the members of the group was largely done through the use of issues on GitHub (Chapter~\ref{sec:GitHub}). Whenever a task arose it was created as an issue on this site. This way, all the members could see what needed to be done, assign different issues to themselves, see what others were working on, and therefore choose an appropriate issue to start working on.
 
-Throughout the project the main consensus of the group has been to meet every day as long as there is not something else interfering. This has caused the group to work together almost every day and thus if a problem was met it could be dealt with quickly. Usually these meeting started at 09:00-10:00 and ended around 16:00. Any and all work done by anyone was registered in a document to ensure correct activity plans. Example on activity plan is documented in Appendix A along with an example on status report.
+Throughout the project the main consensus of the group has been to meet every day as long as there is not something else interfering. This has caused the group to work together almost every day and thus if a problem was encountered it could be dealt with quickly. Usually these meeting started at 09:00-10:00 and ended around 16:00. Any and all work done by anyone was registered in a document to ensure correct activity plans. Example of an activity plan is documented in Appendix \ref{appendix-project-documents} along with an example of a status report.
 
 \section{Communication}
 \label{communication}
 Most of the communication within the group was done at group meetings and when the group was working together. For communication between group members outside the meetings it was decided that the group should only use email and Skype. This was decided to avoid the confusion that might arise from using numerous channels of communication. Mobile phone was also used when immediate contact was necessary.\\
 \newline
-Communication between the group and the customer was mainly done in meetings or by email. The same applies for communication with the supervisor. The customer also had access to the entire project on GitHub. This meant that at any time he could check up on the progress of the project and add issues or concerns he may have had directly into GitHub.
+Communication between the group and the customer was mainly done during meetings or by email. The same applies for communication with the supervisor. The customer also had access to the entire project on GitHub. This meant that he could check up on the progress of the project at any time, and add issues or concerns directly into GitHub.
 
 \section{Project planning}
-
 \label{projectplanning}
-
-In this section the planning of the project will be presented. The project was divided into five large milestones to represent the different phases of the project. The phases of the Rational Unified Process (RUP) is not explicitly stated in the work breakdown structure, as some of the milestones stretches over several of the phases in the process model. \\
+In this section the planning of the project will be presented. The project was divided into five large milestones to represent the different phases of the project. The phases of the Rational Unified Process (RUP) are not explicitly stated in the work breakdown structure, as some of the milestones stretches over several of the phases in the process model. \\
 \newline
 In the work breakdown structure (WBS), the first part of the Project Management activity and the Planning activity represents the inception and elaboration phase of RUP. Further, the Execution and Testing activities represents the construction phase. As mentioned above, the transition phase of RUP was deemed unnecessary. It was expected that tasks related to project management would appear at least until the technical part of the project was concluded, and it was therefore decided to let this activity run through the larger part of the project. In the closeout phase work on the final report was to be prioritized.
 
 \subsection{Work breakdown structure (WBS)}
-The WBS is a view on what work packages the project encompasses. It helps with communicating the work and processes to easily execute the project. The duration-time show how much estimated time one task requires, and gives an assessment on how much effort is needed to complete the task.
+The WBS is a view on what work packages the project encompasses. It helps with communicating the work and processes to easily execute the project. The duration time show how much estimated time one task requires, and gives an assessment on how much effort is needed to complete the task.
 
 \subsubsection{Gantt chart}
-Gantt chart showing the initial work breakdown structure created in the project.
+The Gantt chart in Figure~\ref{fig:gantt} is showing the initial work breakdown structure created in the project.
 \begin{figure}[H]
+\label{fig:gantt}
 \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{images/gantt-diagram.png}}
 \caption[Gant chart]{Gantt chart. Milestones are marked using vertical lines}
 \end{figure}
@@ -98,8 +97,8 @@ This is the WBS tree made for this specific project.
 \end{figure}
 
 \subsection{Editions to WBS}
-Due to challenges and unexpected work that emerged during the project, it was not possible to follow the WBS completely. First of all, a lot of unplanned work arose in connection with the implementation of STK500 in Java. The result of this was that not all group members were able to move to the closeout phase at the same time, as there still was unfinished work on the protocol.
+Due to challenges and unexpected work that emerged during the project, it was not possible to follow the WBS completely. First of all, a lot of unplanned work arose in connection with the implementation of STK500v1 in Java. The result of this was that not all group members were able to move to the closeout phase at the same time, as there still was unfinished work on the protocol.
 
 \section{Risk analysis}
-The risk analysis as shown in table~\ref{fig:risktable} states risks identified by the team. The importance of a risk is calculated by multiplying likelihood and impact. Higher number means higher importance for the project.
+The risk analysis as shown in Table~\ref{fig:risktable} states risks identified by the team. The importance of a risk is calculated by multiplying likelihood and impact. Higher numbers means higher importance for the project.
 \input{figures/risk-analysis}

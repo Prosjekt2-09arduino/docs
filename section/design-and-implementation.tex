@@ -1,5 +1,5 @@
 \chapter{Design and implementation}
-In this chapter the design and system architecture of the product will be presented. The reader will learn about how the different components of the product is put together, and how the design of the application was planned.
+In this chapter the design and system architecture of the product will be presented. The reader will learn about how the different components of the product are put together, and how the design of the application was planned.
 
 \section{System architecture}
 	The design was divided into several modules:
@@ -7,13 +7,12 @@ In this chapter the design and system architecture of the product will be presen
 		\item{Bluetooth connection between the Android and the Arduino}
 		\item{Synchronization with the local SQLite database}
 		\item{Android application view (the visible design)}
-		\item{A service that contains the protocol for installing ``over the air''}
+		\item{A service that contains the protocol for installing over-the-air}
 	\end{itemize}
 	\vspace{0.2in}
 	
 	The system design was implemented such that further developing and extension should be as modular and easy as possible.
-	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices).
-	The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}\\
+	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500v1 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices). The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}.\\
 
 	\begin{figure}[H]
 	\centering
