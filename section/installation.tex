@@ -1,5 +1,5 @@
 \chapter{Installation guide}
-This installation guide guides you through how you install apps on your Arduino. If you are building your own Arduino, we recommend you to have programming expertise and how serial communications works.\\
+This installation guide guides you through how you install apps on the Arduino. If you are building your own Arduino, it is recommended to have programming expertise and know how serial communications works.\\
 
 If you have bought a finished product, you can skip to the \ref{sec:install-android-application} section.
 
@@ -37,7 +37,7 @@ If you have bought a finished product, you can skip to the \ref{sec:install-andr
 		\end{enumerate}
 
 			\subsection{Supported Bluetooth modules}
-			You can use any Bluetooth module you want, but this is the modules we have tested. Remember to power off the modules after they are reprogrammed to activate the new configuration.
+			You can use any Bluetooth module you want, but this is the modules that have been tested. Remember to power off the modules after they are reprogrammed to activate the new configuration.
 			
 				\subsubsection{RN-42}
 				To enter programming mode, just write ''\$\$\$'' and enter. You should get AOK back when you entered programming mode. To change baud to 115200, write SU,11 and hit enter. You should now get AOK back.\\
@@ -55,4 +55,6 @@ If you have bought a finished product, you can skip to the \ref{sec:install-andr
 	.......
 	
 	\section{Devolope your own apps}
-	To develop your own applications we assume you have programming experience. Arduino is a language based on C, so any C experience would work. To learn how things work, you can take a look at some tutorials here \url{http://arduino.cc/en/Tutorial/HomePage}.\\
+	Arduino is a language based on C, so any C experience would work. To learn more about how the Arduino works, take a look at the tutorials here \url{http://arduino.cc/en/Tutorial/HomePage}.\\
+	
+	Remember to allway import the ComputerSerial library.
