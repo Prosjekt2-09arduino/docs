@@ -1,11 +1,11 @@
 \chapter{Testing}
-	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product met the requirements set.
+	This chapter contains a description of the testing performed during the project. Tests were performed in order to ensure product quality and that the product met the requirements. The first sections describe how the tests should be performed, followed by the execution and results of the tests.
 	
 	\section{Testing strategy}
-		The ways in which testing was performed is detailed in this section. Testing was performed by unit testing first, then integration testing. Usability testing was performed after the main shop part of the project was completed. User acceptance testing was then performed by the customer after significant parts were complete~\cite{testing-overview}.
+		The ways in which testing was performed is detailed in this section. Unit testing was performed initially, followed by the integration testing. Following the completion of the Android application, usability testing was executed. User acceptance testing was then performed by the customer after the significant parts were completed~\cite{testing-overview}.
 
 		\subsection{Unit testing}
-			For testing of the Android application, Robotium was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. During the development of the application, different units were tested with Robotium after they were finished. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with a Arduino device is as expected~\cite{unit-testing1}~\cite{unit-testing2}~\cite{unit-testing3}.\\
+			For testing of the Android application, Robotium was used. Robotium is a powerful test framework that can be used for function, system and acceptance testing. The tests created in Robotium aims at writing small portions of code and checking the results against expected predefined values. Robotium was used for unit testing on the Android application. During the development of the application, different units were to be tested with Robotium after they were finished. An example of a Robotium test is shown below. In this test it is asserted that the Bluetooth connection with an Arduino device is as expected~\cite{unit-testing1}~\cite{unit-testing2}~\cite{unit-testing3}.\\
 
 			\begin{lstlisting}
 solo.clickOnActionBarItem(R.id.settings);
@@ -20,38 +20,38 @@ assertEquals(expectedState, actualState);
 			\end{lstlisting}
 
 		\subsection{Integration testing}
-		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing~\cite{validation-testing}. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units rather than having tests to ensure the units work correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were tested in pairs and not all at once. Integration testing identifies problems that occur when we combine the different units of the product, and was performed when units of the product was put together~\cite{integration-testing2}.\\
-		\newline
-		Just as in unit testing, Robotium was used for integration testing as well. This is well supported as you can code the test to press different buttons or text and are therefore capable of navigating through the entire application, and/or units.\\
+		Integration testing is based on combining different units and testing the interface and communication between them. This type of testing comes after the unit testing phase and before the validation testing~\cite{validation-testing}. The units that can be used in these tests must therefore have passed the unit tests. This made integration testing focus purely on the integration of units, rather than testing that the units were working correctly as well. Because the system is composed of more than one component (STK500 protocol and the Android application), they were to be tested in pairs and not all at once. Integration testing identifies problems that occur when different units of the product are combined. These test were to be performed when units of the product were put together~\cite{integration-testing2}. Just as in unit testing, Robotium was to be used for integration testing as well.\\
 
-		\subsection{Usability test}
-		As the intent of the product was to ease the use of and set up physical user interfaces, usability tests were crucial in the testing aspects. The decision were made to perform a hallway test following tasks given to the test subjects. To ensure that the test subjects had a proper understanding of the product, the think aloud protocol was used, meaning the subject talked about their actions during the test.\\
+		\subsection{Usability testing}
+		As the intent of the product was to ease the use and setup of physical user interfaces, usability tests were crucial in the testing aspects. The decision was made to perform a hallway test, where random test subjects followed the tasks detailed in Section \ref{taskssection}. To ensure that the test subjects had a proper understanding of the product, the think aloud protocol was to be used, meaning the subject was supposed to be talking about their actions during the test.\\
 		\newline
 		All test subjects filled out a System Usability Scale (SUS) form in order to create a score, 0-100, which gave us a comparable score with other systems. Concerning the amount of subjects tested, five users has been recognized as the proper amount. According to Nielsen, 85\% of the problems with a system will be found by these five users, thus testing more would increase the time spent watching the same problems resurface~\cite{Nielsen}.
 
 		\subsubsection{Tasks}
-			These were the tasks given to each tester. The tasks were created with the user cases previously mentioned as a basis. Each task is meant to be a vague description of what they are supposed to do in order for them having to think mostly for themselves and not given any answer as to what they are supposed to do.
+		\label{taskssection}
+			These were the tasks given to each tester. The tasks were created with the use cases mentioned in Chapter \ref{usecases} as a basis. Each task was meant to have a vague description. This way, test subjects would have to think for themselves, instead of simply following detailed steps. \\
 
-			The preface of these tasks was that they had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could have on this jacket.
+			The preface of these tasks was that the test subjects had bought a jacket with an Arduino device fitted in it. This jacket was called an iJacket and they had just downloaded the $\mu$CSS in order for them to check what other applications they could install on the device.
 
 			\vspace{6 mm}
 			\begin{enumerate}
 			 \item Select your jacket
-			 \item Look for applications
-			 \item Install the application
+			 \item Browse applications
+			 \item Install the chosen application
 			\end{enumerate}
 			\vspace{6 mm}
 
-			After the tests the test subjects were asked if there were any details or points during the test where they either were confused or found it difficult to do something. These points would be added or confirmed on a form where the observer would have noted any other details which may have risen during the test.
+			After the tests, the test subjects were to be asked if at any point during the test they got stuck or confused at any task. The feedback from the test subjects were to be recorded.
 
 		\subsection{User acceptance testing}
-		User acceptance testing was performed with the customer in order to ensure that requirements were met and to check whether or not the customer was satisfied. This test was done in much the same way as the usability test, though with a scope bigger than just the usability aspect. A phone with the application was given to the customer in order for him to get first degree experience with the application. The tester was then asked to perform the same cases as in the usability tests, while thinking aloud in order to properly record his reactions to the application. These reactions were then written down on paper. After the cases were done with, the customer was given the opportunity to just play around with the product. Lastly, the customer was asked to what degree he felt the product fulfilled the requirements set for the product.\\
+		User acceptance testing was to be performed with the customer in order to ensure that requirements were met and to check whether or not the customer was satisfied. This test was to be done in much the same way as the usability. A phone with the application was given to the customer in order for him to get first degree experience with the application. The tester was then asked to perform the same cases as in the usability tests, while a group member recorded his reactions to the application.\\
 		\newline
-		There were also expert reviews made during a presentation at the offices of SINTEF. The think aloud protocol was also used here. These testers had much experience within development, but not much knowledge about the task. They were therefore given a brief presentation beforehand about the project and given a short presentation of the application itself.\\
+
+		There were also expert reviews held during a presentation at the offices of SINTEF. The think aloud protocol was also used here. These testers had much experience within development, but not much knowledge about the task. They were therefore given a brief presentation beforehand about the project and given a short presentation of the application itself.\\
 
 	\section{System testing}
 	\label{systemtesting}
-	In this section the system tests will be presented. Each test was written to test a specific part of the product, and applies to both the Android application, STK500 protocol and software installed on the Arduino device. Each test was executed separately, and the results will be presented in section \ref{testresults}.
+	In this section the system tests will be presented. Each test was to be written to test a specific part of the product. This applies to both the Android application, STK500 protocol and software installed on the Arduino device. Each test was to be executed separately, and the results will be presented in Section \ref{testresults}.
 
 	\begin{table}[H]
 	\caption{Connect with device using device list}
@@ -63,15 +63,15 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Connect with an Arduino device from the Device list screen \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\
+			Precondition & Arduino device is switched on with Bluetooth enabled \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
-				\item{Press Device list from Action overflow or from the Welcome screen}
+				\item{Press ``Device'' list from Action overflow or from the Welcome screen}
 				\item{Press desired Arduino device}
 				\end{itemize} \\
 		\hline
-			Success condition & Android and Arduino device is connected via Bluetooth \\
+			Success condition & Android and Arduino device are connected via Bluetooth \\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -84,20 +84,20 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test name & QR Code connect\\
 		\hline
-			Test description & Connect with an Arduino device using QR Code reader \\
+			Test description & Connect to an Arduino device using QR Code reader \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\
+			Precondition & Arduino device is switched on with Bluetooth enabled \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
-				\item{Press Device list from Action overflow}
-				\item{Press Add device}
-				\item{Press Connect with QR Code}
+				\item{Press ``Device'' list from Action overflow}
+				\item{Press ``Add'' device}
+				\item{Press ``Connect with QR Code''}
 				\item{Choose QR Code reader}
 				\item{Scan QR Code}
 				\end{itemize} \\
 		\hline
-			Success condition & Android and Arduino device is connected via Bluetooth \\
+			Success condition & Android and Arduino device are connected via Bluetooth enabled\\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -112,18 +112,17 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Connect with an Arduino device using serial \\
 		\hline
-			Precondition & Arduino device is switched on with Bluetooth \\
+			Precondition & Arduino device is switched on with Bluetooth enabled\\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
-				\item{Press Device list from Action overflow}
-				\item{Press Add device}
-				\item{Press Connect with QR Code}
-				\item{Choose QR Code reader}
-				\item{Scan QR Code}
+				\item{Press ``Device'' list from Action overflow}
+				\item{Press ``Add'' device}
+				\item{Press ``Input serial''}
+				\item{Enter MAC address}
 				\end{itemize} \\
 		\hline
-			Success condition & Android and Arduino device is connected via Bluetooth \\
+			Success condition & Android and Arduino device are connected via Bluetooth \\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -152,19 +151,19 @@ assertEquals(expectedState, actualState);
 	\end{table}
 
 	\begin{table}[H]
-	\caption{Connect to last connected device when in range}
+	\caption{Connect to last connected device on application startup}
 	\begin{tabularx}\linewidth{|m{0.15 \textwidth}|X|}
 		\hline
 			{Test ID} & {ST05}\\
 		\hline
 			Test name & Last connected\\
 		\hline
-			Test description & Test that the Android application connects to the last connected Arduino device when it is in range and gives proper feedback to the user. The application should only reconnect when this option is selected. \\
+			Test description & Test that the Android application connects to the last connected Arduino device when the application is started, and gives proper feedback to the user. The application should only reconnect when this option is selected. \\
 		\hline
-			Precondition & Available Arudino device with Bluetooth \\
+			Precondition & Available Arduino device with Bluetooth \\
 		\hline
 			Test steps & \begin{itemize}
-				\item{Check option ''Automatically try to reconnect to last connected device''}
+				\item{Check option ``Automatically try to reconnect to last connected device''}
 				\item{Connect with an Arduino}
 				\item{Exit Android application completely}
 				\item{Start Android application}
@@ -174,7 +173,7 @@ assertEquals(expectedState, actualState);
 					\end{itemize}
 				\end{itemize} \\
 		\hline
-			Success condition & When the last connected Arudino device is on and in range, the Android device should connect to it immediately when the Android application is started and give feedback to the user. If the Arduino device is out of range or off, proper feedback should be given \\
+			Success condition & When the last connected Arduino device is on and in range, the Android device should connect to it immediately when the Android application is started and give feedback to the user. If the Arduino device is out of range or off, proper feedback should be given \\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -196,7 +195,7 @@ assertEquals(expectedState, actualState);
 				\item{Choose a category}
 				\item{Choose an app}
 				\item{Go back and choose different app}
-				\item{Swipe left/right to browse different sorting}
+				\item{Swipe left or right to browse different sorting}
 				\end{itemize} \\
 		\hline
 			Success condition & User is able to browse apps \\
@@ -219,8 +218,8 @@ assertEquals(expectedState, actualState);
 			Test steps & \begin{itemize}
 				\item{Start program}
 				\item{Select desired app}
-				\item{Press Install}
-				\item{Press Confirm}
+				\item{Press ``Install''}
+				\item{Press ``Confirm''}
 				\end{itemize} \\
 		\hline
 			Success condition & Arduino app is installed on the connected Arduino device \\
@@ -238,7 +237,7 @@ assertEquals(expectedState, actualState);
 		\hline
 			Test description & Test that it is possible to first connect to one Arduino, then another, thus changing which device the Android application is connected to \\
 		\hline
-			Precondition & Two available Arduinos with Bluetooth\\
+			Precondition & Two available Arduinos with Bluetooth enabled \\
 		\hline
 			Test steps & \begin{itemize}
 				\item{Start program}
@@ -246,7 +245,7 @@ assertEquals(expectedState, actualState);
 				\item{Connect with Arduino \#2}
 				\end{itemize} \\
 		\hline
-			Success condition & Both connections is successful, and the Android device is connected with Arduino \#2 \\
+			Success condition & Both connections are successful, and the Android device is connected with Arduino \#2 \\
 		\hline
 	\end{tabularx}
 	\end{table}
@@ -256,13 +255,13 @@ assertEquals(expectedState, actualState);
 		In this section the results of all the tests performed will be presented. In each subsection the result of the given type of test will be shown.
 
 		\subsection{Unit testing}
-		All written Robotium tests run without encountering errors. This indicates that the units tested works properly and correct values are obtained throughout the testing. A decision was made to not write any more tests as time was of an essence and resources were needed elsewhere.
+		All written Robotium tests run without encountering errors. This indicates that the units tested work properly and correct values are obtained throughout the testing. A decision was made to not write any more tests, as time was of the essence and resources were needed elsewhere.
 
 		\subsection{Integration testing}
-		When different units of the product was ready to be sown together, integration testing was performed. When bugs and errors was encountered, the person currently responsible for the integration testing would fix it. %TODO Write more here?
+		When different units of the product were ready to be sewn together, integration testing was performed. If bugs and errors were encountered, the person currently responsible for the integration testing would fix it.
 
 		\subsection{System testing}
-		The system testing was performed according to the description of the tests in section \ref{systemtesting}. In table~\ref{table:systemtestingtable} the results of each test is shown. These tests was performed when both unit testing an integration testing was done to ensure that the product met the requirements set by the customer.
+		The system testing was performed according to the description of the tests in section \ref{systemtesting}. In table~\ref{table:systemtestingtable} the results of each test is shown. These tests were performed when both unit testing and integration testing had been done to ensure that the product met the requirements set by the customer.
 
 	\captionof{table}{System test results}
 	\label{table:systemtestingtable}
@@ -285,7 +284,7 @@ assertEquals(expectedState, actualState);
 
 	\endlastfoot%
 				
-				ST01 & Passed & If the Arduino device is on and within range, the Android application successfully connects with it via Bluetooth using the Device List. \\
+				ST01 & Passed & If the Arduino device is on and within range, the Android application successfully connects to it via Bluetooth using the Device List. \\
 			\hline
 				ST02 & Passed & If the Arduino device is on and within range, and the QR Code is correct, the Android application successfully connects with it via Bluetooth using optional QR reader. \\
 			\hline
@@ -305,14 +304,16 @@ assertEquals(expectedState, actualState);
 
 
 		\subsection{Usability testing}
-		The results of the usability testing was overall positive. The scores varied from 57,5 to 90 out of a 100 with an average of 78,3. In the end, six people were tested with different technological background. There were not much problems that occurred during the testing, one person did, however, have a small complaint about the consistency of the design of the application. After discussing it, it became apparent that this issue came from this person not being used to Android devices. 
+		The results of the usability testing were positive overall. The scores varied from 57,5 to 90 out of a 100 with an average of 78,3. In the end, six people were tested with different technological backgrounds. Not many problems  occurred during the testing. One person did, however, have a small complaint about the consistency of the design of the application. After discussing it, it became apparent that this issue came from this person not being used to Android devices. 
 
+		\subsection{Expert reviews}
+		After the presentation by the customers request at the SINTEF offices, three people agreed to fill out SUS forms about their thoughts of the system. As there were still problems with the system, the scores reflected the criticism of expert uses, but received an average score of 54 out of a maximum of 100. The main ideas for improvements were stability and security. Stability was then worked on, but the security aspect was not recognized as an important focus point this late in the development. This was agreed upon by the customer after the meeting.
 
 		\subsection{User acceptance testing}
-		After the presentation by the customers request at the SINTEF offices, three people agreed to fill out SUS forms about their thoughts of the system. As there were still problems with the system, the scores were not too positive, but received an average score of 54 of a maximum of 100. The main ideas for improvements were stability and security. Stability was then worked on, but the security aspect was not recognized as an important focus point this late in the development. This was agreed upon by the customer after the meeting.
+		A formal user acceptance test session was not held, but during the last meeting with the customer, he got the opportunity to test the product. The customer was pleased with the performance of the system, and gave positive feedback.
 
 		\subsection{Summary}
-		Based on the test performed during and after development of the product, table x describes to what degree the initial requirements set by the customer were met. As described in the table \ref{table:functionalsummary}, some of the requirements were omitted during the project as some tasks proved more time consuming than expected. As a result of this, not all the initial requirements have been met. \\
+		Based on the tests performed during and after development of the product, Table~\ref{table:functionalsummary} describes to what degree the initial requirements set by the customer were met. As described in the Table~\ref{table:functionalsummary}, some of the requirements were omitted during the project as some tasks proved more time consuming than expected. As a result of this, not all the initial requirements have been met. \\
 		\newline
 		Regarding the non-functional requirements, it is difficult to summarize to what degree some of these requirements have been met. As a result of this not all the non-functional requirements is included in the table below.
 

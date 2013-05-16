@@ -260,7 +260,7 @@ The user is warned not to move the Android device out of range of the Arduino.
 	Several different options were added to the Action overflow menu. It is convenient to show different options in this menu, depending on which screen the user is on, so the content of the menu changes throughout the application.
 
 	\paragraph{Add device manually.}
-	The Bluetooth button in \ref{fig:screen1b} was removed, as it was unnecessary.
+	The ``Bluetooth'' button in Figure \ref{fig:screen1b} was removed, as it was unnecessary.
 
 	\paragraph{Welcome screen.}
 	The ``Welcome Screen'' was added as the start screen. This makes it easier to navigate between ``Devices'' and ``Browse Shop''. It also provides an option (checkbox) that allows the user to choose whether or not they will automatically reconnect the next time the application is started. Figure~\ref{fig:welcomescreen} shows a simple connection between the reconnect option and the welcome screen.
@@ -274,21 +274,21 @@ The user is warned not to move the Android device out of range of the Arduino.
 
 \section{Database implementation}
 
-	SQLite was used as database language because it is integrated with Android and have much functionality that makes it easy to use in an Android application. Because of changes to priorities the group and the customer got in an agreement to drop the sync adapter, and only use a local database.
+	SQLite was used as database language because it is integrated with Android and have much functionality that makes it easy to use in an Android application. Because of changes to priorities, the group and the customer agreed to drop the sync adapter, and only use a local database.
 
 	\subsection{Database model}
 
-		In figure~\ref{fig:erdiagram} the database is shown as an ER Diagram. The pictures table was not used because of changes to the teams priorities. Things that had been done before was not important for the customer.
+		In Figure~\ref{fig:erdiagram} the database is shown as an ER Diagram. Established appstore features, like ratings and application pictures, were not important to the customer. Because of this, the \textit{pictures} table was not used.
 
 		\begin{figure}[H]
 		\includegraphics[scale=1]{images/ER_Diagram.png}
-		\caption[ER Diagram]{The ER Diagram describing the setup of the app database.}
+		\caption[ER Diagram]{The ER Diagram describing the setup of the database.}
 		\label{fig:erdiagram}
 		\end{figure}
 
 	\subsection{Database details}
 
-		Description and detail about the database tables.
+		This section describes the structure and details of the database tables.
 
 		\subsubsection{Table: app}
 
