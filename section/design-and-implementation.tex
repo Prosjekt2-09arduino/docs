@@ -1,18 +1,17 @@
 \chapter{Design and implementation}
-In this chapter the design and system architecture of the product will be presented. The reader will learn about how the different components of the product are put together, and how the design of the application was planned.
+In this chapter the design and system architecture of the product will be presented. The reader will learn how the different components of the product are put together, and how the design of the application was planned.
 
 \section{System architecture}
 	The design was divided into several modules:
 	\begin{itemize}
 		\item{Bluetooth connection between the Android and the Arduino}
 		\item{Synchronization with the local SQLite database}
-		\item{Android application view (the visible design)}
+		\item{Android application view (General user interface)}
 		\item{A service that contains the protocol for installing over-the-air}
 	\end{itemize}
 	\vspace{0.2in}
 	
-	The system design was implemented such that further developing and extension should be as modular and easy as possible.
-	Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. The application only supports the STK500v1 protocol and therefore only connections towards Arduino devices (and with some work other STK500 based devices). The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}.\\
+	The system design was implemented such that further development should be as modular and easy as possible. Therefore it was designed as a plugin-like system where you easily can implement your own protocols against a desired device, e.g. Raspberry Pi. Currently the application only supports the STK500v1 protocol and therefore only connections with Arduino devices. With some work, compatibility with other STK500-based devices can implemented. be The design for the connection to other devices was done as shown in Figure~\ref{fig:btconnection_service_stk500}.\\
 
 	\begin{figure}[H]
 	\centering
@@ -22,11 +21,11 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:btconnection_service_stk500}
 	\end{figure}
 
-	\textit{Devices} as shown in Figure~\ref{fig:btconnection_service_stk500} is an activity that manages the discovered Bluetooth devices. A device is discovered by listening to the Bluetooth API on the Android. This happens in the \textit{MyBroadcastReceiver} that works like a listener. When this listener gets notified with a device as input, the discovered device will be put in a list in \textit{Devices}.\\
+	\textit{Devices}, as shown in Figure~\ref{fig:btconnection_service_stk500}, is an activity that manages the discovered Bluetooth devices. A device is discovered by listening to the Bluetooth API on the Android. This happens in the \textit{MyBroadcastReceiver} which works like a listener. When this listener gets notified with a device as input, the discovered device will be put in a list in \textit{Devices}.\\
 
-	If the user choose to connect to a device from the list of discovered devices, a service (BtArduinoService) will be created. This service will create and manage the \textit{BluetoothConnection} that manages the Bluetooth connection between the Android device and a Bluetooth device. The service uses \textit{STK500v1} for transferring bytes over the \textit{BluetoothConnection} to the connected device.\\
+	If the user choose to connect to a device from the list of discovered devices, a service (\textit{BtArduinoService}) will be created. This service will create the \textit{BluetoothConnection} that manages the connection between the Android device and a Bluetooth device. The service uses \textit{STK500v1} for transferring data over the \textit{BluetoothConnection} to the connected device.\\
 
-	To add support for other microcontrollers than Arduino, only few changes to Devices.java would have to be done. Another service and a protocol communicating with a desired device must be implemented, or support for multiple simultaneous services. Since this project only considered connections between Android and Arduino, only the STK500v1 protocol and one service was implemented.\\
+	To add support for other microcontrollers than Arduino, only few changes to \textit{Devices} would have to be made.Another service and a protocol communicating with a desired device must be implemented. If the added protocol(s) should coexist with STK500v1, support for multiple simultaneous services must also be implemented as well. Since this project only considered connections between Android and Arduino, only the STK500v1 protocol and one service was implemented.\\
 
 	The overall design solution for multiple connections is described in Figure~\ref{fig:otaarchitecture}.\\
 	\begin{figure}[H]
@@ -47,54 +46,52 @@ In this chapter the design and system architecture of the product will be presen
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.85]{images/UML/adddevicescreen.png}
-	\caption[UML - AddDeviceScreen]{This is a UML diagram of Add Device Screen. When QR-reader or input-serial is chosen, a new asynchronous task is started that handles the Bluetooth connection process.}
+	\caption[UML - AddDeviceScreen]{This is a UML diagram of the \textit{Add Device Screen}. When QR-reader or input serial is chosen, a new asynchronous task is started that handles the Bluetooth connection process.}
 	\label{fig:adddevicescreenuml}
 	\end{figure}
 
-	The \textit{Service} holds and manages the Bluetooth connection (\textit{BluetoothConnection}) and is managing the protocol for installing apps on the microcontroller. \\
+	The \textit{Service} holds and manages the Bluetooth connection (\textit{BluetoothConnection}) and is communicating with the protocol for installing apps on the microcontroller. \\
 
 	The \textit{Memory card} represents the local storage solution on the mobile phone where the database is stored. SQLite was used as the database engine because it is common and easy to implement on Android.\\
 
 	\textit{DatabaseHandler} is a class for taking care of the SQL transactions and is the access point for communication with the database. A helper class called \textit{Save} is used for easy access to the \textit{DatabaseHandler}.
-	When the application communicates with the Save module, the database communicates with the DatabaseHandler.
-	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional java classes) and makes sure its only one instance of the \textit{DatabaseHandler}.
+	When the application communicates with the \textit{Save} module, the database communicates with the DatabaseHandler. The \textit{Save} class can be created from any class in the application. It ensures that only a single instance of the \textit{DatabaseHandler} can be instantiated and handles insertions and queries.
 
-	\subsection{Browse Shop}
-	This is the shop where the user can see the $\mu$C apps, choose categories and swipe though different fragments. In  Figure~\ref{fig:categoriesuml} we see the \textit{MainActivity} that is the activity for the category selection of the shop. 
-	When a category is selected, a new activity \textit{MainFragmentActivity} (see Figure~\ref{fig:maingui}) is started with the intent information about which category that was selected.
+	\textit{Save} was created because it can be initialized and created everywhere in the application (in optional Java classes) and makes sure it is only one instance of the \textit{DatabaseHandler}.
+
+	\subsection{Browse shop}
+	This is the shop where the user can see the $\mu$C apps, choose categories and swipe through different fragments. In  Figure~\ref{fig:categoriesuml} one can see the \textit{MainActivity} which is the activity for the category selection of the shop. When a category is selected, a new activity \textit{MainFragmentActivity} (see Figure~\ref{fig:maingui}) is started with the Intent about which category was selected.
 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.85]{images/UML/categories.png}
-	\caption[UML - Categories]{The MainActivity is an activity with a ListView that uses ListAdapterCategory as an adapter. When a category is selected, the ``MainFragmentActivity'' is started with intent information about which category that was selected.}
+	\caption[UML - Categories]{The \textit{MainActivity} is an activity with a \textit{ListView} that uses \textit{ListAdapterCategory} as an adapter. When a category is selected, the \textit{MainFragmentActivity} is started with Intent about which category was selected.}
 	\label{fig:categoriesuml}
 	\end{figure}
 
-	In Figure~\ref{fig:maingui} the \textit{MainFragmentActivity} is started when a category is selected. This activity creates an FragmentPagerAdapter that manages the fragments. One fragment is one of the views that can be swiped thorugh. \textit{All} and \textit{TopHits} are these fragments. Each fragment consist of a list, and have an Adapter for this list (ListAdapter).
+	In Figure~\ref{fig:maingui} the \textit{MainFragmentActivity} is started when a category is selected. This activity creates a \textit{FragmentPagerAdapter} that manages the fragments. One fragment is one of the views that can be swiped through. \textit{All} and \textit{TopHits} are these fragments. Each fragment consist of a list, and have an \textit{Adapter} for this list (\textit{ListAdapter}).
 
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.55]{images/UML/main.png}
-	\caption[UML - Main GUI]{Here we see a FragmentPagerAdapter that manages all the fragments. Each fragment uses an ListAdapter that structures the list items.}
+	\caption[UML - Main GUI]{Here one can see a \textit{FragmentPagerAdapter} that manages all the fragments. Each fragment uses a \textit{ListAdapter} that structures the list items.}
 	\label{fig:maingui}
 	\end{figure}
 
-	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. This enum is sent as a intent to the MainFragmentActivity when started. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that belongs to the selected category.\\
+	The \textit{Page} enum is used to tell \textit{MyFragmentPagerAdapter} which category that should be shown in \textit{All} and \textit{TopHits} fragments. This enum is sent as an intent to the \textit{MainFragmentActivity} when started. When a category is chosen, the content in \textit{All} and \textit{TopHits} are filtered by only showing applications that belongs to the selected category.\\
 
-	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from the search. This class is an activity that have a list like the other fragments, and therefore uses the same list adapter as \textit{All} and \textit{TopHits}. 
+	\textit{SearchResults} is a class that contains a list of search results ($\mu$C applications) from a search. This class is an activity that has a list like the other fragments, and therefore uses the same list adapter as \textit{All} and \textit{TopHits}. 
+
+	When a specific $\mu$C app is chosen, a new activity is started: \textit{AppView}. This class contains the information about the chosen app and presents it to the user. From this screen the user can choose to install the app on the connected Arduino.
 
 	\subsection{STK500v1}
-	In Figure~\ref{fig:stk500v1uml} the general design of the protocol component is shown. The STK500v1 class
+	In Figure~\ref{fig:stk500v1uml} the general design of the protocol component is shown. The \textit{STK500v1} class
     handles most of the logic and actual programming; this is the class called upon by the application when
-    an app is to be uploaded. The Constants class holds important commands and responses used when communicating
-    with the Arduino.
-    The Hex class deals with interpreting and verifying the app to be programmed. It provides the raw bytes
-    requested by the protocol class.\\
-    
+    an app is to be uploaded. The \textit{Constants} class holds important commands and responses used when communicating
+    with the Arduino. The \textit{Hex} class deals with interpreting and verifying the app to be programmed. It provides the raw bytes requested by the protocol class.\\
+
     The rest are for abstracting and dealing with reading from the Bluetooth connection; the current
-    implementation allows for avoiding blocking by only reading buffered bytes. The Reader behaves differently while
-    %TODO: reference state pattern
-    reading or during timeouts, based on a state pattern implementation. As shown, the different states are both
+    implementation allows for avoiding blocking by only reading buffered bytes. The Reader behaves differently while reading or during timeouts, based on a state pattern implementation. As shown, the different states are both
     states and readers.\\
 
 	\begin{figure}[H]
@@ -104,70 +101,65 @@ In this chapter the design and system architecture of the product will be presen
 	\label{fig:stk500v1uml}
 	\end{figure}
 
-	In Figure~\ref{fig:stk500_sequence_diagram} a simplified view of the programming process is shown. ArduinoStore is here a representation of any application requesting an app to be uploaded to the Arduino,
-	and the Arduino represents a microcontroller to be programmed.\\
+	In Figure~\ref{fig:stk500_sequence_diagram} a simplified view of the programming process is shown. Here the \textit{ArduinoStore} is a representation of any application requesting an app to be uploaded to the Arduino. The \textit{Arduino} represents a microcontroller to be programmed.\\
 	
-	Note that the IReader has already been instantiated before the starting call, and that stopping doesn't
+	Note that the \textit{IReader} has already been instantiated before the starting call, and that stopping doesn't
 	destroy the object.\\
 	
 	Most of the simplification occurs within the programming loop, as several different types of commands
-	are sent to the device, depending on the responses received; for details on this communication, see the AVR061 documentation~\cite{AVR061}. Communication details with the Hex class and IReader-related classes have also been reduced slightly in the diagram.\\
+	are sent to the device, depending on the responses received; for details on this communication, see the AVR061 documentation~\cite{AVR061}. Communication details with the \textit{Hex} class and \textit{IReader}-related classes have also been reduced slightly in the diagram.\\
 	
 	\begin{figure}[H]
 	\hspace*{-1.0in}
 	\includegraphics[scale=0.6]{images/Sequence_diagram.png}
-	\caption[Sequence diagram for programming]{Sequence diagram of the programming process. The three classes in the middle are in the protocol library, ArduinoStore represents an outside caller, and the Arduino is a programmable microcontroller.}
+	\caption[Sequence diagram for programming]{Sequence diagram of the programming process. The three classes in the middle are in the protocol library, \textit{ArduinoStore} represents an outside caller, and the \textit{Arduino} is a programmable microcontroller.}
 	\label{fig:stk500_sequence_diagram}
 	\end{figure}
 
 
-\section{Design of Android application}
-One of the purposes of the Android application was to ease the process of installing PUIs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages are supposed to understand how to use the application. This requirement put pressure on the design, as one have to make sure everyone are able to understand the different functions of the application. \\
-\newline
-Before the programming of the Android application was started, a complete design guide were created. In this section the complete design of the application is presented. This guide was made for primarily two reasons:
-\begin{itemize}
-	\item{Presentation for the customer:} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at an early stage, when it was easier to change the design.
-	\item{Avoid confusion:} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. When the looks of the user interface was settled before the programming had started, there was less need to discuss this along the way.
-\end{itemize}
+\section{Design of the Android application}
+One of the purposes of the Android application was to ease the process of installing PUIs on an Arduino for non-technical users. As described in section \ref{non-functional}, one of the requirements for the project was that people of all ages were supposed to understand how to use the application. This requirement put pressure on the design, as one has to make sure everyone were able to understand the different functions of the application.
 
 \subsection{Design guide}
-Following is the complete design guide of the Android application. Minor changes were made to some of the screens. In these cases it is commented below the picture. The design of the preferences screen is not shown, as it was unnecessary to design this screen since it is a standard for Android applications.
+Before the programming of the Android application was started, a complete design guide was created. In this section the complete design of the application is presented. This guide was made primarily for two reasons:\\
+\begin{itemize}
+	\item{Presentation for the customer:} With a complete design guide it was possible to present the user interface of the application to the customer before it was programmed. This allowed for input from the customer at an early stage, when it was easier to change the design.
+	\item{Avoid confusion:} A design guide reduces the amount of confusion and discussion regarding the appearance of the user interface. Because the design of the user interface was settled on before the programming had started, there was less need to discuss this along the way.
+\end{itemize}
+\vspace{6 mm}
+During the project, some changes were made to the design. These changes can be viewed in Section \ref{designchanges}.
 
-\paragraph{Screen 1a - Device list}
-Screen that shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text have switched places. When a device is clicked, a progress bar appears and stays on the screen until a valid Bluetooth connection with the chosen device is made.
+\paragraph{Screen 1a - Device list,} as shown in Figure \ref{fig:screen1a}, shows the list of available Arduino devices. In the final design the list of devices fills the whole screen, and the buttons and description text have switched places. When a device is pressed, a progress bar appears and stays on the screen until a valid Bluetooth connection with the chosen device is made.
 
 \begin{figure}[H]
 	\centering
 		\includegraphics[scale=0.2]{images/Design_guide/Screen1a.png}
-	\caption[Screen 1a - Device list]{The design for the device list of the discovered bluetooth devices}
+	\caption[Screen 1a - Device list]{The design for the device list of the discovered Bluetooth devices}
 	\label{fig:screen1a}
 \end{figure}
 
 
-\paragraph{Screen 1b - Add device manually}
-Screen that appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
+\paragraph{Screen 1b - Add device manually,} as shown in Figure \ref{fig:screen1b}, appears after pressing the ``Add device'' button in Screen 1a. It was chosen to remove the ``Bluetooth settings'' button, as it proved unnecessary. In the final design, this screen contains only the ``QR Code'' button and ``Input serial'' button, with a short description of the functionality of the button between them.
 
 \begin{figure}[H]
 	\centering
 		\includegraphics[scale=0.2]{images/Design_guide/Screen1b.png}
-	\caption[Screen 1b - Add device manually]{The design for how to add devices alternatively}
+	\caption[Screen 1b - Add device manually]{The design for alternative methods to add devices}
 	\label{fig:screen1b}
 \end{figure}
 
 
-\paragraph{Screen 1b-i - Input serial}
-Screen that appears when the ``Input serial'' button is clicked.
+\paragraph{Screen 1b-i - Input serial,} as shown in Figure \ref{fig:screen1bi}, appears when the ``Input serial'' button is clicked.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/Design_guide/Screen1b-i.png}
-\caption[Screen 1b-i - Input serial]{The design for input serial popup box.}
+\caption[Screen 1b-i - Input serial]{The design for Input serial box.}
 \label{fig:screen1bi}
 \end{figure}
 
 
-\paragraph{Screen 2a - Browse shop}
-Screen for browsing all the applications for Arduino in the shop. More categories have been added. The user can here swipe left/right to sort the available applications in different ways. See next paragraph.
+\paragraph{Screen 2a - Browse shop,} as shown in Figure \ref{fig:screen2a}, is a screen for browsing all the apps for Arduino in the shop. More categories have been added. The user can swipe to the left or right to sort the available applications in different ways. See next paragraph.
 
 \begin{figure}[H]
 \centering
@@ -177,8 +169,8 @@ Screen for browsing all the applications for Arduino in the shop. More categorie
 \end{figure}
 
 
-\paragraph{Screen 2b - Browse shop by category}
-Screen that shows a list of all applications in chosen category. Category ``All'' is chosen.
+\paragraph{Screen 2b - Browse shop by category,} as shown in Figure \ref{fig:screen2b}, is a
+ screen that shows a list of all applications in the chosen category. Category ``All'' is chosen.
 
 \begin{figure}[H]
 \centering
@@ -188,8 +180,7 @@ Screen that shows a list of all applications in chosen category. Category ``All'
 \end{figure}
 
 
-\paragraph{Screen 3a - Application view}
-Screen with overview of an chosen application. Small changes were needed, as the comments field and reviews were given a lower priority at mid-term.
+\paragraph{Screen 3a - Application view,} as shown in Figure \ref{fig:screen3a}, provides an overview of a chosen application. Small changes were needed, as the comments field and reviews were given a lower priority at mid-term.
 
 \begin{figure}[H]
 \centering
@@ -199,8 +190,8 @@ Screen with overview of an chosen application. Small changes were needed, as the
 \end{figure}
 
 
-\paragraph{Screen 3a-i - Installation confirmation}
-Screen that appears when the ``Install'' button in Screen 3a is pressed. Shows the name of the chosen device.
+\paragraph{Screen 3a-i - Installation confirmation,} as shown in Figure \ref{fig:screen3ai}, is a 
+screen that appears when the ``Install'' button in Screen 3a is pressed. Shows the name of the chosen device.
 
 \begin{figure}[H]
 \centering
@@ -210,8 +201,7 @@ Screen that appears when the ``Install'' button in Screen 3a is pressed. Shows t
 \end{figure}
 
 
-\paragraph{Screen 3a-ii - Progress of installation}
-Screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed.
+\paragraph{Screen 3a-ii - Progress of installation,} as shown in Figure \ref{fig:screen3aii}, is a screen that shows the progress of the installation. The progress bar cannot be dismissed, so the Android application is locked until the installation is complete or has failed.
 The user is warned not to move the Android device out of range of the Arduino.
 
 \begin{figure}[H]
@@ -222,8 +212,7 @@ The user is warned not to move the Android device out of range of the Arduino.
 \end{figure}
 
 
-\paragraph{Screen Xa - Action overflow}
-Screen that appears when the ``Action overflow'' button is clicked. This menu is available from all the screen in the application with the exception of the preferences screen.
+\paragraph{Screen Xa - Action overflow,} as shown in Figure \ref{fig:screenXa}, is a screen that appears when the ``Action overflow'' button is clicked. This menu is available from all the screen in the application with the exception of the preferences screen.
 
 \begin{figure}[H]
 \centering
@@ -235,32 +224,46 @@ Screen that appears when the ``Action overflow'' button is clicked. This menu is
 	\subsection{Design decisions}
 	This section explains the reasoning behind the different aspects of the design.
 
-	\textbf{Device list}\\
-	It should be simple and fit as many devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered Bluetooth devices as a primary method of connection to an Arduino. That is why the user will meet this screen first. The less frequently used methods for connecting to an Arduino, like QR codes and serial input, were therefore put separately in another screen, as shown in Figure~\ref{fig:screen1b}. \\
+	\paragraph{Device list.}
+	It should be simple and fit as many devices as possible, even on the smaller cell phones. As shown in Figure~\ref{fig:screen1a} it was decided to use discovered Bluetooth devices as a primary method of connecting to an Arduino. The less frequently used methods for connecting to an Arduino, like QR codes and serial input, were put in another screen, as shown in Figure~\ref{fig:screen1b}. \\
 
 	Because of license compatibility issues, it was necessary to use external QR Code readers. To give the user more flexibility, it is therefore possible for the user to select the optimal QR-reader from his application list.\\
 
-	When serial input is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on what is happening and it does not add unnecessary clutter to the GUI.\\
+	When \textit{Serial input} is clicked, it was decided to open a dialog box for the input string as shown in Figure~\ref{fig:screen1bi}. This is because it clearly gives the user feedback on what is happening and it does not add unnecessary clutter to the GUI.
 
-	\textbf{Browse shop}\\
-	The category selection as shown in Figure~\ref{fig:screen2a} was done because it groups the applications, and makes it easier for the user to browse for the more specific applications. The swiping was implemented because it easily and quickly selects what to show. This is a fast way to change what to sort the applications by, and is user friendly on a touch screen. ``Top hits'' and ``All'' were chosen because the database is currently small, and it is not necessary with a large amount of ``sort by'' tabs. Other tabs could be easily implemented if need be.\\
+	\paragraph{Browse shop.}
+	The category selection, as shown in Figure~\ref{fig:screen2a} groups the apps in different categories, making it easier for the user to browse for apps. \\
 
-	\textbf{Application view}\\
-	The application view, as shown in Figure~\ref{fig:screen3a}, should show all the detail and information about an application that is useful and interesting to the user. Rating, description, developer, application name and images were selected for trying to keep a ``standard''. Meaning that both Google Market and AppStore uses these elements and are expected to be familiar for many users.\\
+	When a category is chosen, a new screen containing the apps in that category is created. In this screen is it possible for the user to swipe left and right to change the way the apps is sorted. This swiping was implemented because it easily and quickly selects what to show. ``Top hits'' and ``All'' were chosen because the database is currently small, and it is not necessary with a large amount of ``sort by'' tabs. Other tabs could be easily implemented if need be.
 
-	When the install button is clicked a confirmation box will pop up as shown in Figure~\ref{fig:screen3ai}. This is because the user might have clicked the button on accident or is not informed about what device he/she is connected to. The device name will therefore be shown in this dialog box.\\
+	\paragraph{Application view.}
+	The application view, as shown in Figure~\ref{fig:screen3a}, should show all the details and information about an application that is useful and interesting to the user. Rating, description, developer and application name were selected for trying to keep a ``standard''. Meaning that both Google Market and AppStore uses these elements and are expected to be familiar to most Android users.\\
 
-	A progress bar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application. \\
+	When the ``Install'' button is clicked, a confirmation box will pop up as shown in Figure~\ref{fig:screen3ai}. This is because the user might have clicked the button by accident, or is not informed about what device he or she is connected to. The device name will therefore be shown in this dialog box.\\
 
-	\textbf{Action overflow menu}
-	When the user clicks on the action overflow menu, he will expect some sort of settings. That is why this menu contains settings. If the user will hide or show incompatible application to his Arduino, this menu will toggle the preference as shown in Figure~\ref{fig:screenXa}.\\
+	A progress bar will pop up when the user have confirmed the installation. This is because the application should give an indicator on when the application is complete and when its safe to close the application.
 
-	\textbf{Changes to the design}
-	The action overflow menu have two other options: ``Device List'' and ``Populate Database''. This is because this application is only a prototype and it was necessary to hard code Arduino applications into the Android application. The populate database function will therefore feed the local database with some sample applications.\\
+	\paragraph{Action overflow menu.}
+	When the user clicks on the action overflow menu, he will expect some sort of settings. That is why this menu contains settings. If the user will hide or show incompatible application to his Arduino, this menu will toggle the preference as shown in Figure~\ref{fig:screenXa}.
 
-	The device list function is there because it should be possible to change device at all times, not only on startup.\\
+	\subsection{Changes to the design}
+	\label{designchanges}
+	In this section the changes made in the design guide will be presented. The final design of the application can be viewed on an Android device.
 
-	Another change is the ``Welcome Screen''. This is the first screen that will be met when the application is started. This makes it easier to navigate between ``Devices'' and ``Browse Shop''. This screen also provides an option (checkbox) that allows the user to chose wheter or not they will automatically reconnect on startup. Figure~\ref{fig:welcomescreen} shows a simple connection between the reconnect option and the welcome screen.
+	\paragraph{Browse shop.}
+	In the ``Browse shop'' screen, shown in Figure \ref{fig:screen2a}, the swiping function was removed due to usability issues. Peer reviews indicated that it would be more user friendly to have this as a separate screen, instead of a fragment as shown in the design guide.
+	
+	\paragraph{Application view.}
+	Due to lack of time, some simplifications were made to this screen. It was decided to remove the images and functionality for adding comments was not implemented. 
+	
+	\paragraph{Action overflow menu.}
+	Several different options were added to the Action overflow menu. It is convenient to show different options in this menu, depending on which screen the user is on, so the content of the menu changes throughout the application.
+
+	\paragraph{Add device manually.}
+	The Bluetooth button in \ref{fig:screen1b} was removed, as it was unnecessary.
+
+	\paragraph{Welcome screen.}
+	The ``Welcome Screen'' was added as the start screen. This makes it easier to navigate between ``Devices'' and ``Browse Shop''. It also provides an option (checkbox) that allows the user to choose whether or not they will automatically reconnect the next time the application is started. Figure~\ref{fig:welcomescreen} shows a simple connection between the reconnect option and the welcome screen.
 
 	\begin{figure}[H]
 	\centering
