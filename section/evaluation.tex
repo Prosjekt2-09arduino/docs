@@ -97,26 +97,4 @@ During the project several challenges were encountered. This section focuses on 
 	Debugging the implementation of the STK500v1 protocol proved to be gruelling work. As described in Chapter \ref{sec:changes-desc}, testing was less prioritized than the implementation. As none of the group members had significant experience on the field, the writing of tests could potentially demand a lot of time that was used on other tasks. In hindsight, continuously writing tests for each new module in both the Android application and the protocol implementation, might have saved the group a lot of time spent on debugging.
 
 	\section{Conclusion}
-
-	%TODO: Write about why the implementation of the protocol had such a large impact.
-
-    The project was successful and the most important requirements including the biggest problem (the protocol) was met. The frequent group meetings, customer meetings and the organized structure of issues, turned out to be a great success. \\
-
-    	\subsection{Requirements met}
-    		The graphical user interface was completed and met every requirement.\\
-
-		\begin{itemize}
-			\item{GUI}
-			\item{Bluetooth connection}
-			\item{QR Code and SerialInput}
-			\item{Retain a reliable connection to the connected device}
-			\item{Remember the device from last time and try to reconnect}
-		\end{itemize}
-    		Bluetooth connection was complete and met every requirement. This part of the project was taken from the UbiCollab/iJacket project and spared the group a lot of workhours. The disadvantage of this usage, was that the bluetooth connection protocol turned out to be unstable.\\
-
-    		The system will automatically try to connect to the last sucessfully connected device on startup, and gives the user the option to turn this feature on and off. This works perfectly if the content on the Arduino is correct. This requirement is considered as fully met.\\
-
-		\subsection{Requirements not met}
-			Content provider with sync adapter towards a remote database was not implemented. This was not prioritized because it has been done by many other projects and this was agreed upon with the customer. \\
-
-			Filtering applications by compatibility was not implemented because of the lack of time the project had. It was a complex problem that was considered to take a period of at least one month past the project schedule. Nevertheless the team managed to write a standard for microcontrollers, that describes how this could be implemented. A document of this standardization can be found in appendix C. \\
+	The most important requirements were met. Those requirements not met were less prioritized after discussions with the customer. The project management methods applied, ensured steady progress throughout the project. The developer team considered the project to be successful as the single most important goal was attained: over-the-air installation.
