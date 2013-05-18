@@ -8,9 +8,9 @@ If you have bought a finished product, or are using the Arduino provided with th
 	
 		\subsection{Arduino IDE}
 		\begin{enumerate}
-		\item To transfer the first application to your Arduino, you need the Arduino IDE. Download the latest version of Arduino IDE from: \url{http://arduino.cc} and install it.
+		\item To transfer the first application to your Arduino, you need the Arduino IDE. Download the latest version of Arduino IDE \cite{download-arduino} and install it.
 	
-		\item Download the latest version of the ComputerSerial library from \url{https://github.com/Prosjekt2-09arduino/ArduinoStore/tree/master/Arduino/} and import this into Arduino IDE. How this is done, you can read here: \url{http://arduino.cc/en/Guide/Libraries/}.
+		\item Download the latest version of the ComputerSerial library \cite{download-computerserial} and import this into the Arduino IDE \cite{import-libraries}.
 	
 		\item Plug an USB cable into your Arduino and make sure you do not have anything plugged into the digital port 0 and 1 on the Arduino, where the Bluetooth module usually is plugged into. This is because these pins are used for programming the device, and if you have something plugged in here the device will not get programmed over USB.
 		\end{enumerate}
@@ -36,8 +36,8 @@ If you have bought a finished product, or are using the Arduino provided with th
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.5]{images/serial_monitor.png}
-			\label{fig:serial_monitor}
 			\caption{Change settings in the serial monitor in the Arduino IDE to configure the Bluetooth module.}
+			\label{fig:serial_monitor}
 		\end{figure}
 		
 		\begin{figure}[H]
@@ -61,14 +61,14 @@ If you have bought a finished product, or are using the Arduino provided with th
 				\subsubsection{RN-42}
 				To enter programming mode, type ``\$\$\$'' and press enter. You should get ``AOK'' back when you entered programming mode. To change baud to 115200, write ``SU,11'' and press enter. You should now get ``AOK'' back.\\
 				
-				Other supported commands can be found here: \url{https://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf}.
+				Other supported commands can be found in the datasheet \cite{rn-42-at-commands}.
 
 				\subsubsection{HC-05}
 				Make sure you pull the KEY pin to 3.3v/5v (depends on what model of this module you have) before powering it up. This will allow you to enter the programming mode.\\
 				
 				After you have successfully connected to the Bluetooth module, just write ``AT'' and press enter. You should get ``AOK'' back when you entered programming mode. To change baud to 115200, type ``AT+UART=115200,0,0''. You should now get ``AOK'' back.\\
 				
-				Other supported commands can be found here: \url{http://elecfreaks.com/store/download/datasheet/Bluetooth/HC-0305%20serail%20module%20AT%20commamd%20set%20201104%20revised.pdf}.
+				Other supported commands can be found in the datasheet \cite{hc-05-at-commands}.
 				
 	\section{Android application}\label{sec:install-android-application}
 	To be able to install the Android application on your device, you have to allow installation of applications from unknown sources on the device. On Android 4.x, this option can be found in the security settings on the device. In the security menu, check the box next to ``Unknown sources''. \\
@@ -76,6 +76,6 @@ If you have bought a finished product, or are using the Arduino provided with th
 	To install the application on your device, you have to transfer the ``uCSoftwareStore.apk'' file to the device. This file can be found the provided CD. Once the file is transferred, press the file to install the application, and follow the on-screen instructions.
 	
 	\section{Develop your own apps}
-	To learn more about how the Arduino works, take a look at the tutorials here: \url{http://arduino.cc/en/Tutorial/HomePage}.\\
+	To learn more about how the Arduino works, take a look at the tutorials on the official web page \cite{arduino-tutorials}.\\
 	
 	To make your applications work with the $\mu$CSS, remember to always import the ComputerSerial library. Take a look at the included examples in the ComputerSerial library to understand how it works.
