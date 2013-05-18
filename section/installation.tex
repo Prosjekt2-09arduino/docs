@@ -30,24 +30,24 @@ If you have bought a finished product, you can skip to the \ref{sec:install-andr
 		
 		\item Change from ''Newline'' to ''Both NL \& CR'' and change baud rate to the baud of the Bluetooth module, as shown in Figure~\ref{fig:serial_monitor}. If you are not sure what baud rate you should use, you can try different baud rates until you find the right.
 		
-		\item You can now send commands to the Bluetooth module.
+		\item You are now ready to send commands to the Bluetooth module.
 		\end{enumerate}
 		
 		\begin{figure}[H]
-			\caption{Change settings in the serial monitor in the Arduino IDE to configure the Bluetooth module.}
 			\centering
 			\includegraphics[scale=0.5]{images/serial_monitor.png}
 			\label{fig:serial_monitor}
+			\caption{Change settings in the serial monitor in the Arduino IDE to configure the Bluetooth module.}
 		\end{figure}
 		
 		\begin{figure}[H]
 		\subfigure[]{
-			\includegraphics[width=0.4 \textwidth]{images/arduino_wiring.pdf}
+			\includegraphics[width=0.5 \textwidth]{images/arduino_wiring.pdf}
 			\label{fig:arduino_standard_wiring}
 			}
 		\hfill
 		\subfigure[]{
-			\includegraphics[width=0.4 \textwidth]{images/arduino_configure_bluetooth.pdf}
+			\includegraphics[width=0.5 \textwidth]{images/arduino_configure_bluetooth.pdf}
 			\label{fig:arduino_configure_bluetooth}
 			}
 		\caption{Standard wiring of Bluetooth module: \protect{\ref{fig:arduino_standard_wiring}}. To configure the Bluetooth module through the Arduino, wire the module like this: \protect{\ref{fig:arduino_configure_bluetooth}}.}
@@ -59,7 +59,7 @@ If you have bought a finished product, you can skip to the \ref{sec:install-andr
 			When the Bluetooth module is programmed, turn of the power and on again to restart the module. Load a test application from the ComputerSerial library. The examples can be found in the menu (File -> Examples -> ComputerSerial -> Examples).
 			
 				\subsubsection{RN-42}
-				To enter programming mode, just write ''\$\$\$'' and enter. You should get AOK back when you entered programming mode. To change baud to 115200, write SU,11 and hit enter. You should now get AOK back.\\
+				To enter programming mode, write ''\$\$\$'' and enter. You should get AOK back when you entered programming mode. To change baud to 115200, write SU,11 and hit enter. You should now get AOK back.\\
 				
 				Other supported commands can be found here \url{https://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf}.
 
