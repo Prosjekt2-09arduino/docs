@@ -26,18 +26,15 @@ This section focuses on areas of improvement regarding the $\mu$C Software Store
 	The Android developer design guide teaches the developers of Android applications how to design applications that fits the Android platform. Further work on the $\mu$C Software Store should make sure that the application follows the design guidelines provided by the Android Developer Guide~\cite{android-dev-guide}. This implies correct use of colours, scaling of the application to fit different screen sizes, use of patterns etc.
 
 \section{STK500 and over-the-air installation}
-This section focuses on the areas of improvement regarding the implementation of the STK500 protocol, and over the air installation of apps on Arduino. Although the functional requirements set by the customer were met and it is possible to  install apps on an Arduino using the $\mu$C Software Store there still are some areas of improvement regarding the implementation.
+This section focuses on the areas of improvement regarding the implementation of the STK500 protocol, and over the air installation of apps on Arduino. Although the functional requirements set by the customer were met and it is possible to  install apps on an Arduino using the $\mu$C Software Store, there are still some areas of improvement.
 
 	\subsection{Hard reset}
-	There was not enough time to fully implement neither the hardware- nor the software implementations. The former
-    due to soldering difficulties and lacking documentation, and the latter had to wait for the former (though
+	There was not enough time to fully implement neither the hardware- nor the software implementations of hard reset. The former due to soldering difficulties and lacking documentation, and the latter had to wait for the former (though
     sections in the code where the feature should be enabled was identified).
 
 	   \subsubsection{How to hard reset}
-    	Both Bluetooth devices experimented on (RN-42~\cite{rn-42} and HC-05~\cite{hc-05}) provide pins that can be used for detecting
-        when it makes a connection. Passing the output to the reset pin of the microcontroller (coupled with a
-        transistor to make it able to coexist with the soft reset) will then cause it to reset, as shown in Figure~\ref{fig:hardReset}. This part was
-        successfully tested.\\
+    	Both Bluetooth devices experimented on (RN-42~\cite{rn-42} and HC-05~\cite{hc-05}) provide pins that can be used for detecting when it makes a connection. Passing the output to the reset pin of the microcontroller (coupled with a
+        transistor to make it able to coexist with the soft reset) will then cause it to reset, as shown in Figure~\ref{fig:hardReset}. The group has confirmed that this will work.\\
 
         Triggering a hard reset is then as simple as disconnecting from the Bluetooth device and then reconnecting
         again. Timing is important, however, as the protocol code must communicate with the boot loader before
@@ -45,16 +42,16 @@ This section focuses on the areas of improvement regarding the implementation of
 
 		\begin{figure}[H]
 		\centering
-		\captionof{figure}{How to wire the hard reset using the HC-05~~\cite{hc-05}.}
-		\label{fig:hardReset}
 		\includegraphics[scale=0.8]{images/wiring_hardReset.png}
+        \captionof{figure}{How to wire the hard reset using the HC-05~~\cite{hc-05}.}
+        \label{fig:hardReset}
 		\end{figure}
 	
     \subsection{Security}
 	Bluetooth itself provides security measures through channel encryption and pairing devices. In the case of
     critical devices, additional security might be needed. A simple way to incorporate this, would be to store a
     key in the EEP-ROM of the Arduino. The ComputerSerial library would then require authentication based on this
-    key before allowing the initial soft reset. A QR code (this should probably be plainly visible) could contain
+    key before allowing the initial soft reset. A QR code (this should not be plainly visible) could contain
     both the MAC address of the device and the required security details for ease of use, though a manual input
     method should also be available. This could easily be integrated with the regular connection management present
     in the application.\\
@@ -62,8 +59,7 @@ This section focuses on the areas of improvement regarding the implementation of
     However, this implementation is vulnerable to hard resets; if the device restarts on a Bluetooth connection, the
     security scheme is pointless. Because of this, the hard reset feature would have to be disabled on such devices,
     meaning the added security is at the expense of ease of use. This presents a second problem; without a way to be
-    sure of automatic error recovery, even authenticated programming poses a risk to critical devices.
-    Therefore, where more than paired device security is required, regular cabled programming is the safest way to go.
+    sure of automatic error recovery, even authenticated programming poses a risk to critical devices. Therefore, where more than paired device security is required, regular cabled programming is the safest way to go.
     
     \subsection{Protocols}
     The implementation targeted specifically the Optiboot boot loader used by many Arduinos. A subset of the STK500
