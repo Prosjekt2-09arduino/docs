@@ -17,10 +17,10 @@ If you have bought a finished product, you can skip to the \ref{sec:install-andr
 		
 				
 		\subsection{Configure Bluetooth module}
-		To program the Arduino over Bluetooth the Arduino requires a baud rate at 115200. Standard configuration of Bluetooth modules is usally configured to use a lower baud rate so you have to reprogram it to use the right baud.\\
+		To program the Arduino over Bluetooth the Arduino requires a baud rate at 115200. Standard configuration of Bluetooth modules is usally configured to use a lower baud rate, therefor it have to reprogramed it to use the correct baud.\\
 		
 		\begin{enumerate}
-		\item Upload an application that does not using the serial communication. The Arduino IDE comes with a lot of example applications and you can use one of them, like Blink. This can be found in the menu (File -> Examples -> Basic -> Blink). Click the ''Upload'' button to upload.
+		\item Upload an application that does not use the serial communication. The Arduino IDE comes with a lot of example applications and you can use one of them, like Blink. This can be found in the menu (File -> Examples -> Basic -> Blink). Click the ''Upload'' button to upload.
 		
 		\item Switch the wires from the Bluetooth module (TX on the Arduino to TX on the Bluetooth module, same with RX), as shown in Figure~\ref{fig:arduino_configure_bluetooth}. This is done because the Bluetooth module have to communicate with the computer through the USB cable. Remember to switch the wires back when you are finished configuring, as shown in Figure~\ref{fig:arduino_standard_wiring}.
 		
