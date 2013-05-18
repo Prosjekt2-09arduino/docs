@@ -31,6 +31,10 @@ During the project several challenges were encountered. This section focuses on 
 
 	\subsection{Hard reset}
 	\label{hard-reset}
+	Due the development of the protocol, there were major problems programming the device without errors and it was needed a way to reset the Arduino to recover the programming. A lot of research were done to find out how the Arduino could be reset without using the excisting soft reset (using the ComputerSerial library).\\
+	
+	The hard reset feature was intended to provide the final fall back; this would be the only way to automatically recover from serious communication problems during programming (the Optiboot boot loader only waits for so long before leaving programming mode). In the case of the device ceasing to communicate with the protocol, reprogramming the device from a computer will be required in the absence of a hard reset feature.\\
+	
 
 \section{Interaction with the customer}
 	Regular meetings with the customer were scheduled every Friday throughout the project. These meetings were used to present status, progress and any problems that were encountered. In these meetings the customer was able to aid the group in decisions and give input on the prototypes of the product. Apart from these regular meetings, the communication with the customer was done by e-mail. If difficult problems were encountered, or difficult decisions had to be made, the group was always able to achieve help from the customer. Extraordinary meetings could be scheduled at short notice if needed, and the customer was willing to request help from external developers if the group requested it.

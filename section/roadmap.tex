@@ -29,26 +29,26 @@ This section focuses on areas of improvement regarding the $\mu$C Software Store
 This section focuses on the areas of improvement regarding the implementation of the STK500 protocol, and over the air installation of apps on Arduino. Although the functional requirements set by the customer were met and it is possible to  install apps on an Arduino using the $\mu$C Software Store there still are some areas of improvement regarding the implementation.
 
 	\subsection{Hard reset}
-    The hard reset feature was intended to provide the final fall back; if both the timeout recovery and soft reset
-    (using the ComputerSerial library) mechanisms failed, this would be the only way to automatically recover from
-    serious communication problems during programming (the Optiboot boot loader only waits for so long before leaving
-    programming mode). In the case of the device ceasing to communicate with the protocol, reprogramming the device
-    from a computer will be required in the absence of a hard reset feature.\\
-    There was not enough time to fully implement neither the hardware- nor the software implementations. The former
+	There was not enough time to fully implement neither the hardware- nor the software implementations. The former
     due to soldering difficulties and lacking documentation, and the latter had to wait for the former (though
     sections in the code where the feature should be enabled was identified).
 
 	   \subsubsection{How to hard reset}
-    %TODO: Add reference
-    	Both Bluetooth devices experimented on (RN-42~\cite{rn-42} and HC-05) provide pins that can be used for detecting
-    %TODO: Mention specific pins
+    	Both Bluetooth devices experimented on (RN-42~\cite{rn-42} and HC-05~\cite{hc-05}) provide pins that can be used for detecting
         when it makes a connection. Passing the output to the reset pin of the microcontroller (coupled with a
-        transistor to make it able to coexist with the soft reset) will then cause it to reset. This part was
+        transistor to make it able to coexist with the soft reset) will then cause it to reset, as shown in Figure~\ref{fig:hardReset}. This part was
         successfully tested.\\
 
         Triggering a hard reset is then as simple as disconnecting from the Bluetooth device and then reconnecting
         again. Timing is important, however, as the protocol code must communicate with the boot loader before
         the latter attempts to start the installed app.
+
+		\begin{figure}[H]
+		\centering
+		\captionof{figure}{How to wire the hard reset using the HC-05~~\cite{hc-05}.}
+		\label{fig:hardReset}
+		\includegraphics[scale=0.8]{images/wiring_hardReset.png}
+		\end{figure}
 	
     \subsection{Security}
 	Bluetooth itself provides security measures through channel encryption and pairing devices. In the case of
