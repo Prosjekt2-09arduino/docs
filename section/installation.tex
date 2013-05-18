@@ -69,13 +69,28 @@ If you have bought a finished product, or are using the Arduino provided with th
 				After you have successfully connected to the Bluetooth module, just write ``AT'' and press enter. You should get ``AOK'' back when you entered programming mode. To change baud to 115200, type ``AT+UART=115200,0,0''. You should now get ``AOK'' back.\\
 				
 				Other supported commands can be found in the datasheet \cite{hc-05-at-commands}.
+			
+			\subsection{Upload supported application}\label{sec:upload-application}
+			Open one of the example application included in the ComputerSerial library using the Arduino IDE \cite{download-arduino} (File $\rightarrow$ Examples $\rightarrow$ ComputerSerial $\rightarrow$ Examples). Upload by clicking the ``Upload'' button.
 				
 	\section{Android application}\label{sec:install-android-application}
 	To be able to install the Android application on your device, you have to allow installation of applications from unknown sources on the device. On Android 4.x, this option can be found in the security settings on the device. In the security menu, check the box next to ``Unknown sources''. \\
 
 	To install the application on your device, you have to transfer the ``uCSoftwareStore.apk'' file to the device. This file can be found the provided CD. Once the file is transferred, press the file to install the application, and follow the on-screen instructions.
 	
+	\section{Recover}
+	If the programming failed, the Arduino needs to be reconfigured from a computer.\\
+	
+	\begin{enumerate}
+	\item Unplug the Bluetooth module.
+	
+	\item Plug a USB cable from your computer to the Arduino.
+	
+	\item Upload application as described in Section~\ref{sec:upload-application}.
+	\end{enumerate}
+	
+	
 	\section{Develop your own apps}
 	To learn more about how the Arduino works, take a look at the tutorials on the official web page \cite{arduino-tutorials}.\\
 	
-	To make your applications work with the $\mu$CSS, remember to always import the ComputerSerial library. Take a look at the included examples in the ComputerSerial library to understand how it works.
+	To make your applications work with the Android application, remember to always import the ComputerSerial library. Take a look at the included examples in the ComputerSerial library to understand how it works.
